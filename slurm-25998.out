@@ -1,0 +1,91 @@
+Processing molecule: formaldehyde
+Running with beta = 20
+Running with l = 100
+read ../MA_best/Simulate_CWNO/CWNO_final_tilde.dat
+Starting Davidson with n_aux = 320, l_buffer = 130, lc = 100, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 32, Converged = 0, ‖r‖ (largest λ) = 1.8853078665253227
+Iter 2: V_size = 64, Converged = 0, ‖r‖ (largest λ) = 0.11215547655318842
+Iter 3: V_size = 128, Converged = 0, ‖r‖ (largest λ) = 0.0016825295310488812
+Iter 4: V_size = 252, Converged = 4, ‖r‖ (largest λ) = 3.96498240193537e-6
+Iter 5: V_size = 232, Converged = 14, ‖r‖ (largest λ) = 3.6516193269046666
+Iter 6: V_size = 194, Converged = 33, ‖r‖ (largest λ) = 1.2148581152789098e-5
+Iter 7: V_size = 283, Converged = 41, ‖r‖ (largest λ) = 7.745886064862138e-5
+Iter 8: V_size = 148, Converged = 56, ‖r‖ (largest λ) = 2.615056633680188
+Iter 9: V_size = 200, Converged = 78, ‖r‖ (largest λ) = 2.4942258509349597e-5
+Iter 10: V_size = 249, Converged = 81, ‖r‖ (largest λ) = 2.8628947639920685
+Iter 11: V_size = 282, Converged = 97, ‖r‖ (largest λ) = 1.639259379046686
+Iter 12: V_size = 315, Converged = 97, ‖r‖ (largest λ) = 3.0532220724677823
+Converged all required eigenvalues (cluster-aware). Iter = 13
+312.655818 seconds (1.15 M allocations: 91.292 GiB, 0.26% gc time)
+Number of FLOPs: 46414378
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Simulate_CWNO/CWNO_final_tilde_results.jld2
+
+Compute the difference between computed and exact eigenvalues:
+100 Eigenvalues converges, out of 100 requested.
+Running with l = 500
+read ../MA_best/Simulate_CWNO/CWNO_final_tilde.dat
+Starting Davidson with n_aux = 1000, l_buffer = 650, lc = 502, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 100, Converged = 0, ‖r‖ (largest λ) = 0.9028993790990167
+Iter 2: V_size = 200, Converged = 0, ‖r‖ (largest λ) = 0.008996176106426458
+Iter 3: V_size = 399, Converged = 1, ‖r‖ (largest λ) = 3.204894556915785e-5
+Iter 4: V_size = 777, Converged = 22, ‖r‖ (largest λ) = 1.0157956866029817e-6
+Iter 5: V_size = 1000, Converged = 106, ‖r‖ (largest λ) = 3.8634809311733807
+Iter 6: V_size = 922, Converged = 189, ‖r‖ (largest λ) = 5.511638113622225e-6
+Iter 7: V_size = 746, Converged = 277, ‖r‖ (largest λ) = 1.1241543210214977e-5
+Iter 8: V_size = 612, Converged = 344, ‖r‖ (largest λ) = 2.3402909750539798e-5
+Iter 9: V_size = 850, Converged = 412, ‖r‖ (largest λ) = 2.8901716939567114e-5
+Iter 10: V_size = 434, Converged = 433, ‖r‖ (largest λ) = 2.6220234866346512
+Converged all required eigenvalues (cluster-aware). Iter = 11
+1094.890053 seconds (11.39 M allocations: 911.416 GiB, 0.49% gc time)
+Number of FLOPs: 170762012
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Simulate_CWNO/CWNO_final_tilde_results.jld2
+
+Compute the difference between computed and exact eigenvalues:
+500 Eigenvalues converges, out of 500 requested.
+Running with l = 1000
+read ../MA_best/Simulate_CWNO/CWNO_final_tilde.dat
+Starting Davidson with n_aux = 2000, l_buffer = 1300, lc = 1005, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 200, Converged = 0, ‖r‖ (largest λ) = 0.4440134307255606
+Iter 2: V_size = 400, Converged = 0, ‖r‖ (largest λ) = 0.0017899512607533839
+Iter 3: V_size = 795, Converged = 5, ‖r‖ (largest λ) = 2.5508060509677037e-6
+Iter 4: V_size = 1491, Converged = 104, ‖r‖ (largest λ) = 4.655839849864151
+Iter 5: V_size = 2000, Converged = 277, ‖r‖ (largest λ) = 3.8045670521696704
+Iter 6: V_size = 1626, Converged = 487, ‖r‖ (largest λ) = 8.06939702286459e-7
+Iter 7: V_size = 1266, Converged = 667, ‖r‖ (largest λ) = 1.3518081252549084e-5
+Iter 8: V_size = 1742, Converged = 824, ‖r‖ (largest λ) = 2.56469157755843e-5
+Iter 9: V_size = 912, Converged = 844, ‖r‖ (largest λ) = 2.6835416758854267
+Converged all required eigenvalues (cluster-aware). Iter = 10
+2392.393592 seconds (41.19 M allocations: 3.216 TiB, 0.76% gc time)
+Number of FLOPs: 285516944
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Simulate_CWNO/CWNO_final_tilde_results.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1000 Eigenvalues converges, out of 1000 requested.
+Running with l = 2000
+read ../MA_best/Simulate_CWNO/CWNO_final_tilde.dat
+Starting Davidson with n_aux = 4000, l_buffer = 2600, lc = 2010, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 400, Converged = 0, ‖r‖ (largest λ) = 0.17290274051870105
+Iter 2: V_size = 800, Converged = 0, ‖r‖ (largest λ) = 0.00029526822767744743
+Iter 3: V_size = 1565, Converged = 35, ‖r‖ (largest λ) = 2.4913514480910136e-7
+Iter 4: V_size = 2850, Converged = 315, ‖r‖ (largest λ) = 3.685438016956771
+Iter 5: V_size = 3962, Converged = 619, ‖r‖ (largest λ) = 3.720324482104627
+Iter 6: V_size = 2972, Converged = 1114, ‖r‖ (largest λ) = 7.72018229673542e-7
+Iter 7: V_size = 2080, Converged = 1560, ‖r‖ (largest λ) = 2.0977412262102836e-5
+Iter 8: V_size = 2788, Converged = 1892, ‖r‖ (largest λ) = 2.3244324260402708e-5
+Iter 9: V_size = 3496, Converged = 1892, ‖r‖ (largest λ) = 2.9903095290667454
+Converged all required eigenvalues (cluster-aware). Iter = 10
+6567.586842 seconds (197.01 M allocations: 15.156 TiB, 1.18% gc time)
+Number of FLOPs: 510796486
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Simulate_CWNO/CWNO_final_tilde_results.jld2
+
+Compute the difference between computed and exact eigenvalues:
+2000 Eigenvalues converges, out of 2000 requested.
+Finished processing molecule: formaldehyde
