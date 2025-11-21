@@ -3,6 +3,7 @@ using Printf
 using JLD2
 using IterativeSolvers
 using LinearMaps
+using DataStructures
 
 
 # === Global FLOP counter and helpers ===
@@ -551,7 +552,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-molecule_dict = Dict(
+molecule_dict = OrderedDict(
     "H2" => 50,
     "formaldehyde" => 30,
     "uracil" => 20
