@@ -1,0 +1,29 @@
+Processing molecule: formaldehyde
+Running with beta = 25
+Running with l = 60
+Starting Davidson with n_aux = 400, l_buffer = 78, lc = 60, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 16, Converged = 0, ‖r‖ (largest λ) = 13.457112320655282
+Iter 2: V_size = 32, Converged = 0, ‖r‖ (largest λ) = 0.10674281193633225
+Iter 3: V_size = 64, Converged = 0, ‖r‖ (largest λ) = 0.0006328014045990158
+Iter 4: V_size = 128, Converged = 3, ‖r‖ (largest λ) = 1.3041300191804503e-6
+Iter 5: V_size = 150, Converged = 11, ‖r‖ (largest λ) = 1.6338702917127878e-6
+Iter 6: V_size = 134, Converged = 15, ‖r‖ (largest λ) = 1.8345236707241564e-5
+Iter 7: V_size = 126, Converged = 21, ‖r‖ (largest λ) = 3.5826929669303155e-5
+Iter 8: V_size = 114, Converged = 40, ‖r‖ (largest λ) = 2.069198606392694e-5
+Iter 9: V_size = 76, Converged = 44, ‖r‖ (largest λ) = 1.1450600369464149e-5
+Total MINRES iterations: 142
+Iter 10: V_size = 68, Converged = 49, ‖r‖ (largest λ) = 2.3298784679165712e-5
+Total MINRES iterations: 124
+Iter 11: V_size = 58, Converged = 53, ‖r‖ (largest λ) = 4.7045335151013714e-5
+Converged all required eigenvalues (cluster-aware). Iter = 12
+146.859657 seconds (645.18 k allocations: 15.122 GiB, 0.14% gc time, 0.45% compilation time)
+Number of FLOPs: 3274150712506
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×60 adjoint(::Vector{Float64}) with eltype Float64:
+ -9.09495e-13  -1.13687e-13  0.0  2.84217e-14  0.0  -1.42109e-13  1.42109e-13  -4.54747e-13  -4.86011e-12  -1.29319e-12  -8.38369e-11  -7.30438e-12  -2.04778e-11  -1.10134e-12  -4.40394e-11  -4.27285e-11  -1.16533e-10  -1.68789e-11  -2.37108e-10  -1.86162e-11  -2.02739e-10  -5.7841e-10  -1.7501e-10  -3.30527e-10  -1.97886e-11  -1.22178e-11  -2.15792e-11  -1.45706e-10  -2.84784e-10  -8.7967e-11  -2.08519e-10  -2.42117e-11  -2.63025e-10  -2.30132e-10  -5.25841e-10  -5.84432e-10  -7.12397e-10  -5.37403e-10  -1.53335e-11  -6.38757e-10  -7.2451e-10  -5.42601e-10  -1.02179e-9  -1.07313e-10  -5.88661e-10  -1.55974e-10  -2.16036e-10  -5.71062e-10  -1.46042e-9  -5.46398e-10  -1.7945e-10  -3.08293e-10  -3.54359e-10  -2.5928e-9  -1.64847e-9  -1.21268e-9  -2.74495e-10  -4.23296e-10  -9.62944e-10  -2.70115e-9
+60 Eigenvalues converges, out of 60 requested.
+Finished processing molecule: formaldehyde

@@ -7,5 +7,5 @@
 
 JULIA=/home/fmereto/julia/bin/julia
 
-$JULIA hybrid_CWNO_improved.jl
+$JULIA TEST_code.jl
 
