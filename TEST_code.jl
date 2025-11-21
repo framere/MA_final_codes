@@ -495,7 +495,7 @@ function davidson(
         T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
         if size(V, 2) + n_b_hat > n_aux || n_b_hat == 0 || n_c > 0
             extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
-            V = hcat(X_nc, T_hat, A[:, extra_idx]...)
+            V = hcat(X_nc, T_hat, A[:, extra_idx])
             n_b = size(V, 2)
         else
             V = hcat(V, T_hat)
