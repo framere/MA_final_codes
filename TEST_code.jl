@@ -443,7 +443,7 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 15
+        if iter < 100
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -551,15 +551,19 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-molecule = ["H2","formaldehyde", "uracil"]  # "H2", "formaldehyde", "uracil"
-Nauxs = [100, 300, 500, 1000, 1500]
-ls = 20
+molecule_dict = Dict(
+    "H2" => 50,
+    "formaldehyde" => 30,
+    "uracil" => 20
+)
 
-for mol in molecule
+Nauxs = [100, 300, 500, 1000, 1500]
+
+for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
     for Naux in Nauxs
         println("Running with Naux = $Naux")
-        nev = ls*occupied_orbitals(mol)
+        nev = molecule_dict[mol]*occupied_orbitals(mol)
         main(mol, nev, Naux, 100)
     end
 end
