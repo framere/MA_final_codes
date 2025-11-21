@@ -514,7 +514,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 
     filename = "../MA_best/Simulate_CWNO/CWNO_final_tilde.dat"
     Nlow = Naux ÷ 4
-    A = load_matrix(filename,molecule)
+    A = load_matrix(filename)
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
