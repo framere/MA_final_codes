@@ -492,7 +492,8 @@ function davidson(
         # --- Orthonormalize & update V ---
         T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
         if size(V, 2) + n_b_hat > n_aux || n_b_hat == 0 || n_c > 0
-            V = hcat(X_nc, T_hat)
+            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            V = hcat(X_nc, T_hat, A[:, extra_idx]...)
             n_b = size(V, 2)
         else
             V = hcat(V, T_hat)
@@ -521,8 +522,8 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Int, max_iter
     # end
 
     D = diag(A)
-    idxs = sortperm(abs.(D), rev = true)[1:Nlow]
-    V = A[:, idxs]
+    all_idxs = sortperm(abs.(D), rev = true)
+    V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
     @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter)
 
