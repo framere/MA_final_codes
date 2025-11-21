@@ -521,10 +521,10 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Float64, max_
     # end
 
     D = diag(A)
-    idxs = sortperm(abs.(D), rev = true)[1:Nlow]
-    V = A[:, idxs]
+    all_idxs = sortperm(abs.(D), rev = true)
+    V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
-    @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter)
+    @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter, all_idxs)
 
     idx = sortperm(Σ)
     Σ = abs.(Σ[idx])
