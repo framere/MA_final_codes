@@ -208,7 +208,8 @@ function davidson(
     n_aux::Integer,
     l::Integer,
     thresh::Float64,
-    max_iter::Integer)::Tuple{Vector{Float64}, Matrix{T}} where T<:AbstractFloat
+    max_iter::Integer,
+    all_idxs::Vector{Int})::Tuple{Vector{Float64}, Matrix{T}} where T<:AbstractFloat
 
     n = size(A, 1)
     n_b = size(V, 2)
@@ -525,7 +526,7 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Int, max_iter
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
-    @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter)
+    @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter, all_idxs)
 
     idx = sortperm(Σ)
     Σ = abs.(Σ[idx])
