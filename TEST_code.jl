@@ -217,6 +217,7 @@ function davidson(
     lc = max(1, round(Int, 1.005 * l))
     nu_0 = max(l_buffer, n_b)
     nevf = 0
+    Nlow = size(V, 2)
 
     println("Starting Davidson with n_aux = $n_aux, l_buffer = $l_buffer, lc = $lc, thresh = $thresh, max_iter = $max_iter")
 
