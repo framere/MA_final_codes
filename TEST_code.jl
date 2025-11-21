@@ -551,14 +551,17 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-molecule = "formaldehyde"
+molecule = ["H2","formaldehyde", "uracil"]  # "H2", "formaldehyde", "uracil"
 Nauxs = [100, 300, 500, 1000, 1500]
-ls = 50
+ls = 20
 
-for Naux in Nauxs
-    println("Running with Naux = $Naux")
-    nev = ls*occupied_orbitals(molecule)
-    main(molecule, nev, Naux, 100)
+for mol in molecule
+    println("\n=== Running tests for molecule: $mol ===")
+    for Naux in Nauxs
+        println("Running with Naux = $Naux")
+        nev = ls*occupied_orbitals(mol)
+        main(mol, nev, Naux, 100)
+    end
 end
 
-println("All done!")
+
