@@ -274,7 +274,7 @@ function davidson(
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(size(H, 2), nu_0 - nevf)
+        nu = min(n_aux//4, size(H,1), nu_0 - nevf)
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
@@ -443,7 +443,7 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 10
+        if iter < 15
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -493,36 +493,34 @@ function davidson(
 
         # --- Orthonormalize & update V ---
         T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
-        if size(V, 2) + n_b_hat > n_aux || n_b_hat == 0 || n_c > 0
+        if size(V, 2) + n_b_hat > n_aux && n_c > 0
             extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
             V = hcat(X_nc, T_hat, A[:, extra_idx])
-            n_b = size(V, 2)
+
+        elseif size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
+            V = hcat(X_nc, T_hat)
+
+        elseif n_c > 0
+            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            V = hcat(V, A[:, extra_idx])
+
         else
             V = hcat(V, T_hat)
-            n_b = size(V, 2)
         end
+
+        n_b = size(V, 2)
     end
 
     return (Eigenvalues, Ritz_vecs)
 end
 
-function main(molecule::String, l::Integer, beta::Integer, factor::Int, max_iter::Integer)
+function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     global NFLOPs
     NFLOPs = 0  # reset for each run
 
     filename = "../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
 
-
-    Nlow = max(round(Int, 0.1*l), 16)
-    Naux = Nlow * beta
     A = load_matrix(filename,molecule)
-    N = size(A, 1)
-
-    # V = zeros(N, Nlow)
-    # for i = 1:Nlow
-    #     V[i, i] = 1.0
-    # end
-
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
@@ -553,19 +551,14 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Int, max_iter
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
+molecule = "formaldehyde"
+Nauxs = [100, 300, 500, 1000, 1500]
+ls = 50
 
-betas = [25] #8,16,32,64, 8,16
-molecules = ["formaldehyde"] #, "uracil"
-ls = [10] #10, 50, 100, 200
-for molecule in molecules
-    println("Processing molecule: $molecule")
-    for beta in betas
-        println("Running with beta = $beta")
-        for (i, l) in enumerate(ls)
-	    nev = l*occupied_orbitals(molecule)
-            println("Running with l = $nev")
-            main(molecule, nev, beta, i, 100)
-        end
-    end
-    println("Finished processing molecule: $molecule")
+for Naux in Nauxs
+    println("Running with Naux = $Naux")
+    nev = ls*occupied_orbitals(molecule)
+    main(molecule, nev, Naux, 100)
 end
+
+println("All done!")

@@ -515,11 +515,6 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Float64, max_
     A = load_matrix(filename)
     N = size(A, 1)
 
-    # V = zeros(N, Nlow)
-    # for i = 1:Nlow
-    #     V[i, i] = 1.0
-    # end
-
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
