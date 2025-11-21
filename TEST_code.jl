@@ -274,7 +274,7 @@ function davidson(
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(n_aux//4, size(H,1), nu_0 - nevf)
+        nu = min(n_aux÷4, size(H,1), nu_0 - nevf)
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
