@@ -519,7 +519,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     NFLOPs = 0  # reset for each run
 
     filename = "../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
-
+    Nlow = Naux ÷ 4
     A = load_matrix(filename,molecule)
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
