@@ -551,7 +551,7 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Float64, max_
 end
 
 
-factors = [0.5] #1,2,3,4,5
+factors = [0.1] #1,2,3,4,5
 betas = [5] #8,16,32,64, 8,16
 molecules = ["formaldehyde"] #, "uracil"
 ls = [10, 50, 100, 200] #10, 50, 100, 200
