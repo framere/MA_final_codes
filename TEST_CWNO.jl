@@ -546,9 +546,9 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = Dict(
-    "formaldehyde" => 100
+    "formaldehyde" => 200
 )
-Nauxs = [1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
+Nauxs = [800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
