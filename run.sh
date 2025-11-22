@@ -7,5 +7,5 @@
 
 JULIA=/home/fmereto/julia/bin/julia
 
-$JULIA TEST_molecules.jl
+$JULIA TEST_CWNO.jl
 

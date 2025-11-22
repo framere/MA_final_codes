@@ -1,0 +1,119 @@
+slurmstepd-andoria01: error: *** JOB 26013 ON andoria01 CANCELLED AT 2025-11-22T07:40:08 ***
+
+[1042155] signal 15: Terminated
+in expression starting at /home/fmereto/MA_final_code/TEST_molecules.jl:564
+dgemm_kernel_ZEN at /home/fmereto/julia/bin/../lib/julia/libopenblas64_.so (unknown line)
+unknown function (ip: (nil))
+Allocations: 70408597 (Pool: 70408047; Big: 550); GC: 7851
+
+=== Running tests for molecule: formaldehyde ===
+Running with Naux = 500
+Starting Davidson with n_aux = 500, l_buffer = 234, lc = 181, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 125, Converged = 0, ‖r‖ (largest λ) = 0.5019495876520204
+Iter 2: V_size = 250, Converged = 1, ‖r‖ (largest λ) = 7.964916218912751e-5
+Iter 3: V_size = 375, Converged = 37, ‖r‖ (largest λ) = 9.734278082057717e-9
+Iter 4: V_size = 500, Converged = 99, ‖r‖ (largest λ) = 296.1386387395246
+Iter 5: V_size = 188, Converged = 114, ‖r‖ (largest λ) = 2.211642480698293e-6
+Iter 6: V_size = 313, Converged = 117, ‖r‖ (largest λ) = 63.653725442887364
+Iter 7: V_size = 433, Converged = 117, ‖r‖ (largest λ) = 0.00026371302545520256
+Iter 8: V_size = 234, Converged = 120, ‖r‖ (largest λ) = 4.3158930451737355e-5
+Iter 9: V_size = 351, Converged = 121, ‖r‖ (largest λ) = 36.630583274526906
+Iter 10: V_size = 465, Converged = 122, ‖r‖ (largest λ) = 20.87725013155557
+Iter 11: V_size = 225, Converged = 125, ‖r‖ (largest λ) = 7.471756664480109e-5
+Iter 12: V_size = 337, Converged = 126, ‖r‖ (largest λ) = 0.00011173041117773782
+Iter 13: V_size = 446, Converged = 129, ‖r‖ (largest λ) = 15.14703896145228
+Iter 14: V_size = 213, Converged = 132, ‖r‖ (largest λ) = 8.987374833357945e-5
+Total MINRES iterations: 1530
+Iter 15: V_size = 318, Converged = 132, ‖r‖ (largest λ) = 0.001962528880324812
+Total MINRES iterations: 75
+Iter 16: V_size = 420, Converged = 139, ‖r‖ (largest λ) = 9.370620532348138e-5
+Total MINRES iterations: 25
+Iter 17: V_size = 197, Converged = 161, ‖r‖ (largest λ) = 0.0024507006336894704
+Total MINRES iterations: 103
+Iter 18: V_size = 292, Converged = 161, ‖r‖ (largest λ) = 64.86067057360808
+Total MINRES iterations: 25
+Iter 19: V_size = 365, Converged = 165, ‖r‖ (largest λ) = 0.002024591584286125
+Total MINRES iterations: 15
+Iter 20: V_size = 438, Converged = 165, ‖r‖ (largest λ) = 45.50034216013343
+Total MINRES iterations: 100
+Iter 21: V_size = 138, Converged = 170, ‖r‖ (largest λ) = 0.0015653226326190228
+Total MINRES iterations: 69
+Iter 22: V_size = 207, Converged = 170, ‖r‖ (largest λ) = 32.13546268182048
+Total MINRES iterations: 100
+Iter 23: V_size = 271, Converged = 175, ‖r‖ (largest λ) = 0.0014550770851236563
+Total MINRES iterations: 41
+Iter 24: V_size = 335, Converged = 175, ‖r‖ (largest λ) = 31.26631030139015
+Total MINRES iterations: 100
+Iter 25: V_size = 394, Converged = 176, ‖r‖ (largest λ) = 0.0013170492564966486
+Total MINRES iterations: 84
+Iter 26: V_size = 453, Converged = 176, ‖r‖ (largest λ) = 0.001097697713750612
+Total MINRES iterations: 25
+Iter 27: V_size = 116, Converged = 178, ‖r‖ (largest λ) = 0.0009506306036407412
+Total MINRES iterations: 69
+Iter 28: V_size = 174, Converged = 178, ‖r‖ (largest λ) = 19.495328194384
+Total MINRES iterations: 75
+Iter 29: V_size = 230, Converged = 179, ‖r‖ (largest λ) = 0.0008829192558605
+Total MINRES iterations: 3
+Iter 30: V_size = 286, Converged = 179, ‖r‖ (largest λ) = 19.833817520018904
+Iter 31: V_size = 341, Converged = 179, ‖r‖ (largest λ) = 0.00077342385181622
+Iter 32: V_size = 396, Converged = 179, ‖r‖ (largest λ) = 0.0006977165841404557
+Iter 33: V_size = 451, Converged = 179, ‖r‖ (largest λ) = 0.0006266481622012522
+Iter 34: V_size = 110, Converged = 179, ‖r‖ (largest λ) = 0.0005473783260745005
+Iter 35: V_size = 165, Converged = 179, ‖r‖ (largest λ) = 0.0005199447820157799
+Iter 36: V_size = 220, Converged = 179, ‖r‖ (largest λ) = 0.000503919010622962
+Iter 37: V_size = 275, Converged = 179, ‖r‖ (largest λ) = 0.00046215587707307065
+Iter 38: V_size = 330, Converged = 179, ‖r‖ (largest λ) = 0.00043396780097673264
+Iter 39: V_size = 385, Converged = 179, ‖r‖ (largest λ) = 0.0003974594729013508
+Iter 40: V_size = 440, Converged = 179, ‖r‖ (largest λ) = 0.0003636298843823367
+Iter 41: V_size = 495, Converged = 179, ‖r‖ (largest λ) = 0.0003354908391180869
+Iter 42: V_size = 110, Converged = 179, ‖r‖ (largest λ) = 0.0002911495895791063
+Iter 43: V_size = 165, Converged = 179, ‖r‖ (largest λ) = 0.00027732644256250194
+Iter 44: V_size = 220, Converged = 179, ‖r‖ (largest λ) = 0.0002682064327323212
+Iter 45: V_size = 275, Converged = 179, ‖r‖ (largest λ) = 0.00024933349630817605
+Iter 46: V_size = 330, Converged = 179, ‖r‖ (largest λ) = 0.00022768008128335083
+Iter 47: V_size = 385, Converged = 179, ‖r‖ (largest λ) = 0.00020978619801845547
+Iter 48: V_size = 440, Converged = 179, ‖r‖ (largest λ) = 0.00019815384796425628
+Iter 49: V_size = 495, Converged = 179, ‖r‖ (largest λ) = 0.00018508541703118775
+Iter 50: V_size = 110, Converged = 179, ‖r‖ (largest λ) = 0.00017380945123270414
+Iter 51: V_size = 165, Converged = 179, ‖r‖ (largest λ) = 0.00016918812922012475
+Iter 52: V_size = 220, Converged = 179, ‖r‖ (largest λ) = 0.0001633752155673128
+Iter 53: V_size = 275, Converged = 179, ‖r‖ (largest λ) = 0.0001550174803811706
+Iter 54: V_size = 330, Converged = 179, ‖r‖ (largest λ) = 0.00014657525481658008
+Iter 55: V_size = 385, Converged = 179, ‖r‖ (largest λ) = 0.00013823657177041438
+Iter 56: V_size = 440, Converged = 179, ‖r‖ (largest λ) = 0.00013167444701963463
+Iter 57: V_size = 495, Converged = 179, ‖r‖ (largest λ) = 0.00012355917411930087
+Iter 58: V_size = 110, Converged = 179, ‖r‖ (largest λ) = 0.00011158109197867206
+Iter 59: V_size = 165, Converged = 179, ‖r‖ (largest λ) = 0.00010654060567647961
+Iter 60: V_size = 220, Converged = 179, ‖r‖ (largest λ) = 0.00010349840423616058
+Iter 61: V_size = 275, Converged = 180, ‖r‖ (largest λ) = 9.596675053362776e-5
+Total MINRES iterations: 4
+Iter 62: V_size = 330, Converged = 180, ‖r‖ (largest λ) = 0.0007500468564886794
+Iter 63: V_size = 384, Converged = 180, ‖r‖ (largest λ) = 0.0007287208917978717
+Iter 64: V_size = 438, Converged = 180, ‖r‖ (largest λ) = 0.0007078471804470375
+Iter 65: V_size = 492, Converged = 180, ‖r‖ (largest λ) = 0.0006955201648096721
+Iter 66: V_size = 108, Converged = 180, ‖r‖ (largest λ) = 0.0006790634066981404
+Iter 67: V_size = 162, Converged = 180, ‖r‖ (largest λ) = 0.0006727102313581288
+Iter 68: V_size = 216, Converged = 180, ‖r‖ (largest λ) = 0.0006662831997818698
+Iter 69: V_size = 270, Converged = 180, ‖r‖ (largest λ) = 0.0006542281400435802
+Iter 70: V_size = 324, Converged = 180, ‖r‖ (largest λ) = 0.0006456839931078952
+Iter 71: V_size = 378, Converged = 180, ‖r‖ (largest λ) = 0.0006373492164745249
+Iter 72: V_size = 432, Converged = 180, ‖r‖ (largest λ) = 0.000627659318139624
+Iter 73: V_size = 486, Converged = 180, ‖r‖ (largest λ) = 0.0006152472678791726
+Iter 74: V_size = 108, Converged = 180, ‖r‖ (largest λ) = 0.0006049954989147563
+Iter 75: V_size = 162, Converged = 180, ‖r‖ (largest λ) = 0.0005992427363567944
+Iter 76: V_size = 216, Converged = 180, ‖r‖ (largest λ) = 0.0005938829994858563
+Iter 77: V_size = 270, Converged = 180, ‖r‖ (largest λ) = 0.0005829467622836072
+Iter 78: V_size = 324, Converged = 180, ‖r‖ (largest λ) = 0.0005736261090703224
+Total MINRES iterations: 25
+Iter 79: V_size = 378, Converged = 180, ‖r‖ (largest λ) = 0.0005652221435643504
+Iter 80: V_size = 432, Converged = 180, ‖r‖ (largest λ) = 0.000556779282804136
+Iter 81: V_size = 486, Converged = 180, ‖r‖ (largest λ) = 0.0005455800769679457
+Iter 82: V_size = 108, Converged = 180, ‖r‖ (largest λ) = 0.0005377011070067238
+Iter 83: V_size = 162, Converged = 180, ‖r‖ (largest λ) = 0.0005326350131964732
+Iter 84: V_size = 216, Converged = 180, ‖r‖ (largest λ) = 0.0005290334263638279
+Iter 85: V_size = 270, Converged = 180, ‖r‖ (largest λ) = 0.0005214279956081077
+Iter 86: V_size = 324, Converged = 180, ‖r‖ (largest λ) = 0.0005160381542500703
+Iter 87: V_size = 378, Converged = 180, ‖r‖ (largest λ) = 0.0005102200224274907
+Iter 88: V_size = 432, Converged = 180, ‖r‖ (largest λ) = 0.0005038784998770016
+Iter 89: V_size = 486, Converged = 180, ‖r‖ (largest λ) = 0.0004962291323574321
+Iter 90: V_size = 108, Converged = 180, ‖r‖ (largest λ) = 0.0004902297984466909
