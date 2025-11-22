@@ -355,3 +355,832 @@ Iter 28: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.001716606165819
 Iter 29: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.0016176699195546986
 Iter 30: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.001513097136754416
 Iter 31: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.0013055134218576982
+Iter 32: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.0011799589239046319
+Iter 33: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.001122956558545331
+Iter 34: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.001049452552836065
+Iter 35: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.0009243455889059823
+Iter 36: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.0008221105878031655
+Iter 37: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.000784090648639372
+Iter 38: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.0007387837702642869
+Iter 39: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.0006640489096987802
+Iter 40: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.0005931893161616416
+Iter 41: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.0005687951741001232
+Iter 42: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.0005444326166674725
+Iter 43: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.0004903720514790239
+Iter 44: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.0004420792527234507
+Iter 45: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.00042045355708196535
+Iter 46: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.0003966927981338118
+Iter 47: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.000357350697287064
+Iter 48: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.0003287736475486099
+Iter 49: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.0003125807755030515
+Iter 50: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.0002996751819819161
+Iter 51: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.00027913613839797107
+Iter 52: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.00025830248918058305
+Iter 53: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.00024677475156874057
+Iter 54: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.00023597944939771334
+Iter 55: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.00021646684680796802
+Iter 56: V_size = 200, Converged = 134, ‖r‖ (largest λ) = 0.00019643952065458875
+Iter 57: V_size = 300, Converged = 134, ‖r‖ (largest λ) = 0.00018827389425996974
+Iter 58: V_size = 400, Converged = 134, ‖r‖ (largest λ) = 0.0001788128882406845
+Iter 59: V_size = 500, Converged = 134, ‖r‖ (largest λ) = 0.00016369392072543653
+Iter 60: V_size = 200, Converged = 135, ‖r‖ (largest λ) = 0.00014811277272663834
+Iter 61: V_size = 300, Converged = 135, ‖r‖ (largest λ) = 0.00017964029365228533
+Iter 62: V_size = 399, Converged = 135, ‖r‖ (largest λ) = 0.0001384562750254761
+Iter 63: V_size = 498, Converged = 135, ‖r‖ (largest λ) = 0.0001275377951475561
+Iter 64: V_size = 198, Converged = 135, ‖r‖ (largest λ) = 0.00011739941492544365
+Iter 65: V_size = 297, Converged = 135, ‖r‖ (largest λ) = 0.00011165100297961325
+Iter 66: V_size = 396, Converged = 135, ‖r‖ (largest λ) = 0.00010635203200287018
+Iter 67: V_size = 495, Converged = 137, ‖r‖ (largest λ) = 9.876201066394057e-5
+Iter 68: V_size = 196, Converged = 137, ‖r‖ (largest λ) = 0.00012612756497867058
+Iter 69: V_size = 293, Converged = 137, ‖r‖ (largest λ) = 0.00012159164263246682
+Iter 70: V_size = 390, Converged = 137, ‖r‖ (largest λ) = 0.00011623893568280894
+Iter 71: V_size = 487, Converged = 137, ‖r‖ (largest λ) = 0.00010629216220949703
+Iter 72: V_size = 194, Converged = 138, ‖r‖ (largest λ) = 9.577493138355034e-5
+Iter 73: V_size = 291, Converged = 138, ‖r‖ (largest λ) = 0.00012206015447879085
+Iter 74: V_size = 387, Converged = 139, ‖r‖ (largest λ) = 0.00011678583189062648
+Iter 75: V_size = 483, Converged = 139, ‖r‖ (largest λ) = 0.00011889435678218103
+Iter 76: V_size = 190, Converged = 140, ‖r‖ (largest λ) = 0.00010105910204666872
+Iter 77: V_size = 285, Converged = 140, ‖r‖ (largest λ) = 0.00010134171495758458
+Iter 78: V_size = 379, Converged = 141, ‖r‖ (largest λ) = 9.531808382862851e-5
+Iter 79: V_size = 473, Converged = 141, ‖r‖ (largest λ) = 0.0001176152340323573
+Iter 80: V_size = 186, Converged = 141, ‖r‖ (largest λ) = 0.00010588139843504032
+Iter 81: V_size = 279, Converged = 141, ‖r‖ (largest λ) = 0.00010333830475527523
+Iter 82: V_size = 372, Converged = 142, ‖r‖ (largest λ) = 0.00010030467961383416
+Iter 83: V_size = 465, Converged = 142, ‖r‖ (largest λ) = 19.59764210832118
+Iter 84: V_size = 184, Converged = 143, ‖r‖ (largest λ) = 8.946155162329326e-5
+Iter 85: V_size = 276, Converged = 143, ‖r‖ (largest λ) = 25.464125573849923
+Iter 86: V_size = 367, Converged = 143, ‖r‖ (largest λ) = 0.00012606083427586895
+Iter 87: V_size = 458, Converged = 143, ‖r‖ (largest λ) = 0.00012177598706312975
+Iter 88: V_size = 182, Converged = 144, ‖r‖ (largest λ) = 0.00011736174436653314
+Iter 89: V_size = 273, Converged = 144, ‖r‖ (largest λ) = 19.36000220101997
+Iter 90: V_size = 363, Converged = 144, ‖r‖ (largest λ) = 0.00011295459202748743
+Iter 91: V_size = 453, Converged = 145, ‖r‖ (largest λ) = 0.00010811137359457301
+Iter 92: V_size = 179, Converged = 146, ‖r‖ (largest λ) = 0.00010348132775461702
+Iter 93: V_size = 268, Converged = 146, ‖r‖ (largest λ) = 0.00010451303994830753
+Iter 94: V_size = 356, Converged = 147, ‖r‖ (largest λ) = 9.925503843734816e-5
+Iter 95: V_size = 444, Converged = 148, ‖r‖ (largest λ) = 0.00017192279131930573
+Iter 96: V_size = 173, Converged = 148, ‖r‖ (largest λ) = 0.00016601531704777986
+Iter 97: V_size = 259, Converged = 148, ‖r‖ (largest λ) = 0.00016453807538057284
+Iter 98: V_size = 345, Converged = 148, ‖r‖ (largest λ) = 0.00016199153348140337
+Iter 99: V_size = 431, Converged = 148, ‖r‖ (largest λ) = 0.00015707836691290338
+Total MINRES iterations: 35
+Iter 100: V_size = 172, Converged = 148, ‖r‖ (largest λ) = 0.00015422410906571396
+Max iterations (100) reached without full expected convergence. Returning what we have.
+1543.213009 seconds (66.13 M allocations: 2.720 TiB, 0.58% gc time)
+Number of FLOPs: 69052387611201
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×148 adjoint(::Vector{Float64}) with eltype Float64:
+ -9.77707e-12  -7.95808e-13  0.0  2.27374e-13  -2.84217e-14  -1.13687e-13  2.55795e-13  -2.55795e-13  -4.26326e-14  -6.25278e-13  -3.00702e-11  -6.18172e-13  -4.73932e-12  -8.20961e-11  -3.06883e-11  1.77636e-14  6.39488e-14  -6.93134e-12  -1.15818e-11  -4.77129e-11  -1.35074e-11  -4.3876e-11  -7.88916e-11  -3.61652e-10  -3.65503e-11  -4.61853e-14  -2.31699e-10  -1.14948e-10  -1.52088e-10  -1.40071e-10  -4.27658e-11  -1.11896e-10  -1.31296e-10  -1.05345e-10  -4.89566e-10  -2.89724e-10  -5.38e-10  -3.91587e-10  -4.28942e-10  -1.24345e-14  -4.3633e-10  -2.04281e-14  2.04281e-14  -4.08562e-14  -2.66454e-15  -5.50671e-14  -6.4837e-14  -1.19016e-13  -6.39488e-14  -4.79616e-14  -6.75016e-14  -7.4607e-14  -9.9476e-14  -3.19744e-13  -3.14415e-13  -1.52767e-13  -5.72875e-13  -8.43769e-13  -6.68798e-13  -3.99236e-13  -8.27782e-13  -1.02585e-12  -2.68718e-12  -9.40581e-13  -4.57323e-12  -1.04627e-12  -3.47145e-12  -3.71703e-12  -1.77769e-12  -8.65086e-12  -7.9261e-12  -3.89022e-12  -7.03215e-12  -2.67408e-11  -2.48064e-11  -1.51568e-11  -5.2474e-11  -1.96492e-11  -5.26694e-11  -3.27627e-11  -4.72502e-11  -4.68963e-11  -8.06559e-11  -1.40328e-10  -8.64082e-11  -1.89393e-10  -9.52569e-11  -1.40647e-10  -3.63583e-10  -4.65334e-10  -5.2391e-10  -8.88038e-10  -4.91359e-10  -4.54685e-10  -5.14305e-10  -9.97125e-10  -6.45744e-10  -9.8526e-10  -1.53988e-12  -9.6397e-10  -7.08877e-12  -3.96461e-12  -2.49036e-11  -3.11526e-11  -6.60607e-11  -5.08327e-12  -2.42697e-11  -1.26489e-10  -2.99773e-10  -8.00937e-11  -4.82611e-10  -2.60895e-10  -6.24995e-9  -5.95003e-9  -1.28385e-9  -2.99929e-9  -1.78012e-9  -1.72827e-9  -8.51647e-9  -5.50792e-9  -8.84934e-9  -5.72415e-9  -6.60294e-9  -6.51684e-9  -1.00098e-8  -7.06906e-9  -8.89723e-9  -7.75852e-9  -1.04339e-8  -8.86413e-9  -9.88182e-9  -1.06853e-8  -9.87126e-9  -9.48211e-9  -1.26283e-8  -1.24264e-8  -1.19592e-8  -1.24316e-8  -1.23191e-8  -1.22572e-8  -1.1163e-8  -1.41894e-8  -1.31103e-8  -1.43081e-8  -1.44018e-8  -1.4322e-8  -1.46571e-8  -0.00796397
+148 Eigenvalues converges, out of 180 requested.
+Running with Naux = 1000
+Starting Davidson with n_aux = 1000, l_buffer = 234, lc = 181, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 250, Converged = 0, ‖r‖ (largest λ) = 0.09323173995939667
+Iter 2: V_size = 484, Converged = 8, ‖r‖ (largest λ) = 2.688642567816883e-6
+Iter 3: V_size = 718, Converged = 82, ‖r‖ (largest λ) = 304.74979724014446
+Iter 4: V_size = 944, Converged = 109, ‖r‖ (largest λ) = 203.86378671232498
+Iter 5: V_size = 277, Converged = 125, ‖r‖ (largest λ) = 2.1950372114061176e-7
+Iter 6: V_size = 402, Converged = 126, ‖r‖ (largest λ) = 62.95314200353726
+Iter 7: V_size = 511, Converged = 128, ‖r‖ (largest λ) = 56.43848362696494
+Iter 8: V_size = 619, Converged = 129, ‖r‖ (largest λ) = 13.86194625055727
+Iter 9: V_size = 725, Converged = 133, ‖r‖ (largest λ) = 32.92690530790304
+Iter 10: V_size = 830, Converged = 133, ‖r‖ (largest λ) = 31.41697276250369
+Iter 11: V_size = 931, Converged = 136, ‖r‖ (largest λ) = 7.100572095451011e-5
+Iter 12: V_size = 199, Converged = 141, ‖r‖ (largest λ) = 9.266944786237806e-5
+Iter 13: V_size = 297, Converged = 141, ‖r‖ (largest λ) = 20.993826758256077
+Iter 14: V_size = 390, Converged = 145, ‖r‖ (largest λ) = 9.58427056605483e-5
+Iter 15: V_size = 483, Converged = 145, ‖r‖ (largest λ) = 30.520280090505207
+Iter 16: V_size = 572, Converged = 150, ‖r‖ (largest λ) = 9.701674022658758e-5
+Iter 17: V_size = 661, Converged = 150, ‖r‖ (largest λ) = 37.10062717010224
+Iter 18: V_size = 745, Converged = 154, ‖r‖ (largest λ) = 9.132745239501074e-5
+Iter 19: V_size = 829, Converged = 154, ‖r‖ (largest λ) = 25.052254352338725
+Iter 20: V_size = 909, Converged = 155, ‖r‖ (largest λ) = 8.53282525993391e-5
+Iter 21: V_size = 989, Converged = 155, ‖r‖ (largest λ) = 25.157329168592877
+Iter 22: V_size = 158, Converged = 155, ‖r‖ (largest λ) = 0.00010616931421892407
+Iter 23: V_size = 237, Converged = 155, ‖r‖ (largest λ) = 0.00010336053782223237
+Iter 24: V_size = 316, Converged = 155, ‖r‖ (largest λ) = 0.00010139195250961867
+Iter 25: V_size = 395, Converged = 156, ‖r‖ (largest λ) = 9.807824004085e-5
+Iter 26: V_size = 474, Converged = 156, ‖r‖ (largest λ) = 0.00025866159261945317
+Iter 27: V_size = 552, Converged = 156, ‖r‖ (largest λ) = 0.00022910601729158304
+Iter 28: V_size = 630, Converged = 156, ‖r‖ (largest λ) = 0.00022511923773668935
+Iter 29: V_size = 708, Converged = 156, ‖r‖ (largest λ) = 0.00022157231179479746
+Iter 30: V_size = 786, Converged = 156, ‖r‖ (largest λ) = 0.00021889296336532067
+Iter 31: V_size = 864, Converged = 156, ‖r‖ (largest λ) = 0.00021657549157002692
+Iter 32: V_size = 942, Converged = 156, ‖r‖ (largest λ) = 0.00021428637734962336
+Iter 33: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.00021248155381981665
+Iter 34: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.00021180741348010514
+Iter 35: V_size = 312, Converged = 156, ‖r‖ (largest λ) = 0.00021123663163769216
+Iter 36: V_size = 390, Converged = 156, ‖r‖ (largest λ) = 0.00021008909108776545
+Iter 37: V_size = 468, Converged = 156, ‖r‖ (largest λ) = 0.00020916886283641533
+Iter 38: V_size = 546, Converged = 156, ‖r‖ (largest λ) = 0.00020835706155629524
+Iter 39: V_size = 624, Converged = 156, ‖r‖ (largest λ) = 0.0002078109409467864
+Iter 40: V_size = 702, Converged = 156, ‖r‖ (largest λ) = 0.0002072294827824076
+Iter 41: V_size = 780, Converged = 156, ‖r‖ (largest λ) = 0.00020671964201879973
+Iter 42: V_size = 858, Converged = 156, ‖r‖ (largest λ) = 0.00020629391195889514
+Iter 43: V_size = 936, Converged = 156, ‖r‖ (largest λ) = 0.00020587270863270193
+Iter 44: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.0002055166833273735
+Iter 45: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.0002053657914329027
+Iter 46: V_size = 312, Converged = 156, ‖r‖ (largest λ) = 0.00020526467911348377
+Iter 47: V_size = 390, Converged = 156, ‖r‖ (largest λ) = 0.00020501660199184185
+Iter 48: V_size = 468, Converged = 156, ‖r‖ (largest λ) = 0.00020487189109096347
+Iter 49: V_size = 546, Converged = 156, ‖r‖ (largest λ) = 0.00020475169892309378
+Iter 50: V_size = 624, Converged = 156, ‖r‖ (largest λ) = 0.00020465987592761155
+Iter 51: V_size = 702, Converged = 156, ‖r‖ (largest λ) = 0.00020455342270827868
+Iter 52: V_size = 780, Converged = 156, ‖r‖ (largest λ) = 0.00020447117339062774
+Iter 53: V_size = 858, Converged = 156, ‖r‖ (largest λ) = 0.0002043821652407121
+Iter 54: V_size = 936, Converged = 156, ‖r‖ (largest λ) = 0.0002043043236482848
+Iter 55: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.00020423087908089728
+Iter 56: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.00020419270178646066
+Iter 57: V_size = 312, Converged = 156, ‖r‖ (largest λ) = 0.0002041600382271011
+Iter 58: V_size = 390, Converged = 156, ‖r‖ (largest λ) = 0.00020410610034556515
+Iter 59: V_size = 468, Converged = 156, ‖r‖ (largest λ) = 0.00020406215571738002
+Iter 60: V_size = 546, Converged = 156, ‖r‖ (largest λ) = 0.00020401939518064908
+Iter 61: V_size = 624, Converged = 156, ‖r‖ (largest λ) = 0.00020398278602177486
+Iter 62: V_size = 702, Converged = 156, ‖r‖ (largest λ) = 0.00020394449131474598
+Iter 63: V_size = 780, Converged = 156, ‖r‖ (largest λ) = 0.00020390362477330055
+Iter 64: V_size = 858, Converged = 156, ‖r‖ (largest λ) = 0.00020387128227405797
+Iter 65: V_size = 936, Converged = 156, ‖r‖ (largest λ) = 0.00020383561856621076
+Iter 66: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.0002037942679821756
+Iter 67: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.00020377598236804895
+Iter 68: V_size = 312, Converged = 156, ‖r‖ (largest λ) = 0.00020375774050256662
+Iter 69: V_size = 390, Converged = 156, ‖r‖ (largest λ) = 0.00020371417744477702
+Iter 70: V_size = 468, Converged = 156, ‖r‖ (largest λ) = 0.00020368740547940085
+Iter 71: V_size = 546, Converged = 156, ‖r‖ (largest λ) = 0.00020366468474589748
+Iter 72: V_size = 624, Converged = 156, ‖r‖ (largest λ) = 0.00020363546169042577
+Iter 73: V_size = 702, Converged = 156, ‖r‖ (largest λ) = 0.00020361150725950472
+Iter 74: V_size = 780, Converged = 156, ‖r‖ (largest λ) = 0.0002035872326977388
+Iter 75: V_size = 858, Converged = 156, ‖r‖ (largest λ) = 0.00020356511507610233
+Iter 76: V_size = 936, Converged = 156, ‖r‖ (largest λ) = 0.00020353361387124135
+Iter 77: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.00020350573672208976
+Iter 78: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.0002034930516533823
+Iter 79: V_size = 312, Converged = 156, ‖r‖ (largest λ) = 0.00020348218990210974
+Iter 80: V_size = 390, Converged = 156, ‖r‖ (largest λ) = 0.0002034559766050377
+Iter 81: V_size = 468, Converged = 156, ‖r‖ (largest λ) = 0.00020343570132292694
+Iter 82: V_size = 546, Converged = 156, ‖r‖ (largest λ) = 0.00020341816832335595
+Iter 83: V_size = 624, Converged = 156, ‖r‖ (largest λ) = 0.0002034049265318316
+Iter 84: V_size = 702, Converged = 156, ‖r‖ (largest λ) = 0.0002033892733427782
+Iter 85: V_size = 780, Converged = 156, ‖r‖ (largest λ) = 0.00020337584393167912
+Iter 86: V_size = 858, Converged = 156, ‖r‖ (largest λ) = 0.00020335938899305358
+Iter 87: V_size = 936, Converged = 156, ‖r‖ (largest λ) = 0.00020333936274007515
+Iter 88: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.0002033235964134034
+Iter 89: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.00020331656649866277
+Iter 90: V_size = 312, Converged = 156, ‖r‖ (largest λ) = 0.00020330862713876987
+Iter 91: V_size = 390, Converged = 156, ‖r‖ (largest λ) = 0.00020329601262833607
+Iter 92: V_size = 468, Converged = 156, ‖r‖ (largest λ) = 0.000203285861847843
+Iter 93: V_size = 546, Converged = 156, ‖r‖ (largest λ) = 0.0002032758026463521
+Iter 94: V_size = 624, Converged = 156, ‖r‖ (largest λ) = 0.00020326272244887157
+Iter 95: V_size = 702, Converged = 156, ‖r‖ (largest λ) = 0.00020325305599161697
+Iter 96: V_size = 780, Converged = 156, ‖r‖ (largest λ) = 0.00020324349362204635
+Iter 97: V_size = 858, Converged = 156, ‖r‖ (largest λ) = 0.00020323309103814207
+Iter 98: V_size = 936, Converged = 156, ‖r‖ (largest λ) = 0.00020322291470813676
+Iter 99: V_size = 156, Converged = 156, ‖r‖ (largest λ) = 0.00020321355419387657
+Total MINRES iterations: 13
+Iter 100: V_size = 234, Converged = 156, ‖r‖ (largest λ) = 0.00020320982361204346
+Max iterations (100) reached without full expected convergence. Returning what we have.
+2434.674989 seconds (123.08 M allocations: 5.036 TiB, 0.63% gc time)
+Number of FLOPs: 106188109293610
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×156 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.36424e-12  7.95808e-13  2.27374e-13  -1.19371e-12  -1.16529e-12  -2.33058e-12  -1.53477e-12  -2.92744e-12  -5.68434e-14  1.27898e-13  -9.9476e-14  -4.9738e-14  -3.55271e-14  -5.68434e-14  -2.13163e-14  -1.27898e-13  2.13163e-14  1.42109e-14  4.61853e-14  -1.3145e-13  1.42109e-14  -1.06581e-14  -2.4869e-14  -3.55271e-14  -9.59233e-14  -2.34479e-13  -2.84217e-14  -3.35731e-13  2.30926e-14  -3.73035e-14  -1.72307e-13  -2.50466e-13  -8.88178e-14  -1.43885e-13  1.06581e-14  -6.21725e-14  -8.17124e-14  -2.13163e-14  -2.62901e-13  1.42109e-14  -9.05942e-14  -1.34115e-13  8.88178e-16  -1.36779e-13  -6.13731e-13  -2.11386e-13  -9.79661e-13  -9.84102e-13  -4.88498e-14  -6.23501e-13  -7.67386e-13  -2.23821e-13  -4.35207e-13  -1.56319e-13  -4.29878e-13  -2.89546e-13  -2.49578e-13  -9.18376e-13  -2.93099e-13  -1.2097e-12  -6.95888e-13  -1.48281e-12  -3.98082e-12  -4.95604e-13  -8.50298e-12  -1.20703e-12  -1.49392e-12  -4.38538e-12  -3.26139e-12  -5.83888e-12  -8.64242e-12  -2.19513e-12  -4.20464e-12  -7.35945e-12  -4.36717e-12  -7.33857e-12  -3.69393e-12  -8.08953e-12  -5.65414e-12  -1.24896e-11  -3.11782e-11  -4.83258e-12  -1.54099e-13  -5.01377e-13  -4.52083e-13  -4.55636e-13  -2.4627e-12  -1.30274e-12  -3.43725e-13  -1.96221e-12  -2.6823e-13  -9.21485e-13  -7.82041e-13  -3.6593e-13  -1.21059e-12  -9.49685e-13  -1.42863e-12  -2.13696e-12  -2.25764e-11  -5.95657e-12  -2.60678e-11  -4.4742e-12  -2.63045e-11  -1.69584e-11  -1.55998e-10  -4.27627e-11  -2.942e-10  -6.16687e-10  -1.77928e-10  -4.08562e-14  -2.88642e-11  -1.32876e-11  -1.19278e-11  -2.67275e-11  -1.88105e-11  -1.02744e-10  -3.50986e-12  -7.54981e-11  -6.19589e-9  -4.74477e-9  -4.28486e-9  -3.44767e-9  -7.12717e-9  -1.03554e-8  -5.83951e-9  -5.22662e-9  -5.03446e-9  -7.79241e-9  -5.97306e-9  -5.70363e-9  -6.7515e-9  -8.997e-9  -9.74631e-9  -6.47641e-9  -5.6751e-9  -1.11767e-8  -8.89402e-9  -1.03039e-8  -7.54696e-9  -9.54705e-9  -1.29864e-8  -1.30707e-8  -1.05936e-8  -1.26771e-8  -1.18601e-8  -1.38715e-8  -1.20018e-8  -1.29478e-8  -1.21544e-8  -1.35932e-8  -1.1814e-8  -1.53201e-8  -1.62651e-8  -1.25088e-8  -1.24078e-8  -1.70103e-8
+156 Eigenvalues converges, out of 180 requested.
+Running with Naux = 1500
+Starting Davidson with n_aux = 1500, l_buffer = 234, lc = 181, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 375, Converged = 0, ‖r‖ (largest λ) = 0.026671535617726835
+Iter 2: V_size = 609, Converged = 21, ‖r‖ (largest λ) = 2.2296379615242674e-7
+Iter 3: V_size = 843, Converged = 86, ‖r‖ (largest λ) = 288.56478688460646
+Iter 4: V_size = 1056, Converged = 111, ‖r‖ (largest λ) = 279.50831755113705
+Iter 5: V_size = 1204, Converged = 124, ‖r‖ (largest λ) = 103.35365510457214
+Iter 6: V_size = 1327, Converged = 129, ‖r‖ (largest λ) = 50.63606134496573
+Iter 7: V_size = 1437, Converged = 144, ‖r‖ (largest λ) = 64.73600660923553
+Iter 8: V_size = 195, Converged = 154, ‖r‖ (largest λ) = 4.7916802826694894e-5
+Iter 9: V_size = 285, Converged = 154, ‖r‖ (largest λ) = 24.48017438622761
+Iter 10: V_size = 365, Converged = 156, ‖r‖ (largest λ) = 9.912241078649715e-5
+Iter 11: V_size = 445, Converged = 156, ‖r‖ (largest λ) = 22.73236181434035
+Iter 12: V_size = 523, Converged = 159, ‖r‖ (largest λ) = 9.010593100459057e-5
+Iter 13: V_size = 601, Converged = 159, ‖r‖ (largest λ) = 22.729214917213426
+Iter 14: V_size = 676, Converged = 163, ‖r‖ (largest λ) = 0.00012701546929997455
+Iter 15: V_size = 751, Converged = 163, ‖r‖ (largest λ) = 51.64463172297287
+Iter 16: V_size = 822, Converged = 166, ‖r‖ (largest λ) = 0.00011821719318601825
+Iter 17: V_size = 893, Converged = 166, ‖r‖ (largest λ) = 40.60190455604662
+Iter 18: V_size = 961, Converged = 167, ‖r‖ (largest λ) = 0.00011048376890018002
+Iter 19: V_size = 1029, Converged = 167, ‖r‖ (largest λ) = 0.00010859830977570501
+Iter 20: V_size = 1096, Converged = 170, ‖r‖ (largest λ) = 0.00010354262738946234
+Iter 21: V_size = 1163, Converged = 170, ‖r‖ (largest λ) = 27.651362705077688
+Iter 22: V_size = 1227, Converged = 172, ‖r‖ (largest λ) = 9.635399365052818e-5
+Iter 23: V_size = 1291, Converged = 172, ‖r‖ (largest λ) = 15.723518396020875
+Iter 24: V_size = 1353, Converged = 172, ‖r‖ (largest λ) = 0.00010688291236223146
+Iter 25: V_size = 1415, Converged = 172, ‖r‖ (largest λ) = 0.00010480303762741292
+Iter 26: V_size = 1477, Converged = 172, ‖r‖ (largest λ) = 0.00010295280863347618
+Iter 27: V_size = 124, Converged = 173, ‖r‖ (largest λ) = 0.00010157798447882429
+Iter 28: V_size = 186, Converged = 173, ‖r‖ (largest λ) = 14.472496238216522
+Iter 29: V_size = 247, Converged = 173, ‖r‖ (largest λ) = 0.00010091037228831353
+Iter 30: V_size = 308, Converged = 173, ‖r‖ (largest λ) = 0.00010043178210908298
+Iter 31: V_size = 369, Converged = 174, ‖r‖ (largest λ) = 9.989175724694986e-5
+Iter 32: V_size = 430, Converged = 174, ‖r‖ (largest λ) = 0.00017162947243204834
+Iter 33: V_size = 490, Converged = 174, ‖r‖ (largest λ) = 0.00010212146725063484
+Iter 34: V_size = 550, Converged = 174, ‖r‖ (largest λ) = 0.00010188850536382555
+Iter 35: V_size = 610, Converged = 174, ‖r‖ (largest λ) = 0.0001017222863208752
+Iter 36: V_size = 670, Converged = 174, ‖r‖ (largest λ) = 0.00010160055577157812
+Iter 37: V_size = 730, Converged = 174, ‖r‖ (largest λ) = 0.00010151464383888511
+Iter 38: V_size = 790, Converged = 174, ‖r‖ (largest λ) = 0.00010145674234449032
+Iter 39: V_size = 850, Converged = 174, ‖r‖ (largest λ) = 0.00010141436121635593
+Iter 40: V_size = 910, Converged = 174, ‖r‖ (largest λ) = 0.00010138499544480523
+Iter 41: V_size = 970, Converged = 174, ‖r‖ (largest λ) = 0.00010136052719097976
+Iter 42: V_size = 1030, Converged = 174, ‖r‖ (largest λ) = 0.00010134056189242575
+Iter 43: V_size = 1090, Converged = 174, ‖r‖ (largest λ) = 0.00010132491627804455
+Iter 44: V_size = 1150, Converged = 174, ‖r‖ (largest λ) = 0.00010131396937894872
+Iter 45: V_size = 1210, Converged = 174, ‖r‖ (largest λ) = 0.00010130665060153634
+Iter 46: V_size = 1270, Converged = 174, ‖r‖ (largest λ) = 0.00010129942289530349
+Iter 47: V_size = 1330, Converged = 174, ‖r‖ (largest λ) = 0.00010129417364628098
+Iter 48: V_size = 1390, Converged = 174, ‖r‖ (largest λ) = 0.00010129021768100435
+Iter 49: V_size = 1450, Converged = 174, ‖r‖ (largest λ) = 0.00010128645532077593
+Iter 50: V_size = 120, Converged = 174, ‖r‖ (largest λ) = 0.00010128375084582585
+Iter 51: V_size = 180, Converged = 174, ‖r‖ (largest λ) = 0.0001012830434883822
+Iter 52: V_size = 240, Converged = 174, ‖r‖ (largest λ) = 0.00010128271236224434
+Iter 53: V_size = 300, Converged = 174, ‖r‖ (largest λ) = 0.00010128222667195547
+Iter 54: V_size = 360, Converged = 174, ‖r‖ (largest λ) = 0.00010128171931563358
+Iter 55: V_size = 420, Converged = 174, ‖r‖ (largest λ) = 0.00010128126575105412
+Iter 56: V_size = 480, Converged = 174, ‖r‖ (largest λ) = 0.0001012810849859758
+Iter 57: V_size = 540, Converged = 174, ‖r‖ (largest λ) = 0.00010128045801889083
+Iter 58: V_size = 600, Converged = 174, ‖r‖ (largest λ) = 0.00010127990674619342
+Iter 59: V_size = 660, Converged = 174, ‖r‖ (largest λ) = 0.00010127942826442339
+Iter 60: V_size = 720, Converged = 174, ‖r‖ (largest λ) = 0.00010127894539382335
+Iter 61: V_size = 780, Converged = 174, ‖r‖ (largest λ) = 0.00010127843614223324
+Iter 62: V_size = 840, Converged = 174, ‖r‖ (largest λ) = 0.00010127757375955964
+Iter 63: V_size = 900, Converged = 174, ‖r‖ (largest λ) = 0.00010127661376840697
+Iter 64: V_size = 960, Converged = 174, ‖r‖ (largest λ) = 0.00010127542874032529
+Iter 65: V_size = 1020, Converged = 174, ‖r‖ (largest λ) = 0.00010127368517304928
+Iter 66: V_size = 1080, Converged = 174, ‖r‖ (largest λ) = 0.00010127213277466534
+Iter 67: V_size = 1140, Converged = 174, ‖r‖ (largest λ) = 0.00010126992163071543
+Iter 68: V_size = 1200, Converged = 174, ‖r‖ (largest λ) = 0.00010126745221208306
+Iter 69: V_size = 1260, Converged = 174, ‖r‖ (largest λ) = 0.00010126498574880199
+Iter 70: V_size = 1320, Converged = 174, ‖r‖ (largest λ) = 0.00010126160865750111
+Iter 71: V_size = 1380, Converged = 174, ‖r‖ (largest λ) = 0.00010125797678254138
+Iter 72: V_size = 1440, Converged = 174, ‖r‖ (largest λ) = 0.00010125445900605639
+Iter 73: V_size = 1500, Converged = 174, ‖r‖ (largest λ) = 0.00010125017475909857
+Iter 74: V_size = 120, Converged = 174, ‖r‖ (largest λ) = 0.00010124510284543026
+Iter 75: V_size = 180, Converged = 174, ‖r‖ (largest λ) = 0.00010124288864452608
+Iter 76: V_size = 240, Converged = 174, ‖r‖ (largest λ) = 0.0001012411337204373
+Iter 77: V_size = 300, Converged = 174, ‖r‖ (largest λ) = 0.00010123881375329502
+Iter 78: V_size = 360, Converged = 174, ‖r‖ (largest λ) = 0.0001012366488961766
+Iter 79: V_size = 420, Converged = 174, ‖r‖ (largest λ) = 0.00010123392795729126
+Iter 80: V_size = 480, Converged = 174, ‖r‖ (largest λ) = 0.00010123180158824915
+Iter 81: V_size = 540, Converged = 174, ‖r‖ (largest λ) = 0.00010122959833552804
+Iter 82: V_size = 600, Converged = 174, ‖r‖ (largest λ) = 0.00010122675282268139
+Iter 83: V_size = 660, Converged = 174, ‖r‖ (largest λ) = 0.00010122435094934248
+Iter 84: V_size = 720, Converged = 174, ‖r‖ (largest λ) = 0.00010122067235735081
+Iter 85: V_size = 780, Converged = 174, ‖r‖ (largest λ) = 0.00010121682999924041
+Iter 86: V_size = 840, Converged = 174, ‖r‖ (largest λ) = 0.00010121281608284104
+Iter 87: V_size = 900, Converged = 174, ‖r‖ (largest λ) = 0.00010120886385558754
+Iter 88: V_size = 960, Converged = 174, ‖r‖ (largest λ) = 0.0001012037821952363
+Iter 89: V_size = 1020, Converged = 174, ‖r‖ (largest λ) = 0.000101198862918909
+Iter 90: V_size = 1080, Converged = 174, ‖r‖ (largest λ) = 0.0001011945094729696
+Iter 91: V_size = 1140, Converged = 174, ‖r‖ (largest λ) = 0.00010118879887805302
+Iter 92: V_size = 1200, Converged = 174, ‖r‖ (largest λ) = 0.00010118370071188913
+Iter 93: V_size = 1260, Converged = 174, ‖r‖ (largest λ) = 0.00010117887556036515
+Iter 94: V_size = 1320, Converged = 174, ‖r‖ (largest λ) = 0.00010117315649428349
+Iter 95: V_size = 1380, Converged = 174, ‖r‖ (largest λ) = 0.00010116674871713466
+Iter 96: V_size = 1440, Converged = 174, ‖r‖ (largest λ) = 0.00010116067712783713
+Iter 97: V_size = 1500, Converged = 174, ‖r‖ (largest λ) = 0.00010115113487529655
+Iter 98: V_size = 120, Converged = 174, ‖r‖ (largest λ) = 0.0001011423643732462
+Iter 99: V_size = 180, Converged = 174, ‖r‖ (largest λ) = 0.00010113844134542399
+Total MINRES iterations: 5
+Iter 100: V_size = 240, Converged = 174, ‖r‖ (largest λ) = 0.00010113478991107406
+Max iterations (100) reached without full expected convergence. Returning what we have.
+3992.070726 seconds (201.15 M allocations: 8.211 TiB, 0.62% gc time)
+Number of FLOPs: 167780679973983
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×174 adjoint(::Vector{Float64}) with eltype Float64:
+ -9.09495e-13  -1.13687e-13  -4.54747e-13  0.0  2.84217e-14  -1.13687e-13  1.7053e-13  -2.27374e-13  -4.41389e-11  1.84741e-13  -1.42109e-14  7.10543e-15  3.55271e-14  0.0  -2.13163e-14  -2.84217e-14  -1.73493e-10  2.13163e-14  -3.55271e-15  -1.06581e-14  -3.55271e-15  -8.21458e-11  3.19744e-14  -4.26326e-14  -1.77636e-14  -3.55271e-14  -8.88178e-15  -3.55271e-15  0.0  -1.77636e-15  5.32907e-15  -3.55271e-15  1.77636e-15  -7.10543e-15  0.0  -6.06839e-11  -5.32907e-15  -2.75264e-10  8.88178e-15  -5.32907e-15  -1.42109e-14  -3.10862e-14  -2.04281e-14  -2.84217e-14  -2.22045e-14  -1.07045e-9  -8.36855e-10  -3.42427e-10  -1.24345e-14  -1.95399e-14  -2.84217e-14  -5.32907e-15  -5.86198e-14  -1.59872e-14  -9.31298e-10  -1.88712e-9  -1.15463e-14  -7.10543e-15  -9.04818e-10  7.10543e-15  -6.83897e-14  -2.79776e-14  -1.75819e-9  -1.50405e-9  -5.15143e-14  -1.94955e-13  1.19904e-14  -7.72715e-14  -7.77156e-14  -1.9984e-14  -5.50671e-14  -2.79776e-14  -9.4591e-14  -6.17284e-14  -2.08722e-14  -1.03029e-13  -9.32587e-15  -4.21885e-14  -1.07025e-13  -1.21236e-13  -3.55271e-14  -2.62013e-14  -4.68292e-12  -8.88178e-15  -1.98906e-9  -3.26862e-9  -2.24265e-14  2.64233e-14  1.59872e-14  -7.77156e-15  -1.19904e-14  2.66454e-15  -3.55271e-15  -2.36677e-9  -5.77316e-15  -3.33067e-15  -1.77636e-14  -2.53131e-14  -3.17524e-14  -8.43769e-15  -1.11688e-13  -7.41629e-14  -3.30846e-14  -1.51879e-13  -2.89102e-13  -1.51879e-13  -2.68674e-13  -1.53877e-13  -1.95843e-13  -7.21518e-10  -2.26485e-14  -7.19425e-14  -7.01246e-10  -1.65423e-13  -6.43929e-15  -2.1827e-13  -1.32849e-12  -1.19349e-12  -3.05886e-11  -1.96931e-12  -1.25366e-12  -6.56764e-10  -5.96978e-12  -1.6148e-9  -2.35569e-9  -3.61684e-9  -3.45766e-9  -3.6906e-10  -2.6756e-10  -1.30222e-9  -9.84435e-10  -7.43841e-9  -7.33794e-10  -1.38524e-9  -3.7534e-9  -3.21906e-9  -3.48677e-9  -5.3719e-9  -4.44878e-9  -6.68986e-9  -3.20004e-9  -1.08824e-8  -9.64517e-9  -1.09817e-8  -1.16012e-8  -3.35902e-9  -2.9751e-9  -6.25771e-9  -7.96819e-9  -5.0959e-9  -8.2876e-9  -7.90269e-9  -1.12015e-8  -1.46485e-8  -1.6746e-8  -1.395e-8  -1.56416e-8  -1.74543e-8  -1.8083e-8  -1.63872e-8  -1.68199e-8  -2.0029e-8  -1.90913e-8  -1.7444e-8  -1.88218e-8  -1.80793e-8  -2.07907e-8  -2.04736e-8  -2.10985e-8  -2.11519e-8  -2.24434e-8  -2.18597e-8  -2.19282e-8  -0.018647
+174 Eigenvalues converges, out of 180 requested.
+
+=== Running tests for molecule: uracil ===
+Running with Naux = 100
+Starting Davidson with n_aux = 100, l_buffer = 546, lc = 422, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 25, Converged = 0, ‖r‖ (largest λ) = 37.330082190001235
+Iter 2: V_size = 50, Converged = 0, ‖r‖ (largest λ) = 2.113417203015593
+Iter 3: V_size = 75, Converged = 0, ‖r‖ (largest λ) = 0.04095839254948072
+Iter 4: V_size = 100, Converged = 0, ‖r‖ (largest λ) = 0.000459413914360557
+Iter 5: V_size = 50, Converged = 6, ‖r‖ (largest λ) = 6.526763774929071e-6
+Iter 6: V_size = 75, Converged = 12, ‖r‖ (largest λ) = 256.6476955838996
+Iter 7: V_size = 100, Converged = 12, ‖r‖ (largest λ) = 255.65947167553946
+Iter 8: V_size = 50, Converged = 17, ‖r‖ (largest λ) = 3.34618548162637e-5
+Iter 9: V_size = 75, Converged = 21, ‖r‖ (largest λ) = 6.38078250937017e-5
+Iter 10: V_size = 100, Converged = 23, ‖r‖ (largest λ) = 9.755870118242701e-6
+Iter 11: V_size = 48, Converged = 24, ‖r‖ (largest λ) = 2.4360049100920267e-5
+Iter 12: V_size = 73, Converged = 25, ‖r‖ (largest λ) = 2.1798476298583484e-5
+Iter 13: V_size = 98, Converged = 25, ‖r‖ (largest λ) = 0.0005077564196678281
+Iter 14: V_size = 50, Converged = 28, ‖r‖ (largest λ) = 4.9256362203478335e-5
+Iter 15: V_size = 75, Converged = 32, ‖r‖ (largest λ) = 252.73282651194046
+Iter 16: V_size = 100, Converged = 39, ‖r‖ (largest λ) = 2.799499566712479e-5
+Iter 17: V_size = 43, Converged = 40, ‖r‖ (largest λ) = 4.7271187435490857e-5
+Iter 18: V_size = 68, Converged = 43, ‖r‖ (largest λ) = 4.735518195596948e-5
+Iter 19: V_size = 93, Converged = 44, ‖r‖ (largest λ) = 162.69218330511197
+Iter 20: V_size = 49, Converged = 44, ‖r‖ (largest λ) = 0.0010327757349748886
+Iter 21: V_size = 74, Converged = 46, ‖r‖ (largest λ) = 0.00019028913579556162
+Iter 22: V_size = 99, Converged = 49, ‖r‖ (largest λ) = 3.568753163170349e-5
+Iter 23: V_size = 47, Converged = 50, ‖r‖ (largest λ) = 4.465573991751134e-5
+Iter 24: V_size = 72, Converged = 50, ‖r‖ (largest λ) = 0.0003682945012842381
+Iter 25: V_size = 97, Converged = 51, ‖r‖ (largest λ) = 7.34924265964278e-5
+Iter 26: V_size = 49, Converged = 54, ‖r‖ (largest λ) = 7.3893474967265e-5
+Iter 27: V_size = 74, Converged = 57, ‖r‖ (largest λ) = 120.74522789471585
+Iter 28: V_size = 99, Converged = 60, ‖r‖ (largest λ) = 5.3775491759661725e-5
+Iter 29: V_size = 47, Converged = 62, ‖r‖ (largest λ) = 4.897740271775911e-5
+Iter 30: V_size = 72, Converged = 64, ‖r‖ (largest λ) = 3.8412020982197524e-5
+Iter 31: V_size = 97, Converged = 65, ‖r‖ (largest λ) = 5.772713697005874e-5
+Iter 32: V_size = 49, Converged = 66, ‖r‖ (largest λ) = 5.9390060933789954e-5
+Iter 33: V_size = 74, Converged = 69, ‖r‖ (largest λ) = 7.085415151465772e-5
+Iter 34: V_size = 99, Converged = 70, ‖r‖ (largest λ) = 98.84211614211762
+Iter 35: V_size = 49, Converged = 71, ‖r‖ (largest λ) = 9.562144039104078e-5
+Iter 36: V_size = 74, Converged = 71, ‖r‖ (largest λ) = 93.35044109475218
+Iter 37: V_size = 99, Converged = 73, ‖r‖ (largest λ) = 4.4851226383994614e-5
+Iter 38: V_size = 48, Converged = 73, ‖r‖ (largest λ) = 0.00017931095371971655
+Iter 39: V_size = 73, Converged = 75, ‖r‖ (largest λ) = 6.34863531427498e-5
+Iter 40: V_size = 98, Converged = 77, ‖r‖ (largest λ) = 95.45196014700386
+Iter 41: V_size = 48, Converged = 78, ‖r‖ (largest λ) = 9.347051906479227e-5
+Iter 42: V_size = 73, Converged = 80, ‖r‖ (largest λ) = 8.243771688885641e-5
+Iter 43: V_size = 98, Converged = 80, ‖r‖ (largest λ) = 0.0001595952812484302
+Iter 44: V_size = 50, Converged = 81, ‖r‖ (largest λ) = 8.312454605571367e-5
+Iter 45: V_size = 75, Converged = 81, ‖r‖ (largest λ) = 102.43637082265266
+Iter 46: V_size = 100, Converged = 85, ‖r‖ (largest λ) = 4.2091726211395985e-5
+Iter 47: V_size = 46, Converged = 87, ‖r‖ (largest λ) = 6.453007663087787e-5
+Iter 48: V_size = 71, Converged = 88, ‖r‖ (largest λ) = 122.4191892914172
+Iter 49: V_size = 96, Converged = 88, ‖r‖ (largest λ) = 0.00013413977576817607
+Iter 50: V_size = 50, Converged = 90, ‖r‖ (largest λ) = 7.612080721905211e-5
+Iter 51: V_size = 75, Converged = 92, ‖r‖ (largest λ) = 90.20879191333728
+Iter 52: V_size = 100, Converged = 93, ‖r‖ (largest λ) = 7.532902210672991e-5
+Iter 53: V_size = 49, Converged = 94, ‖r‖ (largest λ) = 5.3738764137999654e-5
+Iter 54: V_size = 74, Converged = 96, ‖r‖ (largest λ) = 8.328659071275272e-5
+Iter 55: V_size = 99, Converged = 96, ‖r‖ (largest λ) = 0.0001820355411448038
+Iter 56: V_size = 50, Converged = 97, ‖r‖ (largest λ) = 9.029011744640113e-5
+Iter 57: V_size = 75, Converged = 99, ‖r‖ (largest λ) = 6.0277497733548664e-5
+Iter 58: V_size = 100, Converged = 101, ‖r‖ (largest λ) = 6.608325543633494e-5
+Iter 59: V_size = 48, Converged = 101, ‖r‖ (largest λ) = 0.00012974893273456594
+Iter 60: V_size = 73, Converged = 102, ‖r‖ (largest λ) = 6.563117566207795e-5
+Iter 61: V_size = 98, Converged = 104, ‖r‖ (largest λ) = 7.233925015485419e-5
+Iter 62: V_size = 48, Converged = 105, ‖r‖ (largest λ) = 0.00010210921374734023
+Iter 63: V_size = 73, Converged = 106, ‖r‖ (largest λ) = 128.15313830912842
+Iter 64: V_size = 98, Converged = 107, ‖r‖ (largest λ) = 4.841959089761871e-5
+Iter 65: V_size = 49, Converged = 109, ‖r‖ (largest λ) = 7.026098092470082e-5
+Iter 66: V_size = 74, Converged = 110, ‖r‖ (largest λ) = 9.093754324788361e-5
+Iter 67: V_size = 99, Converged = 111, ‖r‖ (largest λ) = 5.0927556549688777e-5
+Iter 68: V_size = 49, Converged = 113, ‖r‖ (largest λ) = 6.135866889272373e-5
+Iter 69: V_size = 74, Converged = 114, ‖r‖ (largest λ) = 8.591829854260523e-5
+Iter 70: V_size = 99, Converged = 114, ‖r‖ (largest λ) = 0.00013668999287665617
+Iter 71: V_size = 50, Converged = 116, ‖r‖ (largest λ) = 6.741476600950655e-5
+Iter 72: V_size = 75, Converged = 119, ‖r‖ (largest λ) = 69.22927457794384
+Iter 73: V_size = 100, Converged = 120, ‖r‖ (largest λ) = 90.85198083637671
+Iter 74: V_size = 49, Converged = 123, ‖r‖ (largest λ) = 7.262874754769853e-5
+Iter 75: V_size = 74, Converged = 126, ‖r‖ (largest λ) = 66.7922731420597
+Iter 76: V_size = 99, Converged = 127, ‖r‖ (largest λ) = 7.257938714510815e-5
+Iter 77: V_size = 49, Converged = 128, ‖r‖ (largest λ) = 5.251498880331533e-5
+Iter 78: V_size = 74, Converged = 131, ‖r‖ (largest λ) = 61.83523596036494
+Iter 79: V_size = 99, Converged = 131, ‖r‖ (largest λ) = 0.0018741449385992577
+Iter 80: V_size = 50, Converged = 134, ‖r‖ (largest λ) = 4.959122572037838e-5
+Iter 81: V_size = 75, Converged = 136, ‖r‖ (largest λ) = 106.80427375531211
+Iter 82: V_size = 100, Converged = 137, ‖r‖ (largest λ) = 4.701920306400135e-5
+Iter 83: V_size = 49, Converged = 139, ‖r‖ (largest λ) = 5.881302407275616e-5
+Iter 84: V_size = 74, Converged = 143, ‖r‖ (largest λ) = 60.97037583666753
+Iter 85: V_size = 99, Converged = 143, ‖r‖ (largest λ) = 0.00018596504221073495
+Iter 86: V_size = 50, Converged = 145, ‖r‖ (largest λ) = 8.426381826942718e-5
+Iter 87: V_size = 75, Converged = 148, ‖r‖ (largest λ) = 68.62397004172684
+Iter 88: V_size = 100, Converged = 148, ‖r‖ (largest λ) = 0.00011196148387495834
+Iter 89: V_size = 50, Converged = 150, ‖r‖ (largest λ) = 4.4025686350060336e-5
+Iter 90: V_size = 75, Converged = 151, ‖r‖ (largest λ) = 8.021860226538505e-5
+Iter 91: V_size = 100, Converged = 153, ‖r‖ (largest λ) = 5.7091730969126515e-5
+Iter 92: V_size = 48, Converged = 153, ‖r‖ (largest λ) = 0.0001824876977396422
+Iter 93: V_size = 73, Converged = 154, ‖r‖ (largest λ) = 7.446042062762014e-5
+Iter 94: V_size = 98, Converged = 156, ‖r‖ (largest λ) = 5.7704659578568305e-5
+Iter 95: V_size = 48, Converged = 156, ‖r‖ (largest λ) = 0.0001613315309801957
+Iter 96: V_size = 73, Converged = 158, ‖r‖ (largest λ) = 7.028617098371987e-5
+Iter 97: V_size = 98, Converged = 161, ‖r‖ (largest λ) = 6.398242128361658e-5
+Iter 98: V_size = 47, Converged = 164, ‖r‖ (largest λ) = 6.166091087880438e-5
+Iter 99: V_size = 72, Converged = 164, ‖r‖ (largest λ) = 87.17221868352445
+Total MINRES iterations: 370
+Iter 100: V_size = 97, Converged = 166, ‖r‖ (largest λ) = 6.929327049245072e-5
+Max iterations (100) reached without full expected convergence. Returning what we have.
+599.533892 seconds (9.85 M allocations: 501.063 GiB, 0.29% gc time)
+Number of FLOPs: 22474335534672
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_uracil_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×166 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.13687e-13  -5.68434e-13  -1.13687e-13  -2.27374e-13  -5.68434e-13  -1.59162e-12  -1.53477e-12  -1.42109e-12  -2.95586e-12  -1.5973e-11  -1.35856e-11  -2.16573e-11  -8.41283e-12  -6.75584e-11  -2.15437e-11  -1.58025e-11  -3.27987e-11  -1.39551e-11  -1.53477e-12  -7.70513e-11  -9.23706e-12  -6.82121e-13  -2.60485e-11  -6.94911e-12  -5.4996e-12  -2.05063e-11  -1.23208e-11  -8.68425e-11  1.03739e-12  -4.0643e-12  -1.82609e-11  -8.71694e-11  -2.84217e-14  -2.04636e-12  9.53548e-12  -1.36993e-11  -3.31113e-12  -8.03766e-11  -6.0453e-11  -2.58353e-11  -1.08997e-11  -7.90266e-11  -2.27374e-11  -2.76401e-12  -2.10676e-11  -1.2804e-11  -7.88702e-13  -2.75378e-10  -6.69118e-11  -5.92664e-11  -1.05949e-10  -1.51971e-10  -1.51388e-10  -2.68614e-10  -2.68088e-11  -3.2685e-12  -2.9285e-10  -6.99885e-11  -2.05564e-10  -1.22125e-10  -6.57217e-11  -5.1946e-10  -3.55804e-11  -2.16016e-10  -1.24121e-10  -1.68839e-10  -2.25743e-10  -1.49576e-10  -4.76859e-10  -1.35021e-10  -7.51555e-10  -2.07656e-11  -2.96264e-10  -1.68974e-10  -5.15026e-10  -7.30711e-10  -6.97895e-10  -8.28962e-10  -5.06891e-10  -5.70481e-10  -6.28727e-10  5.25127e-11  -4.73435e-11  -3.12866e-10  -8.43581e-10  -3.49718e-10  -9.20036e-10  -2.34433e-10  -2.29292e-10  -5.91772e-10  3.25024e-10  -6.44356e-10  -2.28951e-10  -6.95977e-12  -7.0721e-10  -2.94181e-10  -5.50093e-10  8.28422e-11  -1.56861e-10  -9.31273e-11  -5.63764e-10  -3.28024e-10  5.44844e-11  -7.44709e-10  -2.10907e-11  1.83942e-11  -1.44004e-9  4.54055e-11  -4.68049e-10  -5.8697e-10  -1.64569e-10  3.05665e-10  -4.5751e-10  -5.38186e-10  -2.14971e-10  -6.60812e-10  3.17952e-10  -9.43604e-10  -2.58007e-10  3.49818e-11  -8.2334e-10  -1.46159e-11  3.68406e-10  -3.14376e-10  -4.70664e-10  -2.08189e-11  -3.52946e-10  1.38414e-11  2.47722e-10  2.22659e-10  -1.46093e-10  3.83439e-10  7.94588e-10  3.56799e-11  -3.73658e-10  -5.24388e-10  1.64134e-10  4.05933e-11  -2.22933e-10  3.19313e-10  5.51131e-10  -4.45002e-10  -3.6934e-11  1.21581e-10  2.80535e-10  -3.03995e-10  -1.56319e-13  -9.6211e-11  2.58051e-10  -1.05981e-10  -3.16274e-10  -1.87672e-11  -6.30809e-10  -5.94862e-10  -4.13231e-10  -1.76521e-9  -9.04794e-10  -1.74982e-9  -2.89431e-10  -1.6968e-9  -8.65362e-10  -7.08698e-10  -1.40924e-9  -2.20666e-9  -9.88454e-10  -1.2399e-9
+166 Eigenvalues converges, out of 420 requested.
+Running with Naux = 300
+Starting Davidson with n_aux = 300, l_buffer = 546, lc = 422, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 75, Converged = 0, ‖r‖ (largest λ) = 10.699871634903095
+Iter 2: V_size = 150, Converged = 0, ‖r‖ (largest λ) = 0.06271487081013735
+Iter 3: V_size = 225, Converged = 0, ‖r‖ (largest λ) = 0.0001989381295470103
+Iter 4: V_size = 300, Converged = 12, ‖r‖ (largest λ) = 3.7777744723684877e-7
+Iter 5: V_size = 138, Converged = 41, ‖r‖ (largest λ) = 1.4963764166165891e-6
+Iter 6: V_size = 213, Converged = 49, ‖r‖ (largest λ) = 195.51708246337893
+Iter 7: V_size = 288, Converged = 62, ‖r‖ (largest λ) = 190.21181086464065
+Iter 8: V_size = 137, Converged = 71, ‖r‖ (largest λ) = 1.6595032948653642e-5
+Iter 9: V_size = 212, Converged = 72, ‖r‖ (largest λ) = 73.7764874655285
+Iter 10: V_size = 287, Converged = 75, ‖r‖ (largest λ) = 8.26246922518611e-6
+Iter 11: V_size = 147, Converged = 75, ‖r‖ (largest λ) = 0.0003013564831880566
+Iter 12: V_size = 222, Converged = 79, ‖r‖ (largest λ) = 3.765262327104913e-5
+Iter 13: V_size = 297, Converged = 92, ‖r‖ (largest λ) = 1.545912043545424e-5
+Iter 14: V_size = 137, Converged = 109, ‖r‖ (largest λ) = 1.991744509258267e-5
+Iter 15: V_size = 212, Converged = 119, ‖r‖ (largest λ) = 130.840096212239
+Iter 16: V_size = 287, Converged = 134, ‖r‖ (largest λ) = 104.24937428511996
+Iter 17: V_size = 135, Converged = 140, ‖r‖ (largest λ) = 2.842512301910467e-5
+Iter 18: V_size = 210, Converged = 142, ‖r‖ (largest λ) = 4.0261217555000436e-5
+Iter 19: V_size = 285, Converged = 146, ‖r‖ (largest λ) = 3.882320905922852e-5
+Iter 20: V_size = 146, Converged = 148, ‖r‖ (largest λ) = 9.288114437703171e-5
+Iter 21: V_size = 221, Converged = 153, ‖r‖ (largest λ) = 5.251224200074528e-5
+Iter 22: V_size = 296, Converged = 154, ‖r‖ (largest λ) = 72.34073763017754
+Iter 23: V_size = 149, Converged = 172, ‖r‖ (largest λ) = 4.4319759524065203e-5
+Iter 24: V_size = 224, Converged = 179, ‖r‖ (largest λ) = 83.04767999459405
+Iter 25: V_size = 299, Converged = 186, ‖r‖ (largest λ) = 55.627307041724656
+Iter 26: V_size = 143, Converged = 195, ‖r‖ (largest λ) = 3.694578072882848e-5
+Iter 27: V_size = 218, Converged = 203, ‖r‖ (largest λ) = 52.163534281290985
+Iter 28: V_size = 293, Converged = 210, ‖r‖ (largest λ) = 48.97668490058527
+Iter 29: V_size = 143, Converged = 212, ‖r‖ (largest λ) = 8.044347504991186e-5
+Iter 30: V_size = 218, Converged = 216, ‖r‖ (largest λ) = 4.0614024459809355e-5
+Iter 31: V_size = 293, Converged = 223, ‖r‖ (largest λ) = 49.78070793433313
+Iter 32: V_size = 143, Converged = 228, ‖r‖ (largest λ) = 4.107077562681283e-5
+Iter 33: V_size = 218, Converged = 230, ‖r‖ (largest λ) = 50.53561048112557
+Iter 34: V_size = 293, Converged = 246, ‖r‖ (largest λ) = 3.7674806921065474e-5
+Iter 35: V_size = 134, Converged = 249, ‖r‖ (largest λ) = 4.769119794083452e-5
+Iter 36: V_size = 209, Converged = 255, ‖r‖ (largest λ) = 62.053343451477296
+Iter 37: V_size = 284, Converged = 258, ‖r‖ (largest λ) = 39.720619418005015
+Iter 38: V_size = 147, Converged = 268, ‖r‖ (largest λ) = 3.734163888439834e-5
+Iter 39: V_size = 222, Converged = 270, ‖r‖ (largest λ) = 60.58966090549097
+Iter 40: V_size = 297, Converged = 277, ‖r‖ (largest λ) = 3.9736762100905495e-5
+Iter 41: V_size = 143, Converged = 281, ‖r‖ (largest λ) = 5.416822933280736e-5
+Iter 42: V_size = 218, Converged = 285, ‖r‖ (largest λ) = 30.34063699720978
+Iter 43: V_size = 293, Converged = 288, ‖r‖ (largest λ) = 37.30032464657373
+Iter 44: V_size = 147, Converged = 301, ‖r‖ (largest λ) = 3.315961348108233e-5
+Iter 45: V_size = 222, Converged = 301, ‖r‖ (largest λ) = 69.03096145533118
+Iter 46: V_size = 297, Converged = 309, ‖r‖ (largest λ) = 3.159810136971921e-5
+Iter 47: V_size = 142, Converged = 314, ‖r‖ (largest λ) = 5.505685654402913e-5
+Iter 48: V_size = 217, Converged = 316, ‖r‖ (largest λ) = 50.282235402896205
+Iter 49: V_size = 292, Converged = 323, ‖r‖ (largest λ) = 3.8568248613136026e-5
+Iter 50: V_size = 143, Converged = 327, ‖r‖ (largest λ) = 9.199053157501275e-5
+Iter 51: V_size = 218, Converged = 328, ‖r‖ (largest λ) = 54.599797754353496
+Iter 52: V_size = 293, Converged = 329, ‖r‖ (largest λ) = 8.074099104890915e-5
+Iter 53: V_size = 149, Converged = 331, ‖r‖ (largest λ) = 0.00010767752523016465
+Iter 54: V_size = 224, Converged = 332, ‖r‖ (largest λ) = 23.648866956178363
+Iter 55: V_size = 299, Converged = 336, ‖r‖ (largest λ) = 6.382558676986797e-5
+Iter 56: V_size = 146, Converged = 339, ‖r‖ (largest λ) = 7.513654681043818e-5
+Iter 57: V_size = 221, Converged = 339, ‖r‖ (largest λ) = 33.1100676384638
+Iter 58: V_size = 296, Converged = 342, ‖r‖ (largest λ) = 7.815876078783209e-5
+Iter 59: V_size = 147, Converged = 344, ‖r‖ (largest λ) = 0.00010716616303046162
+Iter 60: V_size = 222, Converged = 346, ‖r‖ (largest λ) = 35.179337864560125
+Iter 61: V_size = 297, Converged = 348, ‖r‖ (largest λ) = 27.001613231708532
+Iter 62: V_size = 148, Converged = 350, ‖r‖ (largest λ) = 7.886519462704164e-5
+Iter 63: V_size = 223, Converged = 350, ‖r‖ (largest λ) = 28.860467147641817
+Iter 64: V_size = 298, Converged = 351, ‖r‖ (largest λ) = 8.65709583837359e-5
+Iter 65: V_size = 149, Converged = 351, ‖r‖ (largest λ) = 0.00010522140619433151
+Iter 66: V_size = 224, Converged = 352, ‖r‖ (largest λ) = 9.449057758951621e-5
+Iter 67: V_size = 299, Converged = 352, ‖r‖ (largest λ) = 0.00012084251881920261
+Iter 68: V_size = 150, Converged = 352, ‖r‖ (largest λ) = 0.00010166249310603565
+Iter 69: V_size = 225, Converged = 353, ‖r‖ (largest λ) = 9.187250406547837e-5
+Iter 70: V_size = 300, Converged = 353, ‖r‖ (largest λ) = 0.00010919760505498697
+Iter 71: V_size = 150, Converged = 355, ‖r‖ (largest λ) = 8.302289104189627e-5
+Iter 72: V_size = 225, Converged = 357, ‖r‖ (largest λ) = 44.791805623993845
+Iter 73: V_size = 300, Converged = 357, ‖r‖ (largest λ) = 31.088364999521122
+Iter 74: V_size = 150, Converged = 359, ‖r‖ (largest λ) = 9.895760600092084e-5
+Iter 75: V_size = 225, Converged = 359, ‖r‖ (largest λ) = 37.42944610221082
+Iter 76: V_size = 300, Converged = 360, ‖r‖ (largest λ) = 0.00010913564409596686
+Iter 77: V_size = 149, Converged = 361, ‖r‖ (largest λ) = 9.956372470827987e-5
+Iter 78: V_size = 224, Converged = 361, ‖r‖ (largest λ) = 26.981719225174164
+Iter 79: V_size = 299, Converged = 361, ‖r‖ (largest λ) = 0.00010825260145974036
+Iter 80: V_size = 150, Converged = 361, ‖r‖ (largest λ) = 0.00010018935623444813
+Iter 81: V_size = 225, Converged = 362, ‖r‖ (largest λ) = 9.473760803837128e-5
+Iter 82: V_size = 300, Converged = 362, ‖r‖ (largest λ) = 26.162223061717814
+Iter 83: V_size = 150, Converged = 363, ‖r‖ (largest λ) = 0.0001167272088734988
+Iter 84: V_size = 225, Converged = 363, ‖r‖ (largest λ) = 21.072573612599026
+Iter 85: V_size = 300, Converged = 363, ‖r‖ (largest λ) = 0.00010973226600910066
+Iter 86: V_size = 150, Converged = 363, ‖r‖ (largest λ) = 0.00010412456434437793
+Iter 87: V_size = 225, Converged = 363, ‖r‖ (largest λ) = 0.00010033694976595499
+Iter 88: V_size = 300, Converged = 365, ‖r‖ (largest λ) = 9.745162269419258e-5
+Iter 89: V_size = 148, Converged = 365, ‖r‖ (largest λ) = 0.00013743452403516866
+Iter 90: V_size = 223, Converged = 365, ‖r‖ (largest λ) = 0.00012887921425651052
+Iter 91: V_size = 298, Converged = 365, ‖r‖ (largest λ) = 0.00011945192393862826
+Iter 92: V_size = 150, Converged = 366, ‖r‖ (largest λ) = 0.00010782793536777531
+Iter 93: V_size = 225, Converged = 366, ‖r‖ (largest λ) = 27.248069237481488
+Iter 94: V_size = 300, Converged = 367, ‖r‖ (largest λ) = 9.719858874903294e-5
+Iter 95: V_size = 149, Converged = 368, ‖r‖ (largest λ) = 0.00010355387130291812
+Iter 96: V_size = 224, Converged = 368, ‖r‖ (largest λ) = 0.000235825561206824
+Iter 97: V_size = 299, Converged = 369, ‖r‖ (largest λ) = 0.00010018925076891708
+Iter 98: V_size = 149, Converged = 370, ‖r‖ (largest λ) = 9.76291857872165e-5
+Iter 99: V_size = 224, Converged = 370, ‖r‖ (largest λ) = 33.15922911892856
+Total MINRES iterations: 139
+Iter 100: V_size = 299, Converged = 371, ‖r‖ (largest λ) = 0.00010733279518424492
+Max iterations (100) reached without full expected convergence. Returning what we have.
+1700.471540 seconds (88.59 M allocations: 4.269 TiB, 0.64% gc time)
+Number of FLOPs: 64961370661552
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_uracil_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×371 adjoint(::Vector{Float64}) with eltype Float64:
+ -2.27374e-13  -5.68434e-13  3.41061e-13  -6.82121e-13  4.54747e-13  2.27374e-13  -3.41061e-13  1.13687e-13  -6.82121e-13  -5.11591e-13  -6.82121e-13  -3.41061e-13  8.52651e-14  0.0  0.0  8.52651e-14  5.68434e-14  -8.52651e-14  -3.97904e-13  -8.52651e-14  -2.84217e-14  -1.13687e-13  -2.27374e-13  -1.23634e-12  -1.06581e-12  -5.1017e-12  -3.51008e-12  -2.57216e-12  -8.42704e-12  -1.64846e-12  -1.93126e-11  -5.82645e-12  -2.2581e-11  -3.06244e-11  -1.9611e-11  -6.03961e-12  -1.85167e-11  -3.80425e-11  -4.52332e-11  -1.09807e-10  -4.54747e-13  -1.46322e-10  -2.41585e-12  -4.28457e-12  -1.93126e-11  -3.16689e-11  -1.62714e-11  -4.44302e-11  -3.7744e-11  -1.50635e-12  -6.46594e-12  -3.98614e-12  -1.94618e-11  -1.65343e-11  -5.64171e-12  -6.23572e-11  -1.12266e-10  -9.33973e-11  -7.2756e-11  -3.0289e-10  -2.36643e-10  -3.57407e-10  -1.35643e-11  -1.48503e-11  -3.15019e-11  -3.64331e-11  -3.24743e-10  -1.93499e-10  -1.67208e-10  -3.54749e-10  -3.03e-10  -3.81597e-11  -3.7339e-12  -3.71614e-12  -1.02922e-11  -8.76419e-11  -5.29283e-10  -6.0929e-12  -4.76053e-10  -5.39888e-10  -1.75469e-11  -1.07754e-11  -2.38849e-11  -2.18137e-11  -9.42677e-11  -2.6926e-11  -2.50644e-11  -1.47988e-10  -3.23574e-10  -2.09905e-10  -4.32294e-11  -1.06084e-11  -4.68248e-12  -4.44976e-10  -6.386e-12  -1.03544e-11  -5.02833e-11  -3.48255e-11  -6.80114e-11  -9.36531e-11  -1.01037e-10  -1.94671e-10  -5.82611e-10  -3.85931e-10  -2.50525e-10  -1.55381e-10  -3.36843e-10  -4.52596e-10  -6.22501e-10  -7.30971e-12  -1.57172e-11  -4.78106e-11  -8.51639e-11  -2.15898e-11  -1.04984e-10  -1.99796e-10  -1.18792e-10  1.05214e-11  -5.48724e-10  2.2613e-11  -7.24258e-10  4.92939e-12  1.52589e-11  -6.29363e-11  -3.50777e-11  -1.97851e-11  -3.38716e-11  -2.86526e-11  -1.96668e-10  -1.35175e-10  -9.23198e-10  -6.30086e-10  -3.2454e-12  -3.14101e-10  -4.89491e-10  -1.81975e-10  -9.31028e-10  -2.91942e-10  -4.35925e-10  -1.42482e-11  -1.51665e-11  5.3717e-11  -1.1998e-9  -5.56355e-11  -7.8348e-11  -2.76561e-10  -9.32726e-10  1.08997e-10  -7.67344e-10  -8.06306e-11  2.9714e-11  -3.82249e-10  -1.40695e-10  2.51751e-10  2.3005e-10  1.44847e-10  2.5115e-11  6.49409e-11  -2.19984e-11  3.95213e-11  3.45661e-11  1.0867e-10  -7.43263e-11  -7.56373e-12  -8.2518e-11  -6.95026e-11  -1.39012e-10  -5.7006e-10  -1.27655e-9  -2.125e-9  -7.16969e-10  -1.29157e-9  -1.31501e-10  6.36868e-11  -7.55467e-10  -2.87701e-10  -2.67115e-10  -1.64187e-9  -4.64169e-10  -1.78715e-9  8.82485e-11  -9.36673e-11  -1.70328e-10  -3.12509e-10  -1.4462e-9  -2.40288e-9  -2.02419e-10  -8.37959e-10  -8.39751e-10  -9.53957e-10  -1.26139e-9  -1.49968e-9  -2.82139e-9  -1.87482e-9  -2.58512e-9  -1.60315e-10  -3.27034e-10  -1.14198e-10  -1.51642e-10  -7.50989e-10  -1.34022e-9  -7.19599e-10  2.6864e-10  -4.55678e-10  2.3082e-11  -4.23778e-10  -1.56453e-9  -5.03246e-10  -1.21068e-9  -2.22866e-9  -1.80321e-9  -1.50923e-9  -1.10381e-10  -8.72661e-10  -7.51089e-10  -4.7396e-10  -2.62028e-10  -1.30952e-10  -1.27536e-9  -3.57108e-10  -9.89287e-10  -2.01237e-9  -2.27616e-9  -7.67826e-11  -6.7919e-10  -1.43024e-10  -2.27792e-9  -2.40458e-9  7.80682e-11  4.31565e-10  4.25077e-10  4.28962e-10  1.95464e-10  -1.09656e-9  2.50018e-10  2.19061e-10  2.40297e-10  2.74394e-10  -1.14448e-10  -3.23652e-10  -2.12269e-9  -6.5695e-10  -4.16466e-10  -2.65301e-9  -1.76686e-9  -3.57812e-10  -1.07116e-9  -2.33392e-9  -1.57062e-9  6.20526e-12  -7.12387e-10  -1.77741e-9  1.93554e-10  -3.45064e-9  -2.54711e-9  1.80259e-10  1.65819e-10  2.87443e-10  -3.69343e-9  2.89612e-10  3.8392e-11  2.00635e-10  -4.18312e-10  -1.69321e-9  -1.22356e-9  -2.93338e-9  -3.23853e-9  4.06108e-10  -3.6176e-9  3.39801e-10  3.66525e-10  -2.33186e-10  -3.88631e-10  -1.37235e-10  -6.48628e-10  -1.35693e-9  -5.03565e-9  -8.69092e-10  -1.52348e-9  -1.92913e-9  -3.82117e-9  -2.76054e-10  -3.90235e-10  -9.58802e-10  3.32021e-10  7.64301e-10  -8.86879e-10  2.27593e-10  -1.39647e-9  3.60562e-10  -1.44114e-10  -2.30309e-9  -3.64035e-9  -8.58178e-10  -1.02154e-9  -1.03746e-9  -1.83267e-9  -1.14099e-9  -1.46848e-9  -4.24488e-9  -4.74705e-9  1.86253e-10  4.40124e-10  1.2233e-10  -2.50813e-9  -2.63162e-9  -9.27887e-10  -7.19136e-10  -7.85167e-10  -3.0521e-9  -3.901e-9  -3.37377e-9  -2.84222e-9  -6.67601e-10  -4.67061e-9  3.61533e-10  -2.2524e-9  -5.68284e-10  -9.53693e-10  -1.42817e-10  -6.89238e-10  -8.35053e-10  -2.08784e-9  -3.11122e-9  -3.77519e-9  -7.08957e-10  -2.4205e-9  -1.28118e-9  -1.78241e-9  -1.09924e-10  -2.12689e-9  -2.4705e-9  -3.22137e-9  -1.85633e-9  -3.3349e-9  -1.90178e-9  -2.07739e-9  -2.9388e-9  -8.21207e-10  -2.29167e-9  -1.91169e-9  -3.27553e-9  -3.30183e-9  -3.01858e-9  -2.28443e-9  -2.69201e-9  -1.93389e-9  -2.88295e-9  -4.45998e-9  -2.41213e-9  -2.3094e-9  -2.82501e-9  -2.98326e-9  -2.16946e-9  -3.20389e-9  -2.39367e-9  -3.05084e-9  -4.17629e-9  -3.41035e-9  -2.69438e-9  -3.57341e-9  -3.81891e-9  -1.99702e-9  -4.2267e-9  -3.93254e-9  -4.38257e-9  -4.34049e-9  -4.42466e-9  -3.896e-9  -0.0128342  -0.00371154
+371 Eigenvalues converges, out of 420 requested.
+Running with Naux = 500
+Starting Davidson with n_aux = 500, l_buffer = 546, lc = 422, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 125, Converged = 0, ‖r‖ (largest λ) = 5.693797348480899
+Iter 2: V_size = 250, Converged = 0, ‖r‖ (largest λ) = 0.016360284264002125
+Iter 3: V_size = 375, Converged = 6, ‖r‖ (largest λ) = 1.857133464725515e-5
+Iter 4: V_size = 500, Converged = 43, ‖r‖ (largest λ) = 356.30291279043223
+Iter 5: V_size = 213, Converged = 73, ‖r‖ (largest λ) = 1.7422042988120475e-6
+Iter 6: V_size = 338, Converged = 102, ‖r‖ (largest λ) = 197.9776707106283
+Iter 7: V_size = 463, Converged = 126, ‖r‖ (largest λ) = 165.09548141508134
+Iter 8: V_size = 226, Converged = 126, ‖r‖ (largest λ) = 0.021024621774025625
+Iter 9: V_size = 351, Converged = 126, ‖r‖ (largest λ) = 0.0017862650844573814
+Iter 10: V_size = 476, Converged = 136, ‖r‖ (largest λ) = 8.370419634461756e-5
+Iter 11: V_size = 240, Converged = 151, ‖r‖ (largest λ) = 1.0180402423676936e-5
+Iter 12: V_size = 365, Converged = 167, ‖r‖ (largest λ) = 91.54428699783448
+Iter 13: V_size = 490, Converged = 192, ‖r‖ (largest λ) = 51.39886040699357
+Iter 14: V_size = 225, Converged = 208, ‖r‖ (largest λ) = 2.8170866734928572e-5
+Iter 15: V_size = 350, Converged = 211, ‖r‖ (largest λ) = 67.41088281579617
+Iter 16: V_size = 475, Converged = 232, ‖r‖ (largest λ) = 52.114193146040144
+Iter 17: V_size = 229, Converged = 246, ‖r‖ (largest λ) = 3.184255364426892e-5
+Iter 18: V_size = 354, Converged = 250, ‖r‖ (largest λ) = 87.26522883752266
+Iter 19: V_size = 479, Converged = 254, ‖r‖ (largest λ) = 2.767248846200074e-5
+Iter 20: V_size = 246, Converged = 273, ‖r‖ (largest λ) = 4.076869926481566e-5
+Iter 21: V_size = 371, Converged = 276, ‖r‖ (largest λ) = 53.75299733116885
+Iter 22: V_size = 496, Converged = 296, ‖r‖ (largest λ) = 29.64587447561276
+Iter 23: V_size = 230, Converged = 313, ‖r‖ (largest λ) = 3.233488906045724e-5
+Iter 24: V_size = 355, Converged = 321, ‖r‖ (largest λ) = 52.63080763396135
+Iter 25: V_size = 480, Converged = 323, ‖r‖ (largest λ) = 40.06733261408756
+Iter 26: V_size = 248, Converged = 332, ‖r‖ (largest λ) = 2.2923090420230555e-5
+Iter 27: V_size = 373, Converged = 332, ‖r‖ (largest λ) = 35.993289926867575
+Iter 28: V_size = 498, Converged = 341, ‖r‖ (largest λ) = 6.0595271505365274e-5
+Iter 29: V_size = 241, Converged = 347, ‖r‖ (largest λ) = 6.06727265216386e-5
+Iter 30: V_size = 366, Converged = 347, ‖r‖ (largest λ) = 38.562866358548945
+Iter 31: V_size = 491, Converged = 352, ‖r‖ (largest λ) = 8.249334577719508e-5
+Iter 32: V_size = 245, Converged = 354, ‖r‖ (largest λ) = 0.00010387471641363598
+Iter 33: V_size = 370, Converged = 355, ‖r‖ (largest λ) = 29.811143187791014
+Iter 34: V_size = 495, Converged = 355, ‖r‖ (largest λ) = 16.20140593943302
+Iter 35: V_size = 250, Converged = 358, ‖r‖ (largest λ) = 7.661894901084314e-5
+Iter 36: V_size = 375, Converged = 358, ‖r‖ (largest λ) = 32.58548752278889
+Iter 37: V_size = 500, Converged = 359, ‖r‖ (largest λ) = 8.524369937871215e-5
+Iter 38: V_size = 249, Converged = 360, ‖r‖ (largest λ) = 0.00010525855562299168
+Iter 39: V_size = 374, Converged = 360, ‖r‖ (largest λ) = 0.00021234095028097987
+Iter 40: V_size = 499, Converged = 362, ‖r‖ (largest λ) = 8.817506559777716e-5
+Iter 41: V_size = 248, Converged = 363, ‖r‖ (largest λ) = 9.714383615170917e-5
+Iter 42: V_size = 373, Converged = 363, ‖r‖ (largest λ) = 59.123708070250686
+Iter 43: V_size = 498, Converged = 363, ‖r‖ (largest λ) = 0.00011351705214723838
+Iter 44: V_size = 250, Converged = 365, ‖r‖ (largest λ) = 0.00010065164608022019
+Iter 45: V_size = 375, Converged = 365, ‖r‖ (largest λ) = 32.03750322772468
+Iter 46: V_size = 500, Converged = 366, ‖r‖ (largest λ) = 9.178671679527266e-5
+Iter 47: V_size = 249, Converged = 366, ‖r‖ (largest λ) = 0.00011498973816394766
+Iter 48: V_size = 374, Converged = 366, ‖r‖ (largest λ) = 0.00010916047921126208
+Iter 49: V_size = 499, Converged = 366, ‖r‖ (largest λ) = 0.00010286058067978366
+Iter 50: V_size = 250, Converged = 368, ‖r‖ (largest λ) = 9.406381840487803e-5
+Iter 51: V_size = 375, Converged = 368, ‖r‖ (largest λ) = 84.6390780000175
+Iter 52: V_size = 500, Converged = 370, ‖r‖ (largest λ) = 0.00012077184918837415
+Iter 53: V_size = 248, Converged = 371, ‖r‖ (largest λ) = 0.00011153600039500537
+Iter 54: V_size = 373, Converged = 371, ‖r‖ (largest λ) = 33.51533495888675
+Iter 55: V_size = 498, Converged = 372, ‖r‖ (largest λ) = 9.92892133010238e-5
+Iter 56: V_size = 249, Converged = 372, ‖r‖ (largest λ) = 0.00013098516947432034
+Iter 57: V_size = 374, Converged = 372, ‖r‖ (largest λ) = 0.0001246567404986183
+Iter 58: V_size = 499, Converged = 372, ‖r‖ (largest λ) = 0.0001175157667274095
+Iter 59: V_size = 250, Converged = 373, ‖r‖ (largest λ) = 0.00010897333510814797
+Iter 60: V_size = 375, Converged = 373, ‖r‖ (largest λ) = 0.00010454148114882583
+Iter 61: V_size = 500, Converged = 374, ‖r‖ (largest λ) = 9.956258556408162e-5
+Iter 62: V_size = 249, Converged = 375, ‖r‖ (largest λ) = 9.959891394992062e-5
+Iter 63: V_size = 374, Converged = 375, ‖r‖ (largest λ) = 0.00021243823238769412
+Iter 64: V_size = 499, Converged = 375, ‖r‖ (largest λ) = 0.00010880742554342095
+Iter 65: V_size = 250, Converged = 375, ‖r‖ (largest λ) = 0.0001036880471588371
+Iter 66: V_size = 375, Converged = 375, ‖r‖ (largest λ) = 0.0001012024584269884
+Iter 67: V_size = 500, Converged = 377, ‖r‖ (largest λ) = 9.882361953648284e-5
+Iter 68: V_size = 248, Converged = 378, ‖r‖ (largest λ) = 9.760807101971342e-5
+Iter 69: V_size = 373, Converged = 378, ‖r‖ (largest λ) = 0.00014651634097278973
+Iter 70: V_size = 498, Converged = 378, ‖r‖ (largest λ) = 0.00011468898181921277
+Iter 71: V_size = 250, Converged = 378, ‖r‖ (largest λ) = 0.0001113439041305957
+Iter 72: V_size = 375, Converged = 378, ‖r‖ (largest λ) = 0.00010959553127035353
+Iter 73: V_size = 500, Converged = 379, ‖r‖ (largest λ) = 0.0001072260888205028
+Iter 74: V_size = 249, Converged = 379, ‖r‖ (largest λ) = 0.0001026338564411228
+Iter 75: V_size = 374, Converged = 380, ‖r‖ (largest λ) = 0.00010035226649086196
+Iter 76: V_size = 499, Converged = 380, ‖r‖ (largest λ) = 24.783644002749615
+Iter 77: V_size = 250, Converged = 383, ‖r‖ (largest λ) = 9.411947548459905e-5
+Iter 78: V_size = 375, Converged = 383, ‖r‖ (largest λ) = 59.19483819824144
+Iter 79: V_size = 500, Converged = 384, ‖r‖ (largest λ) = 0.00011538357044224105
+Iter 80: V_size = 249, Converged = 385, ‖r‖ (largest λ) = 0.00011213822004351005
+Iter 81: V_size = 374, Converged = 385, ‖r‖ (largest λ) = 0.00012986631826093382
+Iter 82: V_size = 499, Converged = 386, ‖r‖ (largest λ) = 0.00010915241871951638
+Iter 83: V_size = 249, Converged = 386, ‖r‖ (largest λ) = 0.00010600529117193053
+Iter 84: V_size = 374, Converged = 386, ‖r‖ (largest λ) = 0.00010458287403640222
+Iter 85: V_size = 499, Converged = 387, ‖r‖ (largest λ) = 0.00010335945636898221
+Iter 86: V_size = 249, Converged = 388, ‖r‖ (largest λ) = 9.955435778912799e-5
+Iter 87: V_size = 374, Converged = 388, ‖r‖ (largest λ) = 24.639432209641207
+Iter 88: V_size = 499, Converged = 388, ‖r‖ (largest λ) = 0.00010181909010540397
+Iter 89: V_size = 250, Converged = 389, ‖r‖ (largest λ) = 9.951935600340024e-5
+Iter 90: V_size = 375, Converged = 389, ‖r‖ (largest λ) = 48.34385043869629
+Iter 91: V_size = 500, Converged = 389, ‖r‖ (largest λ) = 0.00012108729747546085
+Iter 92: V_size = 250, Converged = 389, ‖r‖ (largest λ) = 0.00011780986642908794
+Iter 93: V_size = 375, Converged = 389, ‖r‖ (largest λ) = 0.00011574410778819293
+Iter 94: V_size = 500, Converged = 390, ‖r‖ (largest λ) = 0.00011344623647259029
+Iter 95: V_size = 249, Converged = 392, ‖r‖ (largest λ) = 0.00010954159068317826
+Iter 96: V_size = 374, Converged = 392, ‖r‖ (largest λ) = 33.97182137511138
+Iter 97: V_size = 499, Converged = 392, ‖r‖ (largest λ) = 0.00010680549574588044
+Iter 98: V_size = 250, Converged = 392, ‖r‖ (largest λ) = 0.00010413321607652706
+Iter 99: V_size = 375, Converged = 393, ‖r‖ (largest λ) = 0.00010274017755854985
+Total MINRES iterations: 450
+Iter 100: V_size = 500, Converged = 394, ‖r‖ (largest λ) = 21.71182423746315
+Max iterations (100) reached without full expected convergence. Returning what we have.
+2954.321091 seconds (179.83 M allocations: 8.608 TiB, 0.66% gc time)
+Number of FLOPs: 110945304549904
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_uracil_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×394 adjoint(::Vector{Float64}) with eltype Float64:
+ -3.41061e-13  -1.47793e-12  -1.93268e-12  -1.13687e-12  -2.16005e-12  -2.72848e-12  1.13687e-13  2.84217e-13  2.27374e-13  0.0  -1.7053e-13  -5.68434e-14  -2.84217e-14  -8.52651e-14  -1.13687e-13  0.0  -5.68434e-14  -1.7053e-13  -6.53699e-13  -1.7053e-13  -2.27374e-13  -1.98952e-13  -8.95284e-13  -1.15108e-12  -1.29319e-12  -1.97815e-11  -2.53948e-11  -4.10267e-11  -2.15863e-11  -8.08598e-12  -2.48832e-11  -1.31024e-11  -2.87343e-11  -1.27898e-11  -2.21831e-11  -2.60627e-11  -3.22871e-11  -2.59632e-11  -3.15055e-11  -7.08837e-11  -8.20535e-11  -1.33298e-10  -1.1724e-10  -8.52651e-14  -2.34479e-13  -2.62901e-13  -1.77636e-13  -3.12639e-13  -2.20268e-13  -8.59757e-13  -1.27187e-12  -3.69482e-12  -6.76437e-12  -6.96332e-12  -2.13873e-12  -1.19584e-11  -7.35412e-12  -6.50857e-12  -3.50937e-11  -3.12461e-11  -4.96669e-11  -6.32312e-11  -7.32605e-11  -4.62386e-11  -4.09059e-11  -1.17861e-10  -8.50484e-11  -1.99311e-10  -1.36602e-10  -1.76239e-10  -4.0442e-10  -4.10484e-10  -2.60414e-12  -4.91696e-12  -4.23057e-10  -4.14246e-12  -3.29692e-12  -5.92948e-12  -7.53531e-12  -5.64526e-12  -9.59233e-14  -1.43707e-11  -1.61187e-11  -2.64357e-11  -1.37383e-11  -4.48814e-11  -5.71596e-11  -3.76978e-11  -9.01466e-11  -5.41718e-11  -8.03198e-11  -6.58353e-11  -1.10248e-10  -1.03991e-10  -9.64562e-13  -9.64562e-13  -6.23501e-13  -1.68267e-10  -1.81783e-10  -1.09146e-10  -6.37689e-10  -6.81109e-11  -4.09527e-10  -1.81188e-12  -1.31983e-12  -6.96865e-12  -5.19407e-12  -3.48434e-10  -4.601e-10  -6.46061e-12  -1.03881e-11  -1.53744e-11  -8.36842e-12  -5.82823e-12  -7.67612e-10  -1.51861e-11  -2.1128e-11  -1.30935e-11  -1.23208e-11  -2.86811e-11  -1.48415e-11  -1.72928e-11  -3.30278e-11  -5.3209e-11  -2.71623e-11  -5.74527e-11  -6.37668e-10  -4.57707e-10  -6.34715e-10  -6.57653e-10  -4.59417e-10  -7.83286e-10  -9.43627e-10  -5.16668e-10  -8.20208e-10  -1.01759e-9  -7.16938e-12  -7.24221e-12  -1.06333e-11  -7.70761e-12  -2.04263e-11  -2.99067e-11  -3.07736e-11  -7.28839e-11  -5.07701e-11  -1.2005e-10  -2.01478e-10  -1.59313e-10  -3.44514e-10  -1.1868e-9  -1.44474e-9  1.38405e-11  1.66622e-11  -2.23226e-11  -7.08367e-11  -4.5639e-11  -1.44877e-10  -2.443e-10  -1.28408e-10  -2.03014e-10  -2.66107e-10  -5.05016e-10  -2.1952e-10  -4.59572e-10  -2.81292e-10  -5.19385e-10  -7.17289e-10  -6.75308e-10  -8.00646e-10  -3.74163e-11  -1.91456e-11  -1.91616e-11  -1.77156e-11  -3.10392e-11  -4.92166e-11  -8.08607e-11  -2.8356e-11  -1.40619e-10  -3.90648e-11  -2.4599e-11  -1.48133e-10  -7.15366e-11  -2.65182e-10  -2.44285e-10  -3.58984e-10  -5.06087e-10  -1.04012e-9  -1.37835e-9  7.228e-12  -1.26306e-9  -7.10845e-11  4.21965e-11  -2.48788e-11  -1.38571e-9  -1.05961e-9  -7.4837e-11  -1.03378e-9  -8.28075e-11  -1.61858e-10  -4.83027e-11  -4.83248e-10  -8.65468e-11  -2.71993e-10  -3.44195e-10  -3.43649e-10  -1.31434e-9  -8.32665e-10  -7.2222e-10  -1.1746e-10  -6.12355e-11  1.48948e-11  -3.75956e-10  1.1056e-11  -4.13021e-11  -2.43494e-11  1.42446e-11  -1.19149e-11  -1.47189e-11  -3.89475e-11  -1.8149e-11  -1.33376e-10  -1.44515e-10  -1.25434e-10  -6.39644e-11  -7.04161e-11  -2.54344e-10  -2.65556e-10  -8.51004e-10  -6.69766e-10  -1.44439e-9  -1.10181e-10  -4.3475e-11  -1.61789e-9  -2.22463e-10  -1.61483e-10  -1.52185e-10  -1.88351e-10  -3.18614e-9  -6.3563e-10  -3.51546e-10  -4.22426e-10  -4.09599e-10  -1.47125e-9  -9.77718e-10  -1.92778e-9  -2.48916e-9  -3.23651e-10  -2.00784e-10  -5.92139e-10  -2.06672e-9  -1.88445e-11  1.14224e-10  -1.84084e-9  -9.00252e-10  -1.89363e-9  1.0073e-10  -1.64184e-10  -2.7598e-10  1.91196e-10  -1.033e-10  -4.66784e-10  -1.23058e-9  -1.18683e-9  -6.25049e-10  -2.21168e-9  -2.90181e-9  -3.11358e-9  -1.90184e-9  6.45461e-11  -1.71367e-9  -2.57969e-9  -2.44654e-9  -1.76654e-9  -3.18418e-9  1.86338e-10  -3.10826e-10  7.28759e-11  -9.65795e-10  1.30106e-10  9.89142e-11  3.59921e-11  9.18967e-11  9.87654e-12  -1.58314e-10  -2.62912e-10  -2.85238e-10  -2.81355e-10  -5.8744e-10  -1.13518e-9  -3.61295e-10  -6.45381e-10  -1.71074e-9  -9.70002e-11  -3.16113e-9  -3.48875e-9  2.59752e-11  -3.16819e-10  -2.50948e-9  -4.88092e-9  -3.78699e-10  -5.19568e-10  -5.26814e-10  -4.50793e-10  -4.41276e-10  -2.71138e-9  -1.14892e-9  1.13247e-10  -3.87438e-9  -1.74235e-9  -9.74572e-10  -5.68001e-9  -5.38059e-9  -6.38408e-9  -5.20112e-9  1.62466e-10  -3.95243e-10  -9.22419e-10  -1.69833e-9  -2.19238e-10  -1.23495e-9  -6.53721e-10  -6.76905e-10  -1.33426e-10  -3.22332e-9  3.92881e-11  -2.36215e-11  1.43721e-10  -8.77298e-12  -2.91414e-10  -5.33023e-10  -5.43352e-10  -1.61472e-9  -8.96475e-10  -1.46664e-9  -1.29762e-9  -1.30389e-9  -2.68675e-9  -1.4148e-9  -2.09523e-9  -1.91899e-9  -2.1319e-9  -4.24987e-9  -3.57859e-9  -2.72193e-9  -3.94807e-9  -3.82609e-9  -4.48096e-9  -2.24899e-9  -1.46121e-9  -3.64923e-9  -2.68648e-9  -3.82251e-9  -3.52869e-9  -4.60215e-9  -2.22616e-9  -4.58548e-9  -3.0839e-9  -3.48674e-9  -4.33046e-9  -3.71682e-9  -3.8333e-9  -4.02454e-9  -5.00706e-9  -3.71532e-9  -4.57538e-9  -3.84367e-9  -4.16196e-9  -4.43166e-9  -5.29861e-9  -4.24011e-9  -4.29516e-9  -5.36286e-9  -5.33011e-9  -4.48849e-9  -4.65344e-9  -4.9945e-9  -4.47601e-9  -3.64817e-9  -3.88414e-9  -5.28511e-9  -5.1595e-9  -4.1671e-9  -5.09451e-9  -4.51137e-9  -5.70913e-9  -4.81771e-9  -4.36224e-9  -4.93195e-9  -4.87505e-9  -0.00609433  -0.00161401  -0.00777991  -0.0246537  -0.0255834
+394 Eigenvalues converges, out of 420 requested.
+Running with Naux = 1000
+Starting Davidson with n_aux = 1000, l_buffer = 546, lc = 422, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 250, Converged = 0, ‖r‖ (largest λ) = 2.030766371103435
+Iter 2: V_size = 500, Converged = 0, ‖r‖ (largest λ) = 0.001542940297629537
+Iter 3: V_size = 750, Converged = 28, ‖r‖ (largest λ) = 4.571164282649252e-7
+Iter 4: V_size = 1000, Converged = 138, ‖r‖ (largest λ) = 362.27570907687664
+Iter 5: V_size = 390, Converged = 246, ‖r‖ (largest λ) = 8.385329276504244e-7
+Iter 6: V_size = 640, Converged = 253, ‖r‖ (largest λ) = 193.05240734549602
+Iter 7: V_size = 890, Converged = 255, ‖r‖ (largest λ) = 53.20111101544998
+Iter 8: V_size = 498, Converged = 255, ‖r‖ (largest λ) = 0.0017907081171750605
+Iter 9: V_size = 748, Converged = 256, ‖r‖ (largest λ) = 0.00013324481503582187
+Iter 10: V_size = 998, Converged = 277, ‖r‖ (largest λ) = 5.455507496904866e-5
+Iter 11: V_size = 479, Converged = 329, ‖r‖ (largest λ) = 3.862299667841946e-5
+Iter 12: V_size = 729, Converged = 339, ‖r‖ (largest λ) = 84.45550507060953
+Iter 13: V_size = 946, Converged = 344, ‖r‖ (largest λ) = 38.91518805448615
+Iter 14: V_size = 409, Converged = 356, ‖r‖ (largest λ) = 2.2034043329345306e-5
+Iter 15: V_size = 611, Converged = 356, ‖r‖ (largest λ) = 55.83924071525655
+Iter 16: V_size = 801, Converged = 361, ‖r‖ (largest λ) = 6.308024973194493e-5
+Iter 17: V_size = 991, Converged = 362, ‖r‖ (largest λ) = 30.9850469815484
+Iter 18: V_size = 369, Converged = 363, ‖r‖ (largest λ) = 8.811963914114986e-5
+Iter 19: V_size = 553, Converged = 364, ‖r‖ (largest λ) = 44.12369589511244
+Iter 20: V_size = 736, Converged = 364, ‖r‖ (largest λ) = 0.00037949960071213405
+Iter 21: V_size = 918, Converged = 367, ‖r‖ (largest λ) = 9.404632551001806e-5
+Iter 22: V_size = 361, Converged = 368, ‖r‖ (largest λ) = 9.149970541662646e-5
+Iter 23: V_size = 540, Converged = 368, ‖r‖ (largest λ) = 15.506659722107232
+Iter 24: V_size = 718, Converged = 371, ‖r‖ (largest λ) = 8.47715518951627e-5
+Iter 25: V_size = 896, Converged = 371, ‖r‖ (largest λ) = 33.09307261935939
+Iter 26: V_size = 350, Converged = 375, ‖r‖ (largest λ) = 7.648965017747114e-5
+Iter 27: V_size = 525, Converged = 375, ‖r‖ (largest λ) = 52.97316434595515
+Iter 28: V_size = 696, Converged = 376, ‖r‖ (largest λ) = 0.00010363639516059201
+Iter 29: V_size = 867, Converged = 376, ‖r‖ (largest λ) = 20.3607189583628
+Iter 30: V_size = 340, Converged = 383, ‖r‖ (largest λ) = 7.464907913346279e-5
+Iter 31: V_size = 510, Converged = 383, ‖r‖ (largest λ) = 68.89032937963431
+Iter 32: V_size = 673, Converged = 384, ‖r‖ (largest λ) = 0.00010057018078527092
+Iter 33: V_size = 836, Converged = 386, ‖r‖ (largest λ) = 19.95628278261699
+Iter 34: V_size = 998, Converged = 388, ‖r‖ (largest λ) = 35.6475147514304
+Iter 35: V_size = 318, Converged = 390, ‖r‖ (largest λ) = 8.952194506289376e-5
+Iter 36: V_size = 476, Converged = 392, ‖r‖ (largest λ) = 27.018429748070563
+Iter 37: V_size = 632, Converged = 393, ‖r‖ (largest λ) = 33.55014135560498
+Iter 38: V_size = 786, Converged = 394, ‖r‖ (largest λ) = 45.154006944662186
+Iter 39: V_size = 939, Converged = 394, ‖r‖ (largest λ) = 0.00013908787223882352
+Iter 40: V_size = 304, Converged = 400, ‖r‖ (largest λ) = 0.00011564652591479832
+Iter 41: V_size = 456, Converged = 400, ‖r‖ (largest λ) = 65.20931838365502
+Iter 42: V_size = 602, Converged = 400, ‖r‖ (largest λ) = 0.00010684329002406818
+Iter 43: V_size = 748, Converged = 401, ‖r‖ (largest λ) = 9.736739444362696e-5
+Iter 44: V_size = 894, Converged = 401, ‖r‖ (largest λ) = 47.934407116685094
+Iter 45: V_size = 290, Converged = 403, ‖r‖ (largest λ) = 9.960052397023348e-5
+Iter 46: V_size = 435, Converged = 403, ‖r‖ (largest λ) = 32.26881098328659
+Iter 47: V_size = 578, Converged = 403, ‖r‖ (largest λ) = 0.00010728135962662582
+Iter 48: V_size = 721, Converged = 403, ‖r‖ (largest λ) = 0.00010014951335373808
+Iter 49: V_size = 864, Converged = 406, ‖r‖ (largest λ) = 9.444062482426063e-5
+Iter 50: V_size = 283, Converged = 406, ‖r‖ (largest λ) = 0.00010696326712475637
+Iter 51: V_size = 423, Converged = 406, ‖r‖ (largest λ) = 0.00010432307805109691
+Iter 52: V_size = 563, Converged = 407, ‖r‖ (largest λ) = 0.0001018023073122152
+Iter 53: V_size = 703, Converged = 409, ‖r‖ (largest λ) = 22.702215929796115
+Iter 54: V_size = 842, Converged = 409, ‖r‖ (largest λ) = 55.325664887361455
+Iter 55: V_size = 979, Converged = 411, ‖r‖ (largest λ) = 9.714950022029874e-5
+Iter 56: V_size = 272, Converged = 412, ‖r‖ (largest λ) = 9.599791501336503e-5
+Iter 57: V_size = 407, Converged = 412, ‖r‖ (largest λ) = 30.09757289119761
+Iter 58: V_size = 541, Converged = 413, ‖r‖ (largest λ) = 9.724707678045702e-5
+Iter 59: V_size = 675, Converged = 413, ‖r‖ (largest λ) = 17.77885302876664
+Iter 60: V_size = 808, Converged = 414, ‖r‖ (largest λ) = 9.714128697517704e-5
+Iter 61: V_size = 941, Converged = 415, ‖r‖ (largest λ) = 26.66031679368587
+Iter 62: V_size = 263, Converged = 415, ‖r‖ (largest λ) = 0.00011253523201640963
+Iter 63: V_size = 394, Converged = 415, ‖r‖ (largest λ) = 0.00011063601103021921
+Iter 64: V_size = 525, Converged = 415, ‖r‖ (largest λ) = 0.00010886985519720746
+Iter 65: V_size = 656, Converged = 415, ‖r‖ (largest λ) = 0.00010626135491856422
+Iter 66: V_size = 787, Converged = 416, ‖r‖ (largest λ) = 0.00010416130694373636
+Iter 67: V_size = 918, Converged = 416, ‖r‖ (largest λ) = 29.151545962604963
+Iter 68: V_size = 260, Converged = 418, ‖r‖ (largest λ) = 9.98293478209962e-5
+Iter 69: V_size = 390, Converged = 418, ‖r‖ (largest λ) = 32.293549059162416
+Iter 70: V_size = 518, Converged = 418, ‖r‖ (largest λ) = 0.00010427349380103343
+Iter 71: V_size = 646, Converged = 418, ‖r‖ (largest λ) = 0.00010206600087660098
+Iter 72: V_size = 774, Converged = 419, ‖r‖ (largest λ) = 9.994068807801074e-5
+Iter 73: V_size = 902, Converged = 420, ‖r‖ (largest λ) = 30.420582753200424
+Iter 74: V_size = 253, Converged = 421, ‖r‖ (largest λ) = 0.00010244036864341361
+Iter 75: V_size = 379, Converged = 421, ‖r‖ (largest λ) = 26.491839574929756
+Iter 76: V_size = 504, Converged = 421, ‖r‖ (largest λ) = 0.00010074841350168441
+Converged all required eigenvalues (cluster-aware). Iter = 77
+3757.515169 seconds (257.55 M allocations: 12.291 TiB, 0.74% gc time)
+Number of FLOPs: 136693958741804
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_uracil_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×420 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.13687e-13  -7.95808e-13  1.13687e-13  0.0  2.27374e-13  -4.54747e-13  -5.11591e-13  2.27374e-13  1.7053e-13  -3.41061e-13  -2.84217e-13  -2.27374e-13  -7.95808e-13  -1.25056e-12  -1.36424e-12  -1.10845e-12  -2.38742e-12  -1.39266e-12  -6.42331e-12  -3.69482e-12  -7.04858e-12  -2.18847e-12  -3.10649e-11  -1.62146e-11  -3.8213e-11  -1.78915e-11  -2.84217e-14  0.0  4.26326e-14  -4.18083e-11  8.52651e-14  -9.9476e-14  -8.18119e-11  2.84217e-14  2.84217e-14  -1.42109e-14  -4.26326e-14  -1.42109e-14  4.26326e-14  -4.26326e-14  4.26326e-14  -7.10543e-14  2.84217e-14  7.10543e-15  5.68434e-14  -7.10543e-15  -9.9476e-14  -2.13163e-14  0.0  -1.42109e-14  -7.10543e-14  -3.55271e-14  -7.10543e-15  -6.39488e-14  -4.26326e-14  -1.42109e-13  0.0  -3.19744e-14  -1.74083e-13  -1.13687e-13  -1.88294e-13  -1.03029e-13  -3.41061e-13  -2.20268e-13  -3.30402e-13  -3.76588e-13  -5.25802e-13  -4.22773e-13  -6.50147e-13  -1.00187e-12  -8.70415e-13  -8.02913e-13  -3.08376e-12  -1.21148e-12  -2.94875e-12  -2.25953e-12  -2.22755e-12  -2.69296e-12  -3.9293e-12  -2.08189e-12  -4.8459e-12  -7.40386e-12  -4.33431e-12  -2.99494e-12  -5.39302e-12  -6.84253e-12  -9.49285e-12  -9.2939e-12  -7.97584e-12  -5.3717e-12  -1.04841e-11  -9.63141e-12  -7.15872e-12  -1.21378e-11  -1.30651e-11  -2.38103e-11  -1.13136e-11  -1.32889e-11  -1.3511e-11  -2.22489e-11  -2.82689e-11  -1.22249e-11  -1.84208e-11  -1.59339e-11  -1.54579e-11  -4.49294e-11  -2.54019e-11  -3.12035e-11  -3.41842e-11  -4.57305e-11  -3.45413e-11  -3.56373e-11  -8.97931e-11  -7.04343e-11  -6.33591e-11  -4.92797e-11  -9.50653e-11  -5.34826e-11  -5.72147e-11  -6.77378e-11  -8.21103e-11  -6.06057e-11  -1.07942e-10  -1.1684e-10  -9.66622e-11  -9.28289e-11  -1.49639e-10  -9.65485e-11  -1.81066e-10  -9.20863e-11  -1.3822e-10  -8.70255e-11  -1.83482e-10  -3.06692e-10  -2.28585e-10  -1.72806e-10  -3.49573e-10  -6.75016e-14  -2.64077e-10  -5.68434e-14  -6.75016e-14  -8.70415e-14  -1.95399e-13  -1.40332e-13  -2.16716e-13  -4.54747e-13  -3.55271e-13  -5.00933e-13  -4.44089e-13  -4.74287e-13  -8.94396e-13  -5.80869e-13  -1.65734e-12  -1.49303e-12  -2.33857e-12  -2.65832e-12  -3.93552e-12  -3.7863e-12  -3.28715e-12  -3.30491e-12  -2.96829e-12  -5.14255e-12  -2.7196e-12  -4.36451e-12  -4.55369e-12  -6.1986e-12  -5.08926e-12  -7.26086e-12  -1.72262e-11  -1.89591e-11  -1.12097e-11  -1.01794e-11  -1.07683e-11  -1.55076e-11  -2.20881e-11  -1.92326e-11  -8.1295e-12  -1.58389e-11  -1.30234e-11  -1.94778e-11  -2.43174e-11  -4.08065e-11  -1.83551e-11  -3.92282e-11  -2.56719e-11  -2.06857e-11  -4.08793e-11  -5.90639e-11  -4.81144e-11  -4.02949e-11  -4.56097e-11  -6.0143e-11  -6.3249e-11  -7.34106e-11  -6.24594e-11  -8.18234e-11  -8.92166e-11  -7.54943e-11  -9.25926e-11  -1.5245e-10  -6.03482e-11  -9.55636e-11  -8.57066e-11  -8.34346e-11  -1.86454e-10  -2.28702e-10  -1.74348e-10  -1.77473e-10  -3.39315e-10  -3.1033e-10  -2.99281e-10  -2.55109e-10  -3.20843e-10  -5.79917e-10  -3.62642e-10  -3.89252e-10  -5.37987e-10  -5.63065e-10  -3.24718e-10  -6.30426e-10  -6.44592e-10  -4.63164e-10  -8.75324e-10  -6.39432e-10  -4.9055e-10  -1.21046e-9  -1.09793e-9  -8.43412e-10  -7.89893e-10  -2.16284e-9  -1.17457e-9  -1.81835e-9  -1.38158e-9  -1.14891e-9  -2.32435e-9  -2.2093e-9  -1.62101e-9  -2.64375e-9  -9.45387e-10  -1.76901e-9  -3.03242e-9  -2.84919e-9  -3.06184e-9  -3.45396e-9  -3.47915e-9  -3.47906e-9  -2.83285e-11  -2.99125e-11  -5.16667e-11  -4.34244e-11  -2.03027e-10  -2.21787e-10  -2.81597e-12  -7.12808e-12  -6.82368e-10  -8.69331e-10  -4.43865e-10  -3.02576e-9  -3.6696e-10  -2.68702e-10  -1.22605e-10  -2.73201e-10  -9.53955e-10  -8.518e-10  -8.17575e-10  -1.46502e-9  -3.8707e-10  -1.46095e-9  -5.356e-10  -1.54657e-9  -4.79299e-10  -1.44179e-9  -2.04403e-9  -5.19925e-10  -1.43392e-10  -2.5023e-9  -8.63667e-10  -5.70121e-10  -2.13192e-9  -1.65693e-9  -7.90669e-10  -1.55641e-9  -9.74825e-10  -9.448e-11  -2.07214e-10  -4.2059e-10  -2.31613e-10  -7.78748e-10  -4.41533e-10  -2.51492e-10  -5.54179e-10  -9.34104e-10  -7.09136e-10  -5.28551e-10  -2.76424e-10  -9.0098e-10  -4.04388e-10  -3.99868e-10  -4.00384e-10  -7.1866e-10  -1.33912e-9  -1.60717e-10  -1.01612e-9  -7.03874e-10  -8.05678e-10  -5.70794e-10  -1.10541e-9  -7.27279e-10  -2.68839e-10  -2.48008e-9  -3.20223e-10  -1.02589e-9  -3.04829e-9  -1.6858e-9  -8.42625e-10  -4.6474e-10  -4.53974e-9  -1.90253e-9  -5.92353e-10  -2.53739e-9  -2.28839e-9  -6.73626e-11  -1.64935e-9  -2.59254e-9  -2.43416e-9  -3.61095e-9  -3.74296e-9  -4.6109e-9  -1.31888e-10  -1.04781e-11  -5.46624e-9  -3.34066e-11  -3.6696e-10  -1.67803e-10  -2.22006e-10  -3.48077e-10  -3.06105e-10  -2.31053e-10  -4.85281e-10  -4.74028e-9  -2.07051e-10  -2.29213e-10  -6.14377e-11  -1.16206e-10  -9.00862e-11  -1.75928e-11  -1.80124e-10  -3.36254e-10  -3.99037e-10  -1.99117e-10  -2.2428e-10  -1.39478e-10  -5.46905e-10  -1.68451e-9  -3.31464e-9  -6.83595e-10  -2.30136e-9  -3.03298e-9  -4.32361e-9  -3.52556e-9  -5.14364e-9  -5.77857e-9  -4.78478e-9  -5.45396e-9  -5.09968e-9  -5.54677e-9  -5.23872e-9  -4.50141e-9  -6.00227e-9  -5.43571e-9  -3.71777e-9  -6.45107e-9  -2.86825e-9  -5.64547e-9  -4.37876e-9  -3.62193e-9  -3.19361e-9  -5.58525e-9  -4.46749e-9  -3.64862e-9  -3.37579e-9  -5.65984e-9  -4.44364e-9  -5.16024e-9  -6.7059e-9  -6.62915e-9  -4.96265e-9  -5.64316e-9  -5.12082e-9  -6.26894e-9  -6.11936e-9  -5.01454e-9  -6.58929e-9  -6.96261e-9  -7.08295e-9  -5.88257e-9  -6.21017e-9  -4.66915e-9  -7.16616e-9  -6.25944e-9  -7.61171e-9  -6.85775e-9  -7.37487e-9  -7.44055e-9  -7.44077e-9  -7.43845e-9  -7.4316e-9  -7.27943e-9  -7.70829e-9  -7.15273e-9  -7.60932e-9  -7.01343e-9  -7.73203e-9  -7.64568e-9  -8.11619e-9  -8.01712e-9  -7.75483e-9  -8.26253e-9  -8.03268e-9  -7.94929e-9
+420 Eigenvalues converges, out of 420 requested.
+Running with Naux = 1500
+Starting Davidson with n_aux = 1500, l_buffer = 546, lc = 422, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 375, Converged = 0, ‖r‖ (largest λ) = 1.0027947181686145
+Iter 2: V_size = 750, Converged = 0, ‖r‖ (largest λ) = 0.00029865181685458596
+Iter 3: V_size = 1125, Converged = 74, ‖r‖ (largest λ) = 2.98566443277943e-8
+Iter 4: V_size = 1500, Converged = 257, ‖r‖ (largest λ) = 349.49570614995275
+Iter 5: V_size = 567, Converged = 341, ‖r‖ (largest λ) = 5.709163356295018e-8
+Iter 6: V_size = 856, Converged = 344, ‖r‖ (largest λ) = 121.79626618360452
+Iter 7: V_size = 1061, Converged = 345, ‖r‖ (largest λ) = 30.86407539609105
+Iter 8: V_size = 1263, Converged = 355, ‖r‖ (largest λ) = 28.96880529663177
+Iter 9: V_size = 1464, Converged = 358, ‖r‖ (largest λ) = 62.34782225694388
+Iter 10: V_size = 379, Converged = 364, ‖r‖ (largest λ) = 3.4888951747163206e-5
+Iter 11: V_size = 567, Converged = 364, ‖r‖ (largest λ) = 43.94191793761975
+Iter 12: V_size = 749, Converged = 375, ‖r‖ (largest λ) = 4.8188701297766204e-5
+Iter 13: V_size = 931, Converged = 375, ‖r‖ (largest λ) = 51.586432157904824
+Iter 14: V_size = 1102, Converged = 391, ‖r‖ (largest λ) = 5.3156018216743906e-5
+Iter 15: V_size = 1273, Converged = 391, ‖r‖ (largest λ) = 76.88329316397132
+Iter 16: V_size = 1428, Converged = 392, ‖r‖ (largest λ) = 6.719770647181441e-5
+Iter 17: V_size = 309, Converged = 392, ‖r‖ (largest λ) = 0.003004000590743708
+Iter 18: V_size = 463, Converged = 392, ‖r‖ (largest λ) = 0.002614276790817843
+Iter 19: V_size = 617, Converged = 392, ‖r‖ (largest λ) = 0.00233405764398371
+Iter 20: V_size = 771, Converged = 392, ‖r‖ (largest λ) = 0.001869922870613105
+Iter 21: V_size = 925, Converged = 392, ‖r‖ (largest λ) = 0.001553410000478306
+Iter 22: V_size = 1079, Converged = 392, ‖r‖ (largest λ) = 0.0013184630515718225
+Iter 23: V_size = 1233, Converged = 392, ‖r‖ (largest λ) = 0.0011305827136694098
+Iter 24: V_size = 1387, Converged = 392, ‖r‖ (largest λ) = 0.000925347557323262
+Iter 25: V_size = 308, Converged = 392, ‖r‖ (largest λ) = 0.0007723491447783421
+Iter 26: V_size = 462, Converged = 392, ‖r‖ (largest λ) = 0.0007203906170885444
+Iter 27: V_size = 616, Converged = 392, ‖r‖ (largest λ) = 0.0006622575705676433
+Iter 28: V_size = 770, Converged = 392, ‖r‖ (largest λ) = 0.000567708311247679
+Iter 29: V_size = 924, Converged = 392, ‖r‖ (largest λ) = 0.0005119163057628239
+Iter 30: V_size = 1078, Converged = 392, ‖r‖ (largest λ) = 0.0004359431715561445
+Iter 31: V_size = 1232, Converged = 392, ‖r‖ (largest λ) = 0.00037749117176049237
+Iter 32: V_size = 1386, Converged = 392, ‖r‖ (largest λ) = 0.00032722352983296073
+Iter 33: V_size = 308, Converged = 392, ‖r‖ (largest λ) = 0.0002871142725569664
+Iter 34: V_size = 462, Converged = 392, ‖r‖ (largest λ) = 0.00026943814439460423
+Iter 35: V_size = 616, Converged = 392, ‖r‖ (largest λ) = 0.0002546483840679307
+Iter 36: V_size = 770, Converged = 392, ‖r‖ (largest λ) = 0.00022596030240845078
+Iter 37: V_size = 924, Converged = 392, ‖r‖ (largest λ) = 0.0001995135226083783
+Iter 38: V_size = 1078, Converged = 392, ‖r‖ (largest λ) = 0.00017492726675390126
+Iter 39: V_size = 1232, Converged = 392, ‖r‖ (largest λ) = 0.00015344712723436592
+Iter 40: V_size = 1386, Converged = 392, ‖r‖ (largest λ) = 0.0001320840908253073
+Iter 41: V_size = 308, Converged = 392, ‖r‖ (largest λ) = 0.0001105430735200754
+Iter 42: V_size = 462, Converged = 392, ‖r‖ (largest λ) = 0.00010116793071489878
+Iter 43: V_size = 616, Converged = 393, ‖r‖ (largest λ) = 9.391397152464388e-5
+Iter 44: V_size = 770, Converged = 393, ‖r‖ (largest λ) = 0.00010485601851652733
+Iter 45: V_size = 923, Converged = 394, ‖r‖ (largest λ) = 9.097052764880288e-5
+Iter 46: V_size = 1076, Converged = 395, ‖r‖ (largest λ) = 27.21040832280601
+Iter 47: V_size = 1228, Converged = 395, ‖r‖ (largest λ) = 0.00014248323430682427
+Iter 48: V_size = 1379, Converged = 395, ‖r‖ (largest λ) = 0.00012086961519614739
+Iter 49: V_size = 302, Converged = 396, ‖r‖ (largest λ) = 0.0001074300741998398
+Iter 50: V_size = 453, Converged = 397, ‖r‖ (largest λ) = 22.189911498886385
+Iter 51: V_size = 603, Converged = 397, ‖r‖ (largest λ) = 20.540018143724257
+Iter 52: V_size = 752, Converged = 399, ‖r‖ (largest λ) = 8.905779832057359e-5
+Iter 53: V_size = 901, Converged = 399, ‖r‖ (largest λ) = 55.660024316239074
+Iter 54: V_size = 1048, Converged = 400, ‖r‖ (largest λ) = 9.308793292523709e-5
+Iter 55: V_size = 1195, Converged = 400, ‖r‖ (largest λ) = 22.653411168170532
+Iter 56: V_size = 1341, Converged = 405, ‖r‖ (largest λ) = 9.195214542166565e-5
+Iter 57: V_size = 1487, Converged = 405, ‖r‖ (largest λ) = 36.49368422621698
+Iter 58: V_size = 282, Converged = 405, ‖r‖ (largest λ) = 0.00010463918576772453
+Iter 59: V_size = 423, Converged = 408, ‖r‖ (largest λ) = 9.86145357065758e-5
+Iter 60: V_size = 564, Converged = 408, ‖r‖ (largest λ) = 24.136268194033565
+Iter 61: V_size = 702, Converged = 412, ‖r‖ (largest λ) = 9.289657260622044e-5
+Iter 62: V_size = 840, Converged = 412, ‖r‖ (largest λ) = 45.02196832805083
+Iter 63: V_size = 974, Converged = 413, ‖r‖ (largest λ) = 0.00015153164173431437
+Iter 64: V_size = 1108, Converged = 413, ‖r‖ (largest λ) = 18.622317010344368
+Iter 65: V_size = 1241, Converged = 414, ‖r‖ (largest λ) = 0.00013359698246930127
+Iter 66: V_size = 1374, Converged = 416, ‖r‖ (largest λ) = 43.69463472788238
+Iter 67: V_size = 262, Converged = 416, ‖r‖ (largest λ) = 0.00011660731358973747
+Iter 68: V_size = 392, Converged = 417, ‖r‖ (largest λ) = 0.0001127169020734564
+Iter 69: V_size = 522, Converged = 417, ‖r‖ (largest λ) = 19.613970233412335
+Iter 70: V_size = 651, Converged = 417, ‖r‖ (largest λ) = 0.0001041529694956621
+Iter 71: V_size = 780, Converged = 418, ‖r‖ (largest λ) = 0.00010048266143157321
+Iter 72: V_size = 909, Converged = 418, ‖r‖ (largest λ) = 23.750902141176017
+Iter 73: V_size = 1037, Converged = 421, ‖r‖ (largest λ) = 9.331725490477849e-5
+Iter 74: V_size = 1165, Converged = 421, ‖r‖ (largest λ) = 23.853584842826034
+Converged all required eigenvalues (cluster-aware). Iter = 75
+5060.431966 seconds (363.57 M allocations: 17.314 TiB, 0.77% gc time)
+Number of FLOPs: 177894430641244
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_uracil_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×420 adjoint(::Vector{Float64}) with eltype Float64:
+ -3.41061e-13  -1.13687e-13  1.02318e-12  -3.41061e-13  -3.41061e-13  -3.41061e-13  -5.11591e-13  2.84217e-13  0.0  -1.13687e-13  -2.84217e-13  5.68434e-14  0.0  1.13687e-13  8.52651e-14  8.52651e-14  0.0  -5.68434e-13  -1.42109e-13  -1.25056e-12  -1.7053e-13  -1.22213e-12  -6.25278e-13  -5.68434e-13  -4.54747e-13  -5.03064e-12  -1.27898e-13  -4.40821e-11  -4.91696e-12  -5.8975e-12  -2.32774e-11  -3.20739e-11  -3.12639e-13  7.10543e-14  5.68434e-14  -3.49587e-12  -9.9277e-11  -3.9222e-12  -1.3253e-10  -2.95586e-12  -9.18021e-12  -1.19996e-10  -9.84812e-12  -1.8396e-11  -5.85487e-11  -1.14753e-11  1.13687e-13  -3.51505e-11  -1.39337e-10  -1.62999e-11  -2.36327e-11  -2.75264e-11  -2.09823e-11  -3.13847e-11  -5.2367e-11  -4.81322e-11  -7.40812e-11  -3.55271e-15  -5.09921e-11  -1.10738e-10  -3.10958e-10  -1.49189e-10  -7.18856e-11  -8.0945e-11  -8.07638e-11  -1.37803e-10  2.13163e-14  -3.21688e-10  -1.51058e-10  -2.09006e-10  -1.6173e-10  -1.84485e-10  -3.30324e-10  -4.12047e-10  -4.51763e-10  -3.44251e-10  -3.19744e-14  -4.66493e-10  -4.79766e-10  -4.3611e-10  4.26326e-14  -2.13163e-14  -5.49008e-10  2.4869e-14  -1.42109e-14  -7.10543e-15  -7.10543e-15  1.42109e-14  -5.32907e-14  -7.10543e-15  -1.06581e-14  -1.06581e-14  1.77636e-14  1.77636e-14  -2.4869e-14  -1.95399e-14  7.10543e-15  -1.59872e-14  -3.37508e-14  -3.55271e-14  1.95399e-14  -5.32907e-15  1.59872e-14  -3.01981e-14  1.59872e-14  -3.55271e-15  -5.32907e-15  -2.66454e-14  -1.95399e-14  0.0  -1.42109e-14  1.77636e-14  -2.84217e-14  -2.13163e-14  1.77636e-15  -1.59872e-14  -2.84217e-14  -2.66454e-14  1.77636e-15  -3.73035e-14  -1.77636e-14  -1.59872e-14  -2.30926e-14  -2.4869e-14  -3.55271e-15  -3.01981e-14  -5.32907e-14  -2.30926e-14  -2.84217e-14  -1.95399e-14  -7.10543e-15  -4.9738e-14  -5.32907e-14  -5.86198e-14  -7.28306e-14  -8.17124e-14  -5.32907e-14  -6.03961e-14  -5.68434e-14  -4.26326e-14  -3.55271e-14  -1.65201e-13  -1.45661e-13  -8.88178e-14  -1.86517e-13  -1.74794e-12  -1.71241e-12  -1.81721e-12  -6.19949e-13  -2.60592e-12  -4.6807e-13  -3.8014e-13  -1.14753e-12  -2.42384e-12  -2.87681e-12  -7.53442e-12  -2.83951e-12  -4.65139e-12  -1.30651e-12  -2.69385e-12  -8.29559e-12  -2.10854e-12  -1.44951e-12  -4.73399e-12  -1.45119e-11  -3.85381e-12  -2.49401e-12  -2.70806e-12  -2.95319e-12  -4.82991e-12  -4.30855e-12  -1.02895e-11  -8.41016e-12  -8.88178e-16  -5.60263e-12  -5.25624e-12  -4.52349e-12  -4.98268e-12  -2.05169e-11  -5.82556e-12  -1.0564e-11  -1.39702e-11  -9.60743e-12  -1.06644e-11  -2.86713e-11  -2.45226e-11  -8.59224e-12  1.77636e-15  -9.31344e-12  -1.27729e-11  -1.15774e-11  -2.55298e-11  -1.09655e-11  -1.7808e-11  -1.84146e-11  -2.09095e-11  -2.06253e-11  -1.66054e-11  -2.00417e-11  -2.28981e-11  -2.94005e-11  -1.22213e-11  -1.57883e-11  -2.56923e-11  -1.93436e-11  -8.88178e-15  -3.30695e-11  -6.52793e-11  -4.14024e-11  -7.03757e-11  -5.25251e-11  -5.77511e-11  -6.36264e-11  -5.20188e-11  -7.17613e-11  -9.80398e-11  -7.29514e-11  -7.99893e-11  -8.05116e-11  -9.60636e-11  -5.61711e-11  -1.60176e-10  -1.36844e-10  -1.07267e-10  -9.57661e-11  -1.72872e-10  -1.83523e-10  -2.46024e-10  -4.19733e-10  -2.44249e-14  -3.64153e-14  -6.57252e-14  -5.83005e-10  -2.82837e-10  -2.42744e-10  -2.24802e-10  -3.91279e-10  -2.88847e-10  -1.75298e-10  -7.07971e-10  -4.45894e-10  -2.38425e-10  -7.63833e-14  -7.06102e-14  -4.66294e-14  -4.90599e-10  -4.52768e-10  -1.19904e-13  -6.52705e-10  -4.14544e-10  -7.54353e-10  -8.86389e-10  -6.38021e-10  -7.04142e-10  -8.15762e-10  -5.34119e-10  -1.37224e-13  -1.20827e-9  -2.36255e-13  -2.39364e-13  -1.32973e-9  -7.39309e-10  -9.70346e-10  -1.62912e-9  -9.00651e-10  -9.63699e-10  -1.53324e-9  -5.92415e-13  -9.94255e-10  -1.51447e-9  -1.3251e-9  -1.06004e-12  -6.81677e-13  -6.21281e-13  -9.579e-13  -8.15792e-13  -6.64357e-13  -9.69891e-13  -1.27232e-12  -1.4686e-12  -1.09068e-12  -6.94111e-13  -9.8499e-13  -1.62403e-12  -9.9698e-13  -1.0747e-12  -1.4988e-12  -9.90319e-13  -2.18581e-12  -2.0175e-12  -1.35358e-12  -1.86295e-12  -1.6569e-12  -2.3137e-12  -2.15827e-12  -2.67386e-12  -1.73639e-12  -2.20401e-12  -3.72058e-12  -6.78568e-12  -7.88614e-12  -3.78453e-12  -8.09708e-12  -2.81002e-11  -1.95324e-11  -2.85314e-11  -2.5794e-11  -1.70024e-11  -2.20366e-11  -1.01834e-11  -2.92473e-11  -1.63407e-11  -3.39146e-11  -2.40514e-11  -4.61937e-11  -4.0183e-11  -3.89546e-11  -7.40266e-11  -1.61636e-10  -1.43421e-10  -6.14748e-11  -1.87586e-10  -4.57718e-11  -2.60876e-10  -1.16872e-10  -1.60352e-10  -1.59546e-10  -7.15805e-11  -2.82289e-10  -5.26428e-10  -6.74441e-10  -6.66263e-10  -9.25705e-10  -6.03107e-10  -3.61886e-10  -2.33315e-9  -1.06359e-9  -1.76866e-9  -1.95542e-9  -3.50062e-9  -8.3185e-11  -1.32412e-10  -3.83742e-9  -1.62534e-10  -1.0081e-10  -3.37705e-11  -4.69857e-11  -2.28398e-10  -1.89553e-10  -1.27572e-10  -4.52976e-10  -4.07605e-9  -2.83094e-9  -1.1873e-9  -1.65551e-9  -1.66788e-9  -1.90517e-9  -7.19073e-10  -1.13664e-9  -3.06512e-9  -3.22937e-9  -3.50163e-9  -3.93671e-9  -3.64977e-9  -1.46429e-9  -4.19248e-9  -4.39693e-9  -2.27421e-9  -3.80205e-9  -3.17994e-9  -3.60072e-9  -2.55972e-9  -1.86828e-9  -2.33017e-9  -4.84483e-9  -5.14741e-9  -5.13199e-9  -6.67622e-9  -3.36794e-9  -2.2741e-9  -5.16382e-9  -4.29675e-9  -2.56394e-9  -3.29367e-9  -3.74959e-9  -2.88292e-9  -3.61051e-9  -3.23383e-9  -2.55033e-9  -3.27555e-9  -4.31795e-9  -5.42089e-9  -6.44452e-9  -6.12706e-9  -6.09973e-9  -5.97706e-9  -6.73225e-9  -7.23428e-9  -6.7501e-9  -6.68729e-9  -6.54214e-9  -6.62683e-9  -7.59588e-9  -6.78151e-9  -7.17171e-9  -6.86003e-9  -7.10852e-9  -7.94433e-9  -7.76708e-9  -7.77374e-9  -8.06238e-9  -7.10759e-9  -7.1751e-9  -7.30748e-9  -7.66992e-9  -8.32667e-9  -6.91864e-9  -7.9994e-9  -8.25403e-9  -7.94128e-9
+420 Eigenvalues converges, out of 420 requested.
