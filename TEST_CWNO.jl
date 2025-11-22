@@ -548,7 +548,7 @@ end
 molecule_dict = Dict(
     "formaldehyde" => 50
 )
-Nauxs = [100, 300, 500, 1000, 1500]
+Nauxs = [700, 800, 900, 1000, 1100, 1200]
 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
