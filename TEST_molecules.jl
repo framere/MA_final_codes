@@ -444,7 +444,7 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 100
+        if iter < 15
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -553,12 +553,13 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = OrderedDict(
-    "H2" => 50,
     "formaldehyde" => 30,
     "uracil" => 20
 )
 
-Nauxs = [100, 300, 500, 1000, 1500]
+# "H2" => 50,
+
+Nauxs = [500, 1000, 1500]
 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
@@ -568,5 +569,3 @@ for mol in keys(molecule_dict)
         main(mol, nev, Naux, 100)
     end
 end
-
-
