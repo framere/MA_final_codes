@@ -444,7 +444,7 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 15
+        if iter < 10
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
