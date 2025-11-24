@@ -360,14 +360,14 @@ function davidson(
         if size(V, 2) + n_b_hat > n_aux && n_c > 0
             max_new_vectors = n_aux - size(X_nc, 2)
             T_hat = T_hat[:, 1:min(n_b_hat, max_new_vectors)]
-            extra_idx = all_idxs[n_b + 1 + nevf -n_c : n_b + nevf]
+            extra_idx = all_idxs[(n_b + 1 + nevf - n_c) : (n_b + nevf)]
             V = hcat(X_nc, T_hat, A[:, extra_idx])
         elseif size(V, 2) + n_b_hat > n_aux || n_b_hat == 0 
             max_new_vectors = n_aux - size(X_nc, 2)
             T_hat = T_hat[:, 1:min(n_b_hat, max_new_vectors)]
             V = hcat(X_nc, T_hat)
         elseif n_c>0
-            extra_idx = all_idxs[n_b + 1 + nevf -n_c : n_b + nevf]
+            extra_idx = all_idxs[(n_b + 1 + nevf - n_c) : (n_b + nevf)]
                 V = hcat(V, T_hat, A[:, extra_idx])
         else
             V = hcat(V, T_hat)
