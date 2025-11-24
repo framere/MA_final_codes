@@ -251,29 +251,42 @@ function davidson(
     history_window = 5        # keep at most this many residual history entries per tracked ritz
 
     # helper to find best match for a lambda among existing ritz_history keys
-    function find_best_match(λ::Float64)
-        best_id = nothing
-        best_dist = Inf
-        for (id, data) in ritz_history
-            last_lambda = data.lambda_hist[end]
-            dist = abs(last_lambda - λ)
-            if dist < best_dist
-                best_dist = dist
-                best_id = id
-            end
+function find_best_match(λ::Float64)
+    best_id = nothing
+    best_dist = Inf
+
+    for (id, data) in ritz_history
+        # skip entries with empty history
+        if isempty(data.lambda_hist)
+            continue
         end
-        # accept only if close enough relative to magnitude
-        if best_id !== nothing
-            # relative tolerance check to avoid spurious matches when values are tiny
-            denom = max(abs(λ), abs(ritz_history[best_id].lambda_hist[end], 1.0))
-            if best_dist / denom < max(match_tol, 1e-8)
-                return best_id
-            else
-                return nothing
-            end
+
+        last_lambda = data.lambda_hist[end]
+        dist = abs(last_lambda - λ)
+
+        if dist < best_dist
+            best_dist = dist
+            best_id = id
         end
+    end
+
+    if best_id === nothing
         return nothing
     end
+
+    last_lambda = ritz_history[best_id].lambda_hist[end]
+
+    # Corrected denom expression
+    denom = max(abs(λ), abs(last_lambda), 1.0)
+
+    # relative tolerance check
+    if best_dist / denom < max(match_tol, 1e-8)
+        return best_id
+    else
+        return nothing
+    end
+end
+
 
     # Ensure V is full rank / orthonormal initially
     if size(V,2) == 0
