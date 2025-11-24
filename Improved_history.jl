@@ -251,41 +251,41 @@ function davidson(
     history_window = 5        # keep at most this many residual history entries per tracked ritz
 
     # helper to find best match for a lambda among existing ritz_history keys
-function find_best_match(λ::Float64)
-    best_id = nothing
-    best_dist = Inf
+    function find_best_match(λ::Float64)
+        best_id = nothing
+        best_dist = Inf
 
-    for (id, data) in ritz_history
-        # skip entries with empty history
-        if isempty(data.lambda_hist)
-            continue
+        for (id, data) in ritz_history
+            # skip entries with empty history
+            if isempty(data.lambda_hist)
+                continue
+            end
+
+            last_lambda = data.lambda_hist[end]
+            dist = abs(last_lambda - λ)
+
+            if dist < best_dist
+                best_dist = dist
+                best_id = id
+            end
         end
 
-        last_lambda = data.lambda_hist[end]
-        dist = abs(last_lambda - λ)
+        if best_id === nothing
+            return nothing
+        end
 
-        if dist < best_dist
-            best_dist = dist
-            best_id = id
+        last_lambda = ritz_history[best_id].lambda_hist[end]
+
+        # Corrected denom expression
+        denom = max(abs(λ), abs(last_lambda), 1.0)
+
+        # relative tolerance check
+        if best_dist / denom < max(match_tol, 1e-8)
+            return best_id
+        else
+            return nothing
         end
     end
-
-    if best_id === nothing
-        return nothing
-    end
-
-    last_lambda = ritz_history[best_id].lambda_hist[end]
-
-    # Corrected denom expression
-    denom = max(abs(λ), abs(last_lambda), 1.0)
-
-    # relative tolerance check
-    if best_dist / denom < max(match_tol, 1e-8)
-        return best_id
-    else
-        return nothing
-    end
-end
 
 
     # Ensure V is full rank / orthonormal initially
@@ -583,7 +583,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
     if molecule == "H2"
-        accuracy = 1e-5
+        accuracy = 1e-4
     else
         accuracy = 2e-3
     end
