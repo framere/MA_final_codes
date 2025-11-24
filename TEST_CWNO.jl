@@ -546,15 +546,15 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = Dict(
-    "formaldehyde" => 200
+    "formaldehyde" => [10, 50, 100, 200]
 )
-Nauxs = [800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400]
 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
-    for Naux in Nauxs
-        println("Running with Naux = $Naux")
-        nev = molecule_dict[mol]*occupied_orbitals(mol)
+    for l in molecule_dict[mol]
+        nev = l*occupied_orbitals(mol)
+        Naux = 4 * nev
+        println("\n--- Running Davidson for $nev eigenvalues (Naux = $Naux) ---")
         main(mol, nev, Naux, 100)
     end
 end
