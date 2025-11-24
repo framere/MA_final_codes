@@ -562,7 +562,7 @@ for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
     for l in ls
         nev = l*occupied_orbitals(mol)
-        Naux = nev ÷ molecule_dict[mol]
+        Naux = (200*occupied_orbitals(mol)) ÷ molecule_dict[mol]
         main(mol, nev, Naux, 100)
     end
 end
