@@ -497,7 +497,6 @@ function davidson(
         elseif n_c > 0
             extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
             V = hcat(V, T_hat, A[:, extra_idx])
-
         else
             V = hcat(V, T_hat)
         end

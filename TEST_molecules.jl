@@ -553,19 +553,16 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = OrderedDict(
-    "formaldehyde" => 30,
-    "uracil" => 20
+    "H2" => 1,
+    "formaldehyde" => 2,
+    "uracil" => 4
 )
-
-# "H2" => 50,
-
-Nauxs = [500, 1000, 1500]
-
+ls = [10, 50, 100, 200] 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
-    for Naux in Nauxs
-        println("Running with Naux = $Naux")
-        nev = molecule_dict[mol]*occupied_orbitals(mol)
+    for l in ls
+        nev = l*occupied_orbitals(mol)
+        Naux = nev ÷ molecule_dict[mol]
         main(mol, nev, Naux, 100)
     end
 end
