@@ -526,7 +526,13 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
-    @time Σ, U = davidson(A, V, Naux, l, 0.002, max_iter, all_idxs)
+    if molecule == "H2"
+        accuracy = 1e-5
+    else
+        accuracy = 2e-3
+    end
+
+    @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
 
     idx = sortperm(Σ)
     Σ = abs.(Σ[idx])
