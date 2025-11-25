@@ -615,16 +615,16 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = OrderedDict(
-    "H2" => 1,
+    "H2" => 0.5,
     "formaldehyde" => 2,
     "uracil" => 4
 )
-ls = [10, 50, 100, 200] 
+ls = [10, 50, 100, 200] #10, 50, 100, 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
     for l in ls
         nev = l*occupied_orbitals(mol)
-        Naux = (200*occupied_orbitals(mol)) ÷ molecule_dict[mol]
+        Naux = Int((200*occupied_orbitals(mol)) ÷ molecule_dict[mol])
         main(mol, nev, Naux, 100)
     end
 end

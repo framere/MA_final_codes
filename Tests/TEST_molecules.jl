@@ -527,7 +527,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
     if molecule == "H2"
-        accuracy = 1e-5
+        accuracy = 1e-4
     else
         accuracy = 2e-3
     end

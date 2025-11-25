@@ -422,10 +422,13 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Integer, max_
 end
 
 molecule_dict = OrderedDict(
-    "H2" => 20,
-    "formaldehyde" => 25,
-    "uracil" => 32
+    "uracil" => 25
 )
+
+#    "H2" => 20,
+    # "formaldehyde" => 25,
+
+    
 ls = [10, 50, 100, 200] #10, 50, 100, 200
 for molecule in keys(molecule_dict)
     println("Processing molecule: $molecule")
