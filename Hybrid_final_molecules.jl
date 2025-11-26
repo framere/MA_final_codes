@@ -251,41 +251,41 @@ function davidson(
     history_window = 5        # keep at most this many residual history entries per tracked ritz
 
     # helper to find best match for a lambda among existing ritz_history keys
-function find_best_match(λ::Float64)
-    best_id = nothing
-    best_dist = Inf
+    function find_best_match(λ::Float64)
+        best_id = nothing
+        best_dist = Inf
 
-    for (id, data) in ritz_history
-        # skip entries with empty history
-        if isempty(data.lambda_hist)
-            continue
+        for (id, data) in ritz_history
+            # skip entries with empty history
+            if isempty(data.lambda_hist)
+                continue
+            end
+
+            last_lambda = data.lambda_hist[end]
+            dist = abs(last_lambda - λ)
+
+            if dist < best_dist
+                best_dist = dist
+                best_id = id
+            end
         end
 
-        last_lambda = data.lambda_hist[end]
-        dist = abs(last_lambda - λ)
+        if best_id === nothing
+            return nothing
+        end
 
-        if dist < best_dist
-            best_dist = dist
-            best_id = id
+        last_lambda = ritz_history[best_id].lambda_hist[end]
+
+        # Corrected denom expression
+        denom = max(abs(λ), abs(last_lambda), 1.0)
+
+        # relative tolerance check
+        if best_dist / denom < max(match_tol, 1e-8)
+            return best_id
+        else
+            return nothing
         end
     end
-
-    if best_id === nothing
-        return nothing
-    end
-
-    last_lambda = ritz_history[best_id].lambda_hist[end]
-
-    # Corrected denom expression
-    denom = max(abs(λ), abs(last_lambda), 1.0)
-
-    # relative tolerance check
-    if best_dist / denom < max(match_tol, 1e-8)
-        return best_id
-    else
-        return nothing
-    end
-end
 
 
     # Ensure V is full rank / orthonormal initially
@@ -326,7 +326,7 @@ end
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(n_aux÷4, size(H,1), nu_0 - nevf)
+        nu = min(n_aux÷6, size(H,1), nu_0 - nevf)
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
@@ -499,7 +499,7 @@ end
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 10
+        if iter < 8
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -550,14 +550,17 @@ end
         # --- Orthonormalize & update V ---
         T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
         if size(V, 2) + n_b_hat > n_aux && n_c > 0
-            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)) : (Nlow+nevf)]
+            if size(X_nc, 2) == 0
+                println("Warning: X_nc is empty when rebuilding V, using only T_hat, size = $(size(T_hat)) and extra A columns, size = $(size(A[:, extra_idx])).")
+            end
             V = hcat(X_nc, T_hat, A[:, extra_idx])
 
         elseif size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
             V = hcat(X_nc, T_hat)
 
         elseif n_c > 0
-            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)) : (Nlow+nevf)]
             V = hcat(V, T_hat, A[:, extra_idx])
 
         else
@@ -565,6 +568,12 @@ end
         end
 
         n_b = size(V, 2)
+
+        if size(V, 2)==0
+            println("Warning: V is empty, rebuilding from A columns.")
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)): (Nlow+nevf + Nlow)] # take some extra columns to avoid empty V
+            V = A[:, extra_idx]
+        end
     end
 
     return (Eigenvalues, Ritz_vecs)
@@ -576,7 +585,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     NFLOPs = 0  # reset for each run
 
     filename = "../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
-    Nlow = Naux ÷ 4
+    Nlow = Naux ÷ 6
     A = load_matrix(filename,molecule)
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
@@ -585,7 +594,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     if molecule == "H2"
         accuracy = 1e-5
     else
-        accuracy = 2e-3
+        accuracy = 1e-3
     end
 
     @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
@@ -615,10 +624,12 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = OrderedDict(
-    "H2" => 0.5,
-    "formaldehyde" => 2,
-    "uracil" => 4
+    "formaldehyde" => 2
 )
+
+    # "uracil" => 4, 
+    # "H2" => 0.5
+
 ls = [10, 50, 100, 200] #10, 50, 100, 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
