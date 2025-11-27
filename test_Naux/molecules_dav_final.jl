@@ -5,11 +5,41 @@ using IterativeSolvers
 using LinearMaps
 using DataStructures
 
+mutable struct EVHistory
+    λ::Float64
+    res::Vector{Float64}
+end
+
+# Match Ritz value to existing history (value-based, fuzzy)
+function match_eigenvalue!(histories::Vector{EVHistory}, λ_new::Float64; tol=1e-2)
+    best_idx = nothing
+    best_err = Inf
+
+    for (i, h) in enumerate(histories)
+        err = abs(λ_new - h.λ)/max(abs(λ_new), abs(h.λ))
+        if err < best_err
+            best_err = err
+            best_idx = i
+        end
+    end
+
+    if best_idx !== nothing && best_err < tol
+        histories[best_idx].λ = λ_new   # update stored value
+        return best_idx
+    end
+
+    # Otherwise create a new entry
+    push!(histories, EVHistory(λ_new, Float64[]))
+    return length(histories)
+end
 
 # === Global FLOP counter and helpers ===
 global NFLOPs = 0
 
 include("../../MA_best/FLOP_count.jl")
+
+
+
 
 function correction_equations_minres(A, U, lambdas, R; tol=1e-1, maxiter=100)
     global NFLOPs
@@ -213,71 +243,6 @@ function is_stagnating(hist::Vector{Float64}; tol=0.1, window=2)
     return abs(r_old - r_new) / r_old < tol
 end
 
-# helper to find best match for a lambda among existing ritz_history keys
-function find_best_match(λ::Float64, match_tol::Float64=1e-6)
-    best_id = nothing
-    best_dist = Inf
-
-    for (id, data) in ritz_history
-        # skip entries with empty history
-        if isempty(data.lambda_hist)
-            continue
-        end
-
-        last_lambda = data.lambda_hist[end]
-        dist = abs(last_lambda - λ)
-
-        if dist < best_dist
-            best_dist = dist
-            best_id = id
-        end
-    end
-
-    if best_id === nothing
-        return nothing
-    end
-
-    last_lambda = ritz_history[best_id].lambda_hist[end]
-
-    # Corrected denom expression
-    denom = max(abs(λ), abs(last_lambda), 1.0)
-
-    # relative tolerance check
-    if best_dist / denom < max(match_tol, 1e-8)
-        return best_id
-    else
-        return nothing
-    end
-end
-
-# Helper function to remove locked vectors from tracking
-function remove_locked_id(pos::Int)
-    if haskey(current_pos_to_id, pos)
-        id = current_pos_to_id[pos]
-        # remove only the id (we may have other pos->id mappings for same id in pathological cases)
-        if haskey(ritz_history, id)
-            delete!(ritz_history, id)
-        end
-        # remove mapping
-        delete!(current_pos_to_id, pos)
-    end
-end
-
-# === NEW: Stagnation detection using history (from ritz_history) ===
-function is_stagnating_improved_for_pos(pos::Int; rel_tol=0.1, min_iters=2)
-    # get tracked id for this pos
-    if !haskey(current_pos_to_id, pos)
-        return false
-    end
-    id = current_pos_to_id[pos]
-    if !haskey(ritz_history, id)
-        return false
-    end
-    hist = ritz_history[id].res_hist
-    return is_stagnating(hist; tol=rel_tol, window=min(min_iters, length(hist)))
-end
-
-
 function davidson(
     A::AbstractMatrix{T},
     V::Matrix{T},
@@ -302,14 +267,11 @@ function davidson(
     Ritz_vecs = Matrix{T}(undef, n, 0)
     V_lock = Matrix{T}(undef, n, 0)
 
+
+    residual_histories = EVHistory[]
+
+
     iter = 0
-
-    # Ritz history tracking ===
-    ritz_history = Dict{Int, NamedTuple{(:lambda_hist, :res_hist, :first_iter), Tuple{Vector{Float64}, Vector{Float64}, Int}}}()
-    next_ritz_id = 1
-
-    # parameters for matching and history
-    history_window = 5        # keep at most this many residual history entries per tracked ritz
 
     # Ensure V is full rank / orthonormal initially
     if size(V,2) == 0
@@ -349,7 +311,7 @@ function davidson(
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(n_aux÷6, size(H,1), nu_0 - nevf)
+        nu = min(n_aux÷3, size(H,1), nu_0 - nevf)
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
@@ -377,46 +339,20 @@ function davidson(
         R_sorted = R[:, sorted_indices]
         norms_sorted = norms[sorted_indices]
 
-        # === robust matching of current ritzs to tracked IDs by lambda closeness ===
-        # We'll build mapping current_pos -> ritz_id
-        current_pos_to_id = Dict{Int, Int}()
+        # --- Update value-based residual histories ---
+        for (local_idx, rnorm) in enumerate(norms_sorted)
+            λ = Σ_sorted[local_idx]
 
-        # Temporary set to avoid assigning one tracked id to multiple current positions
-        used_ids = Set{Int}()
+            # find or create the history entry for this eigenvalue
+            idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
 
-        for pos in 1:length(Σ_sorted)
-            λ = Σ_sorted[pos]
-            matched_id = find_best_match(λ)
-            if matched_id !== nothing && !(matched_id in used_ids)
-                # assign existing id
-                current_pos_to_id[pos] = matched_id
-                push!(used_ids, matched_id)
-            else
-                # create new id
-                new_id = next_ritz_id
-                next_ritz_id += 1
-                current_pos_to_id[pos] = new_id
-                # initialize history entry
-                ritz_history[new_id] = (lambda_hist = Float64[], res_hist = Float64[], first_iter = iter)
-                push!(used_ids, new_id)
+            # append new residual
+            push!(residual_histories[idx].res, rnorm)
+
+            # keep buffer short
+            if length(residual_histories[idx].res) > 4
+                popfirst!(residual_histories[idx].res)
             end
-        end
-
-        # Append current data to histories (and cap sizes)
-        for pos in 1:length(Σ_sorted)
-            id = current_pos_to_id[pos]
-            data = ritz_history[id]
-            # append
-            push!(data.lambda_hist, Σ_sorted[pos])
-            push!(data.res_hist, norms_sorted[pos])
-            # cap histories
-            if length(data.lambda_hist) > history_window
-                data = (lambda_hist = data.lambda_hist[end-history_window+1:end],
-                        res_hist = data.res_hist[end-history_window+1:end],
-                        first_iter = data.first_iter)
-            end
-            # store back
-            ritz_history[id] = data
         end
 
         current_cutoff = min(lc - nevf, length(Σ_sorted))
@@ -441,7 +377,8 @@ function davidson(
                         V_lock = hcat(V_lock, xvec)
                         push!(locked_sorted_positions, gi)
                         nevf += 1; n_c += 1
-                        remove_locked_id(gi)
+                        hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                        deleteat!(residual_histories, hist_idx)
                     end
                 end
                 continue
@@ -454,7 +391,8 @@ function davidson(
                         V_lock = hcat(V_lock, xvec)
                         push!(locked_sorted_positions, gi)
                         nevf += 1; n_c += 1
-                        remove_locked_id(gi)
+                        hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                        deleteat!(residual_histories, hist_idx)                        
                     end
                 end
             end
@@ -472,7 +410,8 @@ function davidson(
                 V_lock = hcat(V_lock, xvec)
                 push!(locked_sorted_positions, i)
                 nevf += 1; n_c += 1
-                remove_locked_id(i)
+                hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                deleteat!(residual_histories, hist_idx)
             end
         end
 
@@ -507,17 +446,23 @@ function davidson(
             jd_indices = Int[]
 
             for (i_local, pos) in enumerate(keep_positions)
-                # pos is the position in the sorted list; norms_sorted uses that indexing
                 rnorm = norms_sorted[pos]
-                # Use residual history-based test
-                if rnorm >= 1e-2 || is_stagnating_improved_for_pos(pos; rel_tol=0.1, min_iters=2)
+                λ = Σ_sorted[pos]
+
+                # get the history entry for this value
+                hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                hist = residual_histories[hist_idx].res
+
+                stagnating = length(hist) ≥ 2 && is_stagnating(hist; tol=0.1, window=2)
+
+                if stagnating
                     push!(jd_indices, i_local)
                 else
                     push!(dav_indices, i_local)
                 end
             end
-            println("Number of vectors in history for JD/Davidson split: ", length(keep_positions))
             println("Using Davidson for $(length(dav_indices)) vectors, JD for $(length(jd_indices)) vectors.")
+
             # Davidson corrections
             t_dav = zeros(T, n, length(dav_indices))
             for (j, i_local) in enumerate(dav_indices)
@@ -582,7 +527,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     NFLOPs = 0  # reset for each run
 
     filename = "../../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
-    Nlow = Naux ÷ 6
+    Nlow = Naux ÷ 3
     A = load_matrix(filename,molecule)
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
@@ -620,14 +565,14 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-Naux = [400, 500, 600, 700] #600, 1200, 2400
+Nauxs = [600] #600, 1200, 2400
 ls = [50, 100, 200] #10, 50, 100, 
-molecule = "H2" # 'uracil', 'H2',
+molecule = "formaldehyde" # 'uracil', 'H2',
 
-for d in Naux
+for naux in Nauxs
     println("\n=== Running tests for molecule: $molecule ===")
     for l in ls
         nev = l*occupied_orbitals(molecule)
-        main(molecule, nev, d, 100)
+        main(molecule, nev, naux, 100)
     end
 end
