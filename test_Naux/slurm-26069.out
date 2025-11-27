@@ -1,0 +1,11 @@
+ERROR: LoadError: Unknown molecule: uracile
+Stacktrace:
+ [1] error(s::String)
+   @ Base ./error.jl:35
+ [2] occupied_orbitals
+   @ ~/MA_final_code/test_Naux/old_hybrid.jl:108 [inlined]
+ [3] top-level scope
+   @ ~/MA_final_code/test_Naux/old_hybrid.jl:440
+in expression starting at /home/fmereto/MA_final_code/test_Naux/old_hybrid.jl:435
+Processing molecule: uracile
+Running with beta = 32

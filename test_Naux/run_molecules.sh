@@ -8,4 +8,3 @@
 JULIA=/home/fmereto/julia/bin/julia
 
 $JULIA molecules_dav_final.jl
-

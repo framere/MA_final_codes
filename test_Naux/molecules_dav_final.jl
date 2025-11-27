@@ -254,7 +254,7 @@ function davidson(
 
     n = size(A, 1)
     n_b = size(V, 2)
-    l_buffer = max(1, round(Int, l * 1.3))
+    l_buffer = max(1, round(Int, l * 1.5))
     lc = max(1, round(Int, 1.005 * l))
     nu_0 = max(l_buffer, n_b)
     nevf = 0
@@ -363,8 +363,15 @@ function davidson(
         for group in deg_groups
             inside = filter(i -> i <= current_cutoff, group)
             outside = filter(i -> i > current_cutoff, group)
-            res_ok_inside = all(norms_sorted[i] < thresh for i in inside)
-            res_ok = all(norms_sorted[i] < thresh for i in group)
+            res_ok_inside = all(
+                norms_sorted[i] < (2 * sqrt(abs(Σ_sorted[i])) * thresh)
+                for i in inside
+            )
+
+            res_ok = all(
+                norms_sorted[i] < (2 * sqrt(abs(Σ_sorted[i])) * thresh)
+                for i in group
+            )
 
             if isempty(inside)
                 continue
@@ -403,7 +410,9 @@ function davidson(
             if i in locked_sorted_positions
                 continue
             end
-            if norms_sorted[i] < thresh
+            λ = Σ_sorted[i]
+            adaptive_thresh = 2 * sqrt(abs(λ)) * thresh
+            if norms_sorted[i] < adaptive_thresh
                 λ = Σ_sorted[i]; xvec = X_sorted[:, i]
                 push!(Eigenvalues, float(λ))
                 Ritz_vecs = hcat(Ritz_vecs, xvec)
@@ -446,19 +455,23 @@ function davidson(
             jd_indices = Int[]
 
             for (i_local, pos) in enumerate(keep_positions)
-                rnorm = norms_sorted[pos]
-                λ = Σ_sorted[pos]
-
-                # get the history entry for this value
-                hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
-                hist = residual_histories[hist_idx].res
-
-                stagnating = length(hist) ≥ 2 && is_stagnating(hist; tol=0.1, window=2)
-
-                if stagnating
-                    push!(jd_indices, i_local)
-                else
+                if pos > current_cutoff
+                    # Anything beyond lc cutoff → always Davidson used for the buffer vectors. We don't spend so much time computing JD for high-lying states.
                     push!(dav_indices, i_local)
+                else
+                    λ = Σ_sorted[pos]
+
+                    # get the history entry for this value
+                    hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                    hist = residual_histories[hist_idx].res
+
+                    stagnating = length(hist) ≥ 2 && is_stagnating(hist; tol=0.1, window=2)
+
+                    if stagnating
+                        push!(jd_indices, i_local)
+                    else
+                        push!(dav_indices, i_local)
+                    end
                 end
             end
             println("Using Davidson for $(length(dav_indices)) vectors, JD for $(length(jd_indices)) vectors.")
@@ -534,15 +547,16 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
     if molecule == "H2"
-        accuracy = 1e-5
+        accuracy = 1e-4
     else
-        accuracy = 1e-3
+        accuracy = 1e-4
     end
 
     @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
 
     idx = sortperm(Σ)
     Σ = abs.(Σ[idx])
+    Σ = sqrt.(abs.(Σ))  # Take square root of eigenvalues
        
     println("Number of FLOPs: $NFLOPs")
 
@@ -551,7 +565,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     Σexact = read_eigenresults(molecule)
     Σexact = abs.(Σexact)
     idx_exact = sortperm(Σexact, rev=true)
-    Σexact = Σexact[idx_exact]
+    Σexact = sqrt.(abs.(Σexact[idx_exact]))
 
 
     # Display difference
@@ -565,9 +579,9 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-Nauxs = [600] #600, 1200, 2400
+Nauxs = [1000] #600, 1200, 2400
 ls = [50, 100, 200] #10, 50, 100, 
-molecule = "formaldehyde" # 'uracil', 'H2',
+molecule = "uracil" # 'uracil', 'H2', 'formaldehyde'
 
 for naux in Nauxs
     println("\n=== Running tests for molecule: $molecule ===")
