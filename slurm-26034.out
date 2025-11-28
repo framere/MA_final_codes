@@ -1,0 +1,110 @@
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 150
+└   cand3 = 780
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 300
+└   cand3 = 780
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 450
+└   cand3 = 770
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 600
+└   cand3 = 686
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 285
+└   cand3 = 671
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 435
+└   cand3 = 602
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 585
+└   cand3 = 601
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 297
+└   cand3 = 598
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 447
+└   cand3 = 594
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 597
+└   cand3 = 594
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 300
+└   cand3 = 594
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 450
+└   cand3 = 528
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 600
+└   cand3 = 518
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 216
+└   cand3 = 434
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 366
+└   cand3 = 378
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 516
+└   cand3 = 378
+┌ Info: nu candidates
+│   cand1 = 150
+│   cand2 = 0
+└   cand3 = 228
+ERROR: LoadError: ArgumentError: illegal choice of eigenvalue indices (il = 1, iu = 0), which must be between 1 and n = 0
+Stacktrace:
+ [1] syevr!(jobz::Char, range::Char, uplo::Char, A::Matrix{Float64}, vl::Float64, vu::Float64, il::Int64, iu::Int64, abstol::Float64)
+   @ LinearAlgebra.LAPACK ~/julia/share/julia/stdlib/v1.11/LinearAlgebra/src/lapack.jl:5375
+ [2] eigen!
+   @ ~/julia/share/julia/stdlib/v1.11/LinearAlgebra/src/symmetriceigen.jl:16 [inlined]
+ [3] eigen
+   @ ~/julia/share/julia/stdlib/v1.11/LinearAlgebra/src/symmetriceigen.jl:38 [inlined]
+ [4] davidson(A::Hermitian{Float64, Matrix{Float64}}, V::Matrix{Float64}, n_aux::Int64, l::Int64, thresh::Float64, max_iter::Int64, all_idxs::Vector{Int64})
+   @ Main ~/MA_final_code/Hybrid_final_molecules.jl:335
+ [5] macro expansion
+   @ ./timing.jl:581 [inlined]
+ [6] main(molecule::String, l::Int64, Naux::Int64, max_iter::Int64)
+   @ Main ~/MA_final_code/Hybrid_final_molecules.jl:595
+ [7] top-level scope
+   @ ~/MA_final_code/Hybrid_final_molecules.jl:634
+in expression starting at /home/fmereto/MA_final_code/Hybrid_final_molecules.jl:629
+
+=== Running tests for molecule: formaldehyde ===
+Starting Davidson with n_aux = 600, l_buffer = 780, lc = 603, thresh = 0.002, max_iter = 100
+Iter 1: V_size = 150, Converged = 0, ‖r‖ (largest λ) = 0.3215948301616369
+Iter 2: V_size = 300, Converged = 10, ‖r‖ (largest λ) = 2.9291012219754313e-5
+Iter 3: V_size = 450, Converged = 94, ‖r‖ (largest λ) = 334.9397615151334
+Iter 4: V_size = 600, Converged = 109, ‖r‖ (largest λ) = 264.67634760046604
+Iter 5: V_size = 285, Converged = 178, ‖r‖ (largest λ) = 7.119424063635292e-6
+Iter 6: V_size = 435, Converged = 179, ‖r‖ (largest λ) = 162.33120194706203
+Iter 7: V_size = 585, Converged = 182, ‖r‖ (largest λ) = 0.0013348653930940347
+Iter 8: V_size = 297, Converged = 186, ‖r‖ (largest λ) = 0.0014218002201817838
+Iter 9: V_size = 447, Converged = 186, ‖r‖ (largest λ) = 35.58892700222835
+Total MINRES iterations: 2424
+Iter 10: V_size = 597, Converged = 186, ‖r‖ (largest λ) = 0.002113204685794937
+Total MINRES iterations: 2075
+Iter 11: V_size = 300, Converged = 252, ‖r‖ (largest λ) = 0.0019381781448175122
+Total MINRES iterations: 2988
+Iter 12: V_size = 450, Converged = 262, ‖r‖ (largest λ) = 98.74350506818638
+Total MINRES iterations: 1398
+Iter 13: V_size = 600, Converged = 346, ‖r‖ (largest λ) = 35.65085489593976
+Total MINRES iterations: 2350
+Iter 14: V_size = 216, Converged = 402, ‖r‖ (largest λ) = 0.00026678494697310545
+Total MINRES iterations: 3000
+Iter 15: V_size = 366, Converged = 402, ‖r‖ (largest λ) = 119.57259787624234
+Iter 16: V_size = 516, Converged = 552, ‖r‖ (largest λ) = 0.000662360920122179

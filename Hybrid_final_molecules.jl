@@ -202,7 +202,19 @@ function degeneracy_detector(eigenvalues::AbstractVector{T}; tol = 1e-5) where T
     return deg_groups
 end
 
+# --- small helper (your provided stagnation test) ---
+function is_stagnating(hist::Vector{Float64}; tol=0.1, window=2)
+    length(hist) < window && return false
+    r_old, r_new = hist[end-window+1], hist[end]
+    # avoid division by zero
+    if r_old == 0.0
+        return r_new == 0.0
+    end
+    return abs(r_old - r_new) / r_old < tol
+end
+        
 
+# --- Replace your existing davidson(...) with this updated version ---
 function davidson(
     A::AbstractMatrix{T},
     V::Matrix{T},
@@ -229,13 +241,52 @@ function davidson(
 
     iter = 0
 
-    # === NEW: Dictionary-based residual tracking ===
-    # Maps ritz_id -> (eigenvalue, residual_norm, first_iteration_seen)
-    ritz_history = Dict{Int, NamedTuple{(:lambda, :residual, :iter), Tuple{Float64, Float64, Int}}}()
+    # === NEW: richer ritz history tracking ===
+    # ritz_history: Dict{Int, NamedTuple{(:lambda_hist, :res_hist, :first_iter), Tuple{Vector{Float64}, Vector{Float64}, Int}}}
+    ritz_history = Dict{Int, NamedTuple{(:lambda_hist, :res_hist, :first_iter), Tuple{Vector{Float64}, Vector{Float64}, Int}}}()
     next_ritz_id = 1
-    
-    # Map from current sorted position -> ritz_id
-    position_to_id = Dict{Int, Int}()
+
+    # parameters for matching and history
+    match_tol = 1e-6          # tolerance for matching eigenvalues across iterations (can be tuned)
+    history_window = 5        # keep at most this many residual history entries per tracked ritz
+
+    # helper to find best match for a lambda among existing ritz_history keys
+    function find_best_match(λ::Float64)
+        best_id = nothing
+        best_dist = Inf
+
+        for (id, data) in ritz_history
+            # skip entries with empty history
+            if isempty(data.lambda_hist)
+                continue
+            end
+
+            last_lambda = data.lambda_hist[end]
+            dist = abs(last_lambda - λ)
+
+            if dist < best_dist
+                best_dist = dist
+                best_id = id
+            end
+        end
+
+        if best_id === nothing
+            return nothing
+        end
+
+        last_lambda = ritz_history[best_id].lambda_hist[end]
+
+        # Corrected denom expression
+        denom = max(abs(λ), abs(last_lambda), 1.0)
+
+        # relative tolerance check
+        if best_dist / denom < max(match_tol, 1e-8)
+            return best_id
+        else
+            return nothing
+        end
+    end
+
 
     # Ensure V is full rank / orthonormal initially
     if size(V,2) == 0
@@ -275,7 +326,7 @@ function davidson(
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(n_aux÷4, size(H,1), nu_0 - nevf)
+        nu = min(n_aux÷6, size(H,1), nu_0 - nevf)
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
@@ -303,28 +354,46 @@ function davidson(
         R_sorted = R[:, sorted_indices]
         norms_sorted = norms[sorted_indices]
 
-        # === NEW: Update position_to_id mapping ===
-        new_position_to_id = Dict{Int, Int}()
-        
-        for (new_pos, old_pos) in enumerate(sorted_indices)
-            # Check if this old position had an ID assigned
-            if haskey(position_to_id, old_pos)
-                # Reuse the existing ID
-                id = position_to_id[old_pos]
-                new_position_to_id[new_pos] = id
+        # === NEW: robust matching of current ritzs to tracked IDs by lambda closeness ===
+        # We'll build mapping current_pos -> ritz_id
+        current_pos_to_id = Dict{Int, Int}()
+
+        # Temporary set to avoid assigning one tracked id to multiple current positions
+        used_ids = Set{Int}()
+
+        for pos in 1:length(Σ_sorted)
+            λ = Σ_sorted[pos]
+            matched_id = find_best_match(λ)
+            if matched_id !== nothing && !(matched_id in used_ids)
+                # assign existing id
+                current_pos_to_id[pos] = matched_id
+                push!(used_ids, matched_id)
             else
-                # Assign a new ID
-                new_position_to_id[new_pos] = next_ritz_id
+                # create new id
+                new_id = next_ritz_id
                 next_ritz_id += 1
+                current_pos_to_id[pos] = new_id
+                # initialize history entry
+                ritz_history[new_id] = (lambda_hist = Float64[], res_hist = Float64[], first_iter = iter)
+                push!(used_ids, new_id)
             end
         end
-        
-        position_to_id = new_position_to_id
 
-        # === NEW: Update ritz_history with current iteration data ===
+        # Append current data to histories (and cap sizes)
         for pos in 1:length(Σ_sorted)
-            id = position_to_id[pos]
-            ritz_history[id] = (lambda=Σ_sorted[pos], residual=norms_sorted[pos], iter=iter)
+            id = current_pos_to_id[pos]
+            data = ritz_history[id]
+            # append
+            push!(data.lambda_hist, Σ_sorted[pos])
+            push!(data.res_hist, norms_sorted[pos])
+            # cap histories
+            if length(data.lambda_hist) > history_window
+                data = (lambda_hist = data.lambda_hist[end-history_window+1:end],
+                        res_hist = data.res_hist[end-history_window+1:end],
+                        first_iter = data.first_iter)
+            end
+            # store back
+            ritz_history[id] = data
         end
 
         current_cutoff = min(lc - nevf, length(Σ_sorted))
@@ -333,10 +402,14 @@ function davidson(
 
         # Helper function to remove locked vectors from tracking
         function remove_locked_id(pos::Int)
-            if haskey(position_to_id, pos)
-                id = position_to_id[pos]
-                delete!(ritz_history, id)
-                delete!(position_to_id, pos)
+            if haskey(current_pos_to_id, pos)
+                id = current_pos_to_id[pos]
+                # remove only the id (we may have other pos->id mappings for same id in pathological cases)
+                if haskey(ritz_history, id)
+                    delete!(ritz_history, id)
+                end
+                # remove mapping
+                delete!(current_pos_to_id, pos)
             end
         end
 
@@ -408,43 +481,25 @@ function davidson(
         Σ_nc = Σ_sorted[keep_positions]
         R_nc = R_sorted[:, keep_positions]
 
-        # === NEW: Stagnation detection using history ===
-        function is_stagnating_improved(pos::Int; rel_tol=0.1, min_iters=3)
-            if !haskey(position_to_id, pos)
+        # === NEW: Stagnation detection using history (from ritz_history) ===
+        function is_stagnating_improved_for_pos(pos::Int; rel_tol=0.1, min_iters=2)
+            # get tracked id for this pos
+            if !haskey(current_pos_to_id, pos)
                 return false
             end
-            id = position_to_id[pos]
+            id = current_pos_to_id[pos]
             if !haskey(ritz_history, id)
                 return false
             end
-            
-            current_data = ritz_history[id]
-            current_residual = current_data.residual
-            
-            # Check if this vector has been around long enough
-            iters_tracked = iter - current_data.iter + 1
-            if iters_tracked < min_iters
-                return false
-            end
-            
-            # Get residual from 2-3 iterations ago (if available)
-            # We approximate by checking if residual hasn't improved much
-            # A more sophisticated approach would store full history
-            
-            # For now, we use a simple heuristic:
-            # If residual is large and hasn't converged in several iterations, it's stagnating
-            if current_residual > 1e-2 && iters_tracked >= min_iters
-                return true
-            end
-            
-            return false
+            hist = ritz_history[id].res_hist
+            return is_stagnating(hist; tol=rel_tol, window=min(min_iters, length(hist)))
         end
 
         # --- Compute correction vectors ---
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 10
+        if iter < 8
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -454,12 +509,12 @@ function davidson(
             # Hybrid Davidson-JD
             dav_indices = Int[]
             jd_indices = Int[]
-            
+
             for (i_local, pos) in enumerate(keep_positions)
+                # pos is the position in the sorted list; norms_sorted uses that indexing
                 rnorm = norms_sorted[pos]
-                
-                # === NEW: Use improved stagnation detection ===
-                if rnorm >= 1e-2 || is_stagnating_improved(pos)
+                # Use residual history-based test
+                if rnorm >= 1e-2 || is_stagnating_improved_for_pos(pos; rel_tol=0.1, min_iters=2)
                     push!(jd_indices, i_local)
                 else
                     push!(dav_indices, i_local)
@@ -495,14 +550,17 @@ function davidson(
         # --- Orthonormalize & update V ---
         T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
         if size(V, 2) + n_b_hat > n_aux && n_c > 0
-            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)) : (Nlow+nevf)]
+            if size(X_nc, 2) == 0
+                println("Warning: X_nc is empty when rebuilding V, using only T_hat, size = $(size(T_hat)) and extra A columns, size = $(size(A[:, extra_idx])).")
+            end
             V = hcat(X_nc, T_hat, A[:, extra_idx])
 
         elseif size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
             V = hcat(X_nc, T_hat)
 
         elseif n_c > 0
-            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)) : (Nlow+nevf)]
             V = hcat(V, T_hat, A[:, extra_idx])
 
         else
@@ -510,26 +568,33 @@ function davidson(
         end
 
         n_b = size(V, 2)
+
+        if size(V, 2)==0
+            println("Warning: V is empty, rebuilding from A columns.")
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)): (Nlow+nevf + Nlow)] # take some extra columns to avoid empty V
+            V = A[:, extra_idx]
+        end
     end
 
     return (Eigenvalues, Ritz_vecs)
 end
+
 
 function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     global NFLOPs
     NFLOPs = 0  # reset for each run
 
     filename = "../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
-    Nlow = Naux ÷ 4
+    Nlow = Naux ÷ 6
     A = load_matrix(filename,molecule)
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
     if molecule == "H2"
-        accuracy = 1e-5
+        accuracy = 1e-4
     else
-        accuracy = 2e-3
+        accuracy = 1e-3
     end
 
     @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
@@ -559,16 +624,18 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 molecule_dict = OrderedDict(
-    "H2" => 1,
-    "formaldehyde" => 2,
-    "uracil" => 4
+    "formaldehyde" => 2
 )
-ls = [10, 50, 100, 200] 
+
+    # "uracil" => 4, 
+    # "H2" => 0.5
+
+ls = [10, 50, 100, 200] #10, 50, 100, 
 for mol in keys(molecule_dict)
     println("\n=== Running tests for molecule: $mol ===")
     for l in ls
         nev = l*occupied_orbitals(mol)
-        Naux = (200*occupied_orbitals(mol)) ÷ molecule_dict[mol]
+        Naux = Int((200*occupied_orbitals(mol)) ÷ molecule_dict[mol])
         main(mol, nev, Naux, 100)
     end
 end

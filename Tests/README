@@ -1,0 +1,4 @@
+Description:
+1) Hybrid_no_res_hist: It's practically the hybrid from before, but with no convergence tracking and residual history tracking
+2) TEST_CWNO/TEST_molecules: residual tracking but a bad version of it. Not ideal. Same code for the two, but in one you work with the CWNO and in the other with molecules
+

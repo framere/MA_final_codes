@@ -3,6 +3,7 @@ using Printf
 using JLD2
 using IterativeSolvers
 using LinearMaps
+using DataStructures
 
 
 # === Global FLOP counter and helpers ===
@@ -127,11 +128,12 @@ function select_corrections_ORTHO(t_candidates, V, V_lock, η, droptol; maxorth=
     return T_hat[:,1:n_b], n_b
 end
 
+
 function occupied_orbitals(molecule::String)
     if molecule == "H2"
         return 1
     elseif molecule == "formaldehyde"
-        return 10
+        return 6
     elseif molecule == "uracil"
         return 21
     else
@@ -139,30 +141,34 @@ function occupied_orbitals(molecule::String)
     end
 end
 
-function load_matrix(filename::String)
-    N = 29791  
-
-    println("read ", filename)
+function load_matrix(filename::String, molecule::String)
+    if molecule == "H2"
+        N = 11994
+    elseif molecule == "formaldehyde"
+        N = 27643
+    elseif molecule == "uracil"
+        N = 32416
+    else
+        error("Unknown molecule: $molecule")
+    end
+    # println("read ", filename)
     file = open(filename, "r")
     A = Array{Float64}(undef, N * N)
     read!(file, A)
     close(file)
 
     A = reshape(A, N, N)
-    A = Hermitian(A)
-    return -A
+    return Hermitian(A)
 end
 
-
 function read_eigenresults(molecule::String)
-    output_file = "../MA_best/Simulate_CWNO/CWNO_final_tilde_results.jld2"
+    output_file = "../MA_best/Eigenvalues_folder/eigenres_" * molecule * "_RNDbasis1.jld2"
     println("Reading eigenvalues from $output_file")
     data = jldopen(output_file, "r")
     eigenvalues = data["eigenvalues"]
     close(data)
     return sort(eigenvalues)
 end
-
 
 
 function degeneracy_detector(eigenvalues::AbstractVector{T}; tol = 1e-5) where T<:Number
@@ -269,7 +275,7 @@ function davidson(
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(size(H, 2), nu_0 - nevf)
+        nu = min(n_aux÷4, size(H,1), nu_0 - nevf)
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
@@ -438,7 +444,7 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 15
+        if iter < 10
             for (i_local, pos) in enumerate(keep_positions)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -488,38 +494,45 @@ function davidson(
 
         # --- Orthonormalize & update V ---
         T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
-        if size(V, 2) + n_b_hat > n_aux || n_b_hat == 0 || n_c > 0
+        if size(V, 2) + n_b_hat > n_aux && n_c > 0
             extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
             V = hcat(X_nc, T_hat, A[:, extra_idx])
-            n_b = size(V, 2)
+
+        elseif size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
+            V = hcat(X_nc, T_hat)
+
+        elseif n_c > 0
+            extra_idx = all_idxs[Nlow+1+(nevf-n_c) : Nlow+nevf]
+            V = hcat(V, T_hat, A[:, extra_idx])
+
         else
             V = hcat(V, T_hat)
-            n_b = size(V, 2)
         end
+
+        n_b = size(V, 2)
     end
 
     return (Eigenvalues, Ritz_vecs)
 end
 
-
-function main(molecule::String, l::Integer, beta::Integer, factor::Float64, max_iter::Integer)
+function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     global NFLOPs
     NFLOPs = 0  # reset for each run
 
-    filename = "../MA_best/Simulate_CWNO/CWNO_final_tilde.dat"
-
-    # Nlow = max(round(Int, 0.1*l), 16)
-    # Naux = Nlow * beta
-    Nlow = Int(l*factor)
-    Naux = Nlow * beta
-    A = load_matrix(filename)
-    N = size(A, 1)
-
+    filename = "../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
+    Nlow = Naux ÷ 4
+    A = load_matrix(filename,molecule)
     D = diag(A)
     all_idxs = sortperm(abs.(D), rev = true)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
-    @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter, all_idxs)
+    if molecule == "H2"
+        accuracy = 1e-4
+    else
+        accuracy = 2e-3
+    end
+
+    @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
 
     idx = sortperm(Σ)
     Σ = abs.(Σ[idx])
@@ -545,23 +558,17 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Float64, max_
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-
-factors = [0.1] #1,2,3,4,5
-betas = [5] #8,16,32,64, 8,16
-molecules = ["formaldehyde"] #, "uracil"
-ls = [10, 50, 100, 200] #10, 50, 100, 200
-for molecule in molecules
-    println("Processing CWNO matrix")
-    for beta in betas
-        println("Running with N_aux = $beta * N_low")
-        for fac in factors
-            for (i, l) in enumerate(ls)
-                nev = l*occupied_orbitals(molecule)
-                println("Running with l = $nev")
-                main(molecule, nev, beta, fac, 100)
-            end
-            println("Finished factor = $fac")
-            println("=========================================================================")
-        end
+molecule_dict = OrderedDict(
+    "H2" => 1,
+    "formaldehyde" => 2,
+    "uracil" => 4
+)
+ls = [10, 50, 100, 200] 
+for mol in keys(molecule_dict)
+    println("\n=== Running tests for molecule: $mol ===")
+    for l in ls
+        nev = l*occupied_orbitals(mol)
+        Naux = (200*occupied_orbitals(mol)) ÷ molecule_dict[mol]
+        main(mol, nev, Naux, 100)
     end
 end

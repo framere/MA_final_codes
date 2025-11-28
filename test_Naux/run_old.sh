@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH -J new_DAV
+#SBATCH -J NAUX_test
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -p andoria
@@ -7,5 +7,4 @@
 
 JULIA=/home/fmereto/julia/bin/julia
 
-$JULIA Hybrid_final_CWNO.jl
-
+$JULIA old_hybrid.jl

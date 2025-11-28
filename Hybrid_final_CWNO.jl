@@ -3,7 +3,35 @@ using Printf
 using JLD2
 using IterativeSolvers
 using LinearMaps
+using DataStructures
 
+mutable struct EVHistory
+    λ::Float64
+    res::Vector{Float64}
+end
+
+# Match Ritz value to existing history (value-based, fuzzy)
+function match_eigenvalue!(histories::Vector{EVHistory}, λ_new::Float64; tol=1e-2)
+    best_idx = nothing
+    best_err = Inf
+
+    for (i, h) in enumerate(histories)
+        err = abs(λ_new - h.λ)/max(abs(λ_new), abs(h.λ))
+        if err < best_err
+            best_err = err
+            best_idx = i
+        end
+    end
+
+    if best_idx !== nothing && best_err < tol
+        histories[best_idx].λ = λ_new   # update stored value
+        return best_idx
+    end
+
+    # Otherwise create a new entry
+    push!(histories, EVHistory(λ_new, Float64[]))
+    return length(histories)
+end
 
 # === Global FLOP counter and helpers ===
 global NFLOPs = 0
@@ -59,42 +87,72 @@ end
 
 
 function select_corrections_ORTHO(t_candidates, V, V_lock, η, droptol; maxorth=2)
-    ν = size(t_candidates, 2)
+    n, ν = size(t_candidates)
     n_b = 0
-    T_hat = Matrix{eltype(t_candidates)}(undef, size(t_candidates, 1), ν)
+
+    # Preallocate maximum possible output (we trim at the end)
+    T_hat = Matrix{eltype(t_candidates)}(undef, n, ν)
+
+    # Build one combined orthogonalization basis
+    if size(V_lock,2) > 0
+        W = hcat(V, V_lock)
+    else
+        W = V
+    end
+
+    have_W = size(W,2) > 0   # for a cheap check
 
     for i in 1:ν
-        t_i = t_candidates[:, i]
+        t_i = @view t_candidates[:, i]
+
+        # Early norm (avoids unnecessary work)
         old_norm = norm(t_i)
         count_norm_flops(length(t_i))
-        k = 0
+        if old_norm < droptol
+            continue
+        end
 
-        while k < maxorth
-            k += 1
+        # Copy so we don't mutate original
+        t = copy(t_i)
 
-            # Count orthogonalization against V
-            count_orthogonalization_flops(1, size(V,2), size(V,1))
-            for j in 1:size(V, 2)
-                t_i -= V[:, j] * (V[:, j]' * t_i)
+        # === Orthogonalize t against W (block Gram-Schmidt)
+
+        # We allow up to maxorth reorthogonalizations
+        for _ in 1:maxorth
+            if have_W
+                # coeffs = W' * t
+                count_matmul_flops(size(W,2), 1, n)
+                coeffs = W' * t
+                # t .-= W * coeffs
+                count_matmul_flops(n, 1, size(W,2))
+                t .-= W * coeffs
+                count_vec_add_flops(n)
             end
 
-            new_norm = norm(t_i)
-            count_norm_flops(length(t_i))
+            new_norm = norm(t)
+            count_norm_flops(length(t))
             if new_norm > η * old_norm
+                old_norm = new_norm
                 break
             end
             old_norm = new_norm
         end
 
-        if norm(t_i) > droptol
-            count_norm_flops(length(t_i))
-            n_b += 1
-            T_hat[:, n_b] = t_i / norm(t_i)
-            count_vec_scaling_flops(length(t_i))
+        # Final norm check
+        final_norm = norm(t)
+        count_norm_flops(length(t))
+        if final_norm < droptol
+            continue
         end
+
+        # Normalize and accept
+        n_b += 1
+        # division by scalar
+        count_vec_scaling_flops(n)
+        T_hat[:, n_b] = t / final_norm
     end
 
-    return T_hat[:, 1:n_b], n_b
+    return T_hat[:,1:n_b], n_b
 end
 
 function occupied_orbitals(molecule::String)
@@ -123,7 +181,6 @@ function load_matrix(filename::String)
     return -A
 end
 
-
 function read_eigenresults(molecule::String)
     output_file = "../MA_best/Simulate_CWNO/CWNO_final_tilde_results.jld2"
     println("Reading eigenvalues from $output_file")
@@ -132,7 +189,6 @@ function read_eigenresults(molecule::String)
     close(data)
     return sort(eigenvalues)
 end
-
 
 function degeneracy_detector(eigenvalues::AbstractVector{T}; tol = 1e-5) where T<:Number
     perm = eachindex(eigenvalues)
@@ -165,15 +221,16 @@ function degeneracy_detector(eigenvalues::AbstractVector{T}; tol = 1e-5) where T
     return deg_groups
 end
 
-function is_too_close_to_converged(λ, Eigenvalues, tol_rel)
-    for λc in Eigenvalues
-        if abs(λ - λc) ≤ tol_rel * max(abs(λ), abs(λc))
-            return true
-        end
+# --- small helper 
+function is_stagnating(hist::Vector{Float64}; tol=0.1, window=2)
+    length(hist) < window && return false
+    r_old, r_new = hist[end-window+1], hist[end]
+    # avoid division by zero
+    if r_old == 0.0
+        return r_new == 0.0
     end
-    return false
+    return abs(r_old - r_new) / r_old < tol
 end
-
 
 function davidson(
     A::AbstractMatrix{T},
@@ -182,15 +239,15 @@ function davidson(
     l::Integer,
     thresh::Float64,
     max_iter::Integer,
-    stable_thresh::Integer = 3  # kept for API compatibility but not used for locking
-)::Tuple{Vector{Float64}, Matrix{T}} where T<:AbstractFloat
+    all_idxs::Vector{Int})::Tuple{Vector{Float64}, Matrix{T}} where T<:AbstractFloat
 
     n = size(A, 1)
     n_b = size(V, 2)
-    l_buffer = max(1, round(Int, l * 1.3))
-    lc = max(1, round(Int, 1.005 * l))  # we want to converge smallest lc eigenvalues
+    l_buffer = max(1, round(Int, l * 1.5))
+    lc = max(1, round(Int, 1.005 * l))
     nu_0 = max(l_buffer, n_b)
     nevf = 0
+    Nlow = size(V, 2)
 
     println("Starting Davidson with n_aux = $n_aux, l_buffer = $l_buffer, lc = $lc, thresh = $thresh, max_iter = $max_iter")
 
@@ -199,15 +256,11 @@ function davidson(
     Ritz_vecs = Matrix{T}(undef, n, 0)
     V_lock = Matrix{T}(undef, n, 0)
 
-    iter = 0
-    residual_history = Dict{Int, Vector{Float64}}()   # for stagnation detection
 
-    # Helper function: stagnation check
-    function is_stagnating(hist::Vector{Float64}; tol=0.1, window=2)
-        length(hist) < window && return false
-        r_old, r_new = hist[end-window+1], hist[end]
-        return abs(r_old - r_new) / r_old < tol
-    end
+    residual_histories = EVHistory[]
+
+
+    iter = 0
 
     # Ensure V is full rank / orthonormal initially
     if size(V,2) == 0
@@ -216,6 +269,7 @@ function davidson(
 
     while nevf < l_buffer
         iter += 1
+        n_c = 0
         if iter > max_iter
             println("Max iterations ($max_iter) reached without full expected convergence. Returning what we have.")
             return (Eigenvalues, Ritz_vecs)
@@ -224,9 +278,13 @@ function davidson(
         # Orthogonalize against locked vectors
         if size(V_lock, 2) > 0
             V_lock = Matrix(qr(V_lock).Q)
+            count_qr_flops(n, size(V_lock,2))
             for i in 1:size(V_lock, 2)
                 v_lock = V_lock[:, i]
                 for j in 1:size(V, 2)
+                    count_dot_product_flops(n)
+                    count_vec_scaling_flops(n)
+                    count_vec_add_flops(n)
                     V[:, j] .-= v_lock * (v_lock' * V[:, j])
                 end
             end
@@ -234,201 +292,189 @@ function davidson(
 
         # Orthonormalize the basis
         V = Matrix(qr(V).Q)
+        count_qr_flops(n, size(V,2))
 
-        # Rayleigh–Ritz
+        # Rayleigh-Ritz
         AV = A * V
+        count_matmul_flops(n, size(V,2), n)
         H = Hermitian(V' * AV)
+        count_matmul_flops(size(V,2), size(AV,2), n)
 
-        # Compute approximate eigenvalues
-        nu = min(size(H, 2), nu_0 - nevf)
+        nu = min(n_aux÷4, size(H,1), nu_0 - nevf)
+        count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
-
-        # Compute Ritz vectors
         X = V * U
+        count_matmul_flops(n, nu, size(V,2))
 
-        # Residuals R = A X - X Σ  (we will keep sign consistent with your earlier code)
-        R = X .* Σ' .- A * X
-        
-        # residual norms
+        AX = A * X
+        count_matmul_flops(n, nu, n)
+        for col in 1:nu
+            count_vec_scaling_flops(n)
+        end
+        R = X .* Σ' .- AX
+        for col in 1:nu
+            count_vec_add_flops(n)
+        end
+
         norms = vec(norm.(eachcol(R)))
+        for _ in 1:nu
+            count_norm_flops(n)
+        end
 
-        # sort by Ritz value (ascending)
+        # Sort Ritz values ascending
         sorted_indices = sortperm(Σ)
         Σ_sorted = Σ[sorted_indices]
         X_sorted = X[:, sorted_indices]
         R_sorted = R[:, sorted_indices]
         norms_sorted = norms[sorted_indices]
 
-        # how many eigenvalues to consider for convergence this outer iteration
+        # --- Update value-based residual histories ---
+        for (local_idx, rnorm) in enumerate(norms_sorted)
+            λ = Σ_sorted[local_idx]
+
+            # find or create the history entry for this eigenvalue
+            idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+
+            # append new residual
+            push!(residual_histories[idx].res, rnorm)
+
+            # keep buffer short
+            if length(residual_histories[idx].res) > 4
+                popfirst!(residual_histories[idx].res)
+            end
+        end
+
         current_cutoff = min(lc - nevf, length(Σ_sorted))
-
-        # === New: degeneracy-based locking ===
-        # detect degenerate clusters (groups of indices in 1:length(Σ_sorted))
         deg_groups = degeneracy_detector(Σ_sorted; tol = 1e-3)
+        locked_sorted_positions = Int[]
 
-        locked_sorted_positions = Int[]  # positions in the sorted arrays that were locked this iteration
-
-        # Lock entire clusters only if every member has residual norm < thresh
-
+        # --- Lock degenerate clusters ---
         for group in deg_groups
             inside = filter(i -> i <= current_cutoff, group)
-            outside = filter(i -> i >  current_cutoff, group)
+            outside = filter(i -> i > current_cutoff, group)
+            res_ok_inside = all(
+                norms_sorted[i] < (2 * sqrt(abs(Σ_sorted[i])) * thresh)
+                for i in inside
+            )
 
-            # cluster residuals
-            res_ok = all(norms_sorted[i] < thresh for i in group)
-            res_ok_inside = all(norms_sorted[i] < thresh for i in inside)
+            res_ok = all(
+                norms_sorted[i] < (2 * sqrt(abs(Σ_sorted[i])) * thresh)
+                for i in group
+            )
 
-            # Case C: cluster entirely outside region we currently need → skip
             if isempty(inside)
                 continue
-            end
-
-            # Case A: cluster fully inside region of interest
-            if isempty(outside)
+            elseif isempty(outside)
                 if res_ok
                     for gi in group
-                        λ = Σ_sorted[gi]
-                        println("Locking full cluster λ=$λ at sorted positions $(group)")
-                        xvec = X_sorted[:, gi]
+                        λ = Σ_sorted[gi]; xvec = X_sorted[:, gi]
                         push!(Eigenvalues, float(λ))
                         Ritz_vecs = hcat(Ritz_vecs, xvec)
                         V_lock = hcat(V_lock, xvec)
                         push!(locked_sorted_positions, gi)
-                        nevf += 1
+                        nevf += 1; n_c += 1
+                        hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                        deleteat!(residual_histories, hist_idx)
                     end
                 end
                 continue
-            end
-
-            # Case B: cluster partially inside cutoff → SPLIT cluster
-
-            # Are we locking the last eigenvalue(s)?
-            last_eval_requested = (current_cutoff == lc - nevf)
-
-            if last_eval_requested && res_ok
-                # Allowed to lock full cluster
-                for gi in group
-                    λ = Σ_sorted[gi]
-                    println("Locking full (split) cluster λ=$λ at sorted positions $(group)")
-                    xvec = X_sorted[:, gi]
-                    push!(Eigenvalues, float(λ))
-                    Ritz_vecs = hcat(Ritz_vecs, xvec)
-                    V_lock = hcat(V_lock, xvec)
-                    push!(locked_sorted_positions, gi)
-                    nevf += 1
-                end
             else
-                # Lock only the inside portion
                 if res_ok_inside
                     for gi in inside
-                        λ = Σ_sorted[gi]
-                        println("Locking partial cluster element λ=$λ at sorted position $gi")
-                        xvec = X_sorted[:, gi]
+                        λ = Σ_sorted[gi]; xvec = X_sorted[:, gi]
                         push!(Eigenvalues, float(λ))
                         Ritz_vecs = hcat(Ritz_vecs, xvec)
                         V_lock = hcat(V_lock, xvec)
                         push!(locked_sorted_positions, gi)
-                        nevf += 1
+                        nevf += 1; n_c += 1
+                        hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                        deleteat!(residual_histories, hist_idx)                        
                     end
                 end
             end
         end
 
-        # After cluster locking, handle isolated (non-degenerate) eigenvalues individually
+        # --- Lock isolated eigenvalues ---
         for i in 1:current_cutoff
             if i in locked_sorted_positions
                 continue
             end
-            if norms_sorted[i] < thresh
-                λ = Σ_sorted[i]
-                xvec = X_sorted[:, i]
-                println("Locking isolated eigenvalue λ = $λ at sorted position $i")
-
-                # # skip locking if too close to already locked eigenvalues
-                # if is_too_close_to_converged(λ, Eigenvalues, 1e-4)
-                #     println("Skipping locking of λ = $λ due to proximity to already locked eigenvalues.")
-                #     continue   # skip completely
-                # end
-
+            λ = Σ_sorted[i]
+            adaptive_thresh = 2 * sqrt(abs(λ)) * thresh
+            if norms_sorted[i] < adaptive_thresh
+                λ = Σ_sorted[i]; xvec = X_sorted[:, i]
                 push!(Eigenvalues, float(λ))
                 Ritz_vecs = hcat(Ritz_vecs, xvec)
                 V_lock = hcat(V_lock, xvec)
                 push!(locked_sorted_positions, i)
-                nevf += 1
+                nevf += 1; n_c += 1
+                hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                deleteat!(residual_histories, hist_idx)
             end
         end
 
-        # If we've converged required low-lying eigenvalues, return
         if nevf >= lc
             println("Converged all required eigenvalues (cluster-aware). Iter = $iter")
             return (Eigenvalues, Ritz_vecs)
         end
 
-        # Prepare for next iteration: pick non-converged sorted positions to expand
+        # --- Prepare candidates for corrections ---
         all_sorted_positions = collect(1:length(Σ_sorted))
         non_conv_positions = setdiff(all_sorted_positions, locked_sorted_positions)
-
-        # Sort non-converged positions by Ritz value (ascending)
-        non_conv_sorted_positions = sort(non_conv_positions, by = i -> Σ_sorted[i])
-
-        # select most promising candidates (up to buffer size)
+        non_conv_sorted_positions = sort(non_conv_positions, by=i->Σ_sorted[i])
         nbuffer = max(1, l_buffer - nevf)
         keep_positions = non_conv_sorted_positions[1:min(length(non_conv_sorted_positions), nbuffer)]
-
-        # prepare block matrices for the kept candidates
         X_nc = X_sorted[:, keep_positions]
         Σ_nc = Σ_sorted[keep_positions]
         R_nc = R_sorted[:, keep_positions]
 
-        # update residual histories for stagnation detection
-        for (kpos, sp) in enumerate(keep_positions)
-            push!(get!(residual_history, sp, Float64[]), norms_sorted[sp])
-            if length(residual_history[sp]) > 4
-                popfirst!(residual_history[sp])
-            end
-        end
-
-        # === Compute correction vectors ===
+        # --- Compute correction vectors ---
         ϵ = 1e-8
-        if iter < 10
-            # pure Davidson early iterations
-            t = zeros(T, n, size(X_nc, 2))
-            for (i, _) in enumerate(keep_positions)
-                denom = clamp.(Σ_nc[i] .- D, ϵ, Inf)
-                t[:, i] = R_nc[:, i] ./ denom
-                count_vec_add_flops(length(D))
-                count_vec_scaling_flops(length(D))
+        t = zeros(T, n, length(keep_positions))
+
+        if iter < 8
+            for (i_local, pos) in enumerate(keep_positions)
+                denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
+                t[:, i_local] = R_nc[:, i_local] ./ denom
+                count_vec_scaling_flops(n)
             end
         else
-            println("Hybrid Davidson-JD corrections at iteration $iter")
+            # Hybrid Davidson-JD
             dav_indices = Int[]
             jd_indices = Int[]
-            for (i_local, sp) in enumerate(keep_positions)
-                # sp is sorted position in Σ_sorted
-                # decide Davidson vs JD
-                if i_local > current_cutoff
+
+            for (i_local, pos) in enumerate(keep_positions)
+                if pos > current_cutoff
+                    # Anything beyond lc cutoff → always Davidson used for the buffer vectors. We don't spend so much time computing JD for high-lying states.
                     push!(dav_indices, i_local)
                 else
-                    r = norms_sorted[sp]
-                    hist = get(residual_history, sp, Float64[])
-                    if r >= 1e-2 || is_stagnating(hist; tol=0.1, window=2)
+                    λ = Σ_sorted[pos]
+
+                    # get the history entry for this value
+                    hist_idx = match_eigenvalue!(residual_histories, λ; tol=1e-3)
+                    hist = residual_histories[hist_idx].res
+
+                    stagnating = length(hist) ≥ 2 && is_stagnating(hist; tol=0.1, window=2)
+
+                    if stagnating
                         push!(jd_indices, i_local)
                     else
                         push!(dav_indices, i_local)
                     end
                 end
             end
+            println("Using Davidson for $(length(dav_indices)) vectors, JD for $(length(jd_indices)) vectors.")
 
             # Davidson corrections
             t_dav = zeros(T, n, length(dav_indices))
             for (j, i_local) in enumerate(dav_indices)
                 denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 t_dav[:, j] = R_nc[:, i_local] ./ denom
+                count_vec_scaling_flops(n)
             end
 
-            # JD corrections (cheap placeholder)
+            # JD corrections
             if !isempty(jd_indices)
-                # pick corresponding columns
                 X_jd = X_nc[:, jd_indices]
                 Σ_jd = Σ_nc[jd_indices]
                 R_jd = R_nc[:, jd_indices]
@@ -437,62 +483,65 @@ function davidson(
                 t_jd = zeros(T, n, 0)
             end
 
-            # Merge
             t = hcat(t_dav, t_jd)
-        end
-
-        # Orthonormalize and select correction vectors
-        T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
-        if size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
-            # Update search space V if size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
-            max_new_vectors = max(0, n_aux - size(X_nc, 2))
-            use = min(n_b_hat, max_new_vectors)
-
-            if use == 0
-                # fallback: restart with the best X_nc
-                V = copy(X_nc)
-                n_b = size(V, 2)
-            else
-                T_hat = T_hat[:, 1:use]
-                V = hcat(X_nc, T_hat)
-                n_b = size(V, 2)
-            end
-        else
-            V = hcat(V, T_hat)
-            n_b += n_b_hat
         end
 
         # Print iteration info
         i_max = argmin(Σ_sorted)
         norm_largest_Ritz = norms_sorted[i_max]
         println("Iter $iter: V_size = $n_b, Converged = $nevf, ‖r‖ (largest λ) = $norm_largest_Ritz")
+
+        # --- Orthonormalize & update V ---
+        T_hat, n_b_hat = select_corrections_ORTHO(t, V, V_lock, 0.1, 1e-12)
+        if size(V, 2) + n_b_hat > n_aux && n_c > 0
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)) : (Nlow+nevf)]
+            if size(X_nc, 2) == 0
+                println("Warning: X_nc is empty when rebuilding V, using only T_hat, size = $(size(T_hat)) and extra A columns, size = $(size(A[:, extra_idx])).")
+            end
+            V = hcat(X_nc, T_hat, A[:, extra_idx])
+
+        elseif size(V, 2) + n_b_hat > n_aux || n_b_hat == 0
+            V = hcat(X_nc, T_hat)
+
+        elseif n_c > 0
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)) : (Nlow+nevf)]
+            V = hcat(V, T_hat, A[:, extra_idx])
+
+        else
+            V = hcat(V, T_hat)
+        end
+
+        n_b = size(V, 2)
+
+        if size(V, 2)==0
+            println("Warning: V is empty, rebuilding from A columns.")
+            extra_idx = all_idxs[(Nlow+1+(nevf - n_c)): (Nlow+nevf + Nlow)] # take some extra columns to avoid empty V
+            V = A[:, extra_idx]
+        end
     end
 
     return (Eigenvalues, Ritz_vecs)
 end
 
 
-function main(molecule::String, l::Integer, beta::Integer, factor::Integer, max_iter::Integer)
+function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     global NFLOPs
     NFLOPs = 0  # reset for each run
 
     filename = "../MA_best/Simulate_CWNO/CWNO_final_tilde.dat"
-
-    Nlow = max(round(Int, 0.1*l), 16)
-    Naux = Nlow * beta
+    Nlow = Naux ÷ 4
     A = load_matrix(filename)
-    N = size(A, 1)
-
-    # V = zeros(N, Nlow)
-    # for i = 1:Nlow
-    #     V[i, i] = 1.0
-    # end
-
     D = diag(A)
-    idxs = sortperm(abs.(D), rev = true)[1:Nlow]
-    V = A[:, idxs]
+    all_idxs = sortperm(abs.(D), rev = true)
+    V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
-    @time Σ, U = davidson(A, V, Naux, l, 1e-4, max_iter)
+    if molecule == "H2"
+        accuracy = 1e-5
+    else
+        accuracy = 1e-5
+    end
+
+    @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
 
     idx = sortperm(Σ)
     Σ = abs.(Σ[idx])
@@ -510,30 +559,24 @@ function main(molecule::String, l::Integer, beta::Integer, factor::Integer, max_
     # Display difference
     r = min(length(Σ), l)
     println("\nCompute the difference between computed and exact eigenvalues:")
-    # display("text/plain", (Σ[1:r] - Σexact[1:r])')
-    difference = (Σ[1:r] .- Σexact[1:r])
-    for i in 1:r
-        println(@sprintf("%3d: %.10f (computed) - %.10f (exact) = % .4e", i, Σ[i], Σexact[i], difference[i]))
-    end
+    display("text/plain", (Σ[1:r] - Σexact[1:r])')
+    # difference = (Σ[1:r] .- Σexact[1:r])
+    # for i in 1:r
+    #     println(@sprintf("%3d: %.10f (computed) - %.10f (exact) = % .4e", i, Σ[i], Σexact[i], difference[i]))
+    # end
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
+molecule_dict = Dict(
+    "formaldehyde" => [10, 50, 100, 200]
+)
 
-
-betas = [20] #8,16,32,64, 8,16
-molecules = ["formaldehyde"] #, "uracil"
-ls = [10, 50, 100, 200] #10, 50, 100, 200
-for molecule in molecules
-    println("Processing molecule: $molecule")
-    for beta in betas
-        println("Running with beta = $beta")
-        for (i, l) in enumerate(ls)
-	    nev = l*occupied_orbitals(molecule)
-            println("Running with l = $nev")
-            main(molecule, nev, beta, i, 100)
-        end
+for mol in keys(molecule_dict)
+    println("\n=== Running tests for CWNO test")
+    for l in molecule_dict[mol]
+        nev = l*occupied_orbitals(mol)
+        Naux = 4 * nev
+        println("\n--- Running Davidson for $nev eigenvalues (Naux = $Naux) ---")
+        main(mol, nev, Naux, 100)
     end
-    println("Finished processing molecule: $molecule")
 end
-
-

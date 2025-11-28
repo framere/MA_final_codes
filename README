@@ -1,0 +1,5 @@
+Description:
+1) Improved_history = as of now the most effective, with improved convergence tracking and degeneracy detector
+2) Hybrid prechanges = same concept as before, but we implemented the better initial guess and we played a bit around with the restart
+
+
