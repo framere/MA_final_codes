@@ -4,6 +4,7 @@ using JLD2
 using IterativeSolvers
 using LinearMaps
 using DataStructures
+using Statistics
 
 mutable struct EVHistory
     λ::Float64
@@ -201,36 +202,46 @@ function read_eigenresults(molecule::String)
 end
 
 
-function degeneracy_detector(eigenvalues::AbstractVector{T}; tol = 1e-5) where T<:Number
-    perm = eachindex(eigenvalues)
-    vals = eigenvalues
-    deg_groups = Vector{Vector{Int}}()
-    used = falses(length(vals))
+function degeneracy_detector(vals::AbstractVector{T}; tol=5e-3) where T<:Number
+    # Sort eigenvalues but keep original index
+    inds = sortperm(vals)
+    sorted_vals = vals[inds]
 
-    for i in eachindex(vals)
-        if used[i]
-            continue
-        end
+    groups = Vector{Vector{Int}}()
+    current_group = [inds[1]]
+    center = sorted_vals[1]     # cluster center (updated mean)
 
-        group = Int[]
-        push!(group, perm[i])   # store original index
-        used[i] = true
+    for k in 2:length(vals)
+        v = sorted_vals[k]
+        rel_dist = abs(v - center) / max(abs(v), abs(center))
 
-        for j in (i+1):length(vals)
-            if !used[j] && abs(vals[i] - vals[j])/max(abs(vals[i]), abs(vals[j])) < tol
-                push!(group, perm[j])
-                used[j] = true
+        if rel_dist < tol
+            # Add to current cluster
+            push!(current_group, inds[k])
+
+            # Update center (running mean)
+            center = mean(vals[current_group])
+
+        else
+            # Finalize old group if size > 1
+            if length(current_group) > 1
+                push!(groups, copy(current_group))
             end
-        end
 
-        # Skip non-degenerate groups (groups of size 1)
-        if !(length(group) == 1)
-            push!(deg_groups, group)
+            # Start new cluster
+            current_group = [inds[k]]
+            center = v
         end
     end
 
-    return deg_groups
+    # Handle last group
+    if length(current_group) > 1
+        push!(groups, current_group)
+    end
+
+    return groups
 end
+
 
 # --- small helper 
 function is_stagnating(hist::Vector{Float64}; tol=0.1, window=2)
@@ -254,13 +265,12 @@ function davidson(
 
     n = size(A, 1)
     n_b = size(V, 2)
-    l_buffer = max(1, round(Int, l * 1.5))
-    lc = max(1, round(Int, 1.005 * l))
+    l_buffer = max(1, round(Int, l * 1.75))
     nu_0 = max(l_buffer, n_b)
     nevf = 0
     Nlow = size(V, 2)
 
-    println("Starting Davidson with n_aux = $n_aux, l_buffer = $l_buffer, lc = $lc, thresh = $thresh, max_iter = $max_iter")
+    println("Starting Davidson with n_aux = $n_aux, l_buffer = $l_buffer, l = $l, thresh = $thresh, max_iter = $max_iter")
 
     D = diag(A)
     Eigenvalues = Float64[]
@@ -355,7 +365,7 @@ function davidson(
             end
         end
 
-        current_cutoff = min(lc - nevf, length(Σ_sorted))
+        current_cutoff = min(l - nevf, length(Σ_sorted))
         deg_groups = degeneracy_detector(Σ_sorted; tol = 1e-3)
         locked_sorted_positions = Int[]
 
@@ -424,7 +434,7 @@ function davidson(
             end
         end
 
-        if nevf >= lc
+        if nevf >= l
             println("Converged all required eigenvalues (cluster-aware). Iter = $iter")
             return (Eigenvalues, Ritz_vecs)
         end
@@ -547,7 +557,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     V = A[:, all_idxs[1:Nlow]] # only use the first Nlow columns of A as initial guess
 
     if molecule == "H2"
-        accuracy = 1e-4
+        accuracy = 1e-3
     else
         accuracy = 1e-4
     end
