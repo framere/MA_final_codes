@@ -1,0 +1,353 @@
+slurmstepd-andoria01: error: *** JOB 26072 ON andoria01 CANCELLED AT 2025-11-30T14:05:41 DUE TO TIME LIMIT ***
+
+[1114035] signal 15: Terminated
+in expression starting at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:596
+dgemv_kernel_4x4 at /home/fmereto/julia/bin/../lib/julia/libopenblas64_.so (unknown line)
+dgemv_n_ZEN at /home/fmereto/julia/bin/../lib/julia/libopenblas64_.so (unknown line)
+dgemv_64_ at /home/fmereto/julia/bin/../lib/julia/libopenblas64_.so (unknown line)
+gemv! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/blas.jl:670
+gemv! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:450 [inlined]
+generic_matvecmul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:79 [inlined]
+_mul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:73 [inlined]
+mul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:70 [inlined]
+mul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:253 [inlined]
+* at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:56
+#3 at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:61
+_unsafe_mul! at /home/fmereto/.julia/packages/LinearMaps/KV78T/src/functionmap.jl:127 [inlined]
+mul! at /home/fmereto/.julia/packages/LinearMaps/KV78T/src/LinearMaps.jl:166 [inlined]
+iterate at /home/fmereto/.julia/packages/IterativeSolvers/bjiMt/src/minres.jl:104
+iterate at /home/fmereto/.julia/packages/IterativeSolvers/bjiMt/src/minres.jl:99 [inlined]
+iterate at ./iterators.jl:206 [inlined]
+iterate at ./iterators.jl:205 [inlined]
+#minres!#25 at /home/fmereto/.julia/packages/IterativeSolvers/bjiMt/src/minres.jl:224
+minres! at /home/fmereto/.julia/packages/IterativeSolvers/bjiMt/src/minres.jl:200 [inlined]
+#minres#26 at /home/fmereto/.julia/packages/IterativeSolvers/bjiMt/src/minres.jl:244 [inlined]
+minres at /home/fmereto/.julia/packages/IterativeSolvers/bjiMt/src/minres.jl:244
+unknown function (ip: 0x7f6b592bcfed)
+#correction_equations_minres#2 at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:72
+correction_equations_minres at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:45 [inlined]
+davidson at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:502
+macro expansion at ./timing.jl:581 [inlined]
+main at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:565
+unknown function (ip: 0x7f6b592b739b)
+top-level scope at /home/fmereto/MA_final_code/test_Naux/molecules_dav_final.jl:600
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/toplevel.c:886
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/toplevel.c:994
+eval at ./boot.jl:430 [inlined]
+include_string at ./loading.jl:2734
+_include at ./loading.jl:2794
+include at ./Base.jl:557
+jfptr_include_46865.1 at /home/fmereto/julia/lib/julia/sys.so (unknown line)
+exec_options at ./client.jl:323
+_start at ./client.jl:531
+jfptr__start_73560.1 at /home/fmereto/julia/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/julia.h:2157 [inlined]
+true_main at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/jlapi.c:900
+jl_repl_entrypoint at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/jlapi.c:1059
+main at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/cli/loader_exe.c:58
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 251624915 (Pool: 251624272; Big: 643); GC: 26935
+
+=== Running tests for molecule: formaldehyde ===
+Starting Davidson with n_aux = 800, l_buffer = 525, l = 300, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 266, Converged = 0, ‖r‖ (largest λ) = 0.07918556563718764
+Iter 2: V_size = 532, Converged = 27, ‖r‖ (largest λ) = 1.8776388051953608e-6
+Iter 3: V_size = 798, Converged = 82, ‖r‖ (largest λ) = 326.83553472954344
+Iter 4: V_size = 477, Converged = 113, ‖r‖ (largest λ) = 3.764450074756332e-6
+Iter 5: V_size = 743, Converged = 116, ‖r‖ (largest λ) = 105.17147826991764
+Iter 6: V_size = 529, Converged = 126, ‖r‖ (largest λ) = 3.187677320608323e-5
+Iter 7: V_size = 795, Converged = 126, ‖r‖ (largest λ) = 54.50861144801734
+Using Davidson for 258 vectors, JD for 5 vectors.
+Total MINRES iterations: 100
+Iter 8: V_size = 532, Converged = 129, ‖r‖ (largest λ) = 0.0001684255370532044
+Using Davidson for 175 vectors, JD for 88 vectors.
+Total MINRES iterations: 1246
+Iter 9: V_size = 798, Converged = 132, ‖r‖ (largest λ) = 23.743166063929372
+Using Davidson for 183 vectors, JD for 2 vectors.
+Total MINRES iterations: 40
+Iter 10: V_size = 529, Converged = 213, ‖r‖ (largest λ) = 2.1336215973047587e-6
+Using Davidson for 264 vectors, JD for 2 vectors.
+Total MINRES iterations: 37
+Iter 11: V_size = 795, Converged = 213, ‖r‖ (largest λ) = 154.51861464715026
+Using Davidson for 257 vectors, JD for 0 vectors.
+Iter 12: V_size = 532, Converged = 222, ‖r‖ (largest λ) = 4.065653302987882e-6
+Using Davidson for 251 vectors, JD for 15 vectors.
+Total MINRES iterations: 306
+Iter 13: V_size = 798, Converged = 222, ‖r‖ (largest λ) = 46.267913185937125
+Using Davidson for 256 vectors, JD for 0 vectors.
+Iter 14: V_size = 532, Converged = 232, ‖r‖ (largest λ) = 0.0001283997614355678
+Using Davidson for 259 vectors, JD for 7 vectors.
+Total MINRES iterations: 117
+Iter 15: V_size = 798, Converged = 232, ‖r‖ (largest λ) = 57.48584740939804
+Using Davidson for 257 vectors, JD for 4 vectors.
+Total MINRES iterations: 46
+Iter 16: V_size = 532, Converged = 237, ‖r‖ (largest λ) = 0.00017060763259368737
+Using Davidson for 247 vectors, JD for 19 vectors.
+Total MINRES iterations: 333
+Iter 17: V_size = 798, Converged = 237, ‖r‖ (largest λ) = 37.361036305298796
+Using Davidson for 253 vectors, JD for 4 vectors.
+Total MINRES iterations: 84
+Iter 18: V_size = 532, Converged = 246, ‖r‖ (largest λ) = 1.6871159279828828e-6
+Using Davidson for 260 vectors, JD for 6 vectors.
+Total MINRES iterations: 108
+Iter 19: V_size = 798, Converged = 246, ‖r‖ (largest λ) = 25.2379512434992
+Using Davidson for 253 vectors, JD for 1 vectors.
+Total MINRES iterations: 14
+Iter 20: V_size = 532, Converged = 258, ‖r‖ (largest λ) = 0.0002737080234727862
+Using Davidson for 266 vectors, JD for 0 vectors.
+Iter 21: V_size = 798, Converged = 258, ‖r‖ (largest λ) = 26.7984954709098
+Using Davidson for 265 vectors, JD for 0 vectors.
+Iter 22: V_size = 532, Converged = 259, ‖r‖ (largest λ) = 0.00024789523596549404
+Using Davidson for 230 vectors, JD for 35 vectors.
+Total MINRES iterations: 565
+Iter 23: V_size = 798, Converged = 260, ‖r‖ (largest λ) = 10.898509956903062
+Using Davidson for 232 vectors, JD for 0 vectors.
+Iter 24: V_size = 531, Converged = 293, ‖r‖ (largest λ) = 0.00022578090150523342
+Using Davidson for 232 vectors, JD for 0 vectors.
+Iter 25: V_size = 796, Converged = 293, ‖r‖ (largest λ) = 71.25591582870396
+Using Davidson for 232 vectors, JD for 0 vectors.
+Iter 26: V_size = 464, Converged = 293, ‖r‖ (largest λ) = 0.0002015481483716066
+Using Davidson for 225 vectors, JD for 7 vectors.
+Total MINRES iterations: 116
+Iter 27: V_size = 696, Converged = 293, ‖r‖ (largest λ) = 0.00019340094531702137
+Converged all required eigenvalues (cluster-aware). Iter = 28
+7861.545171 seconds (52.87 M allocations: 2.166 TiB, 0.51% gc time, 0.04% compilation time)
+Number of FLOPs: 50503497109622
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×300 adjoint(::Vector{Float64}) with eltype Float64:
+ -7.10543e-15  -2.4869e-14  -7.10543e-15  -1.42109e-14  -2.4869e-14  -3.37508e-14  -3.01981e-14  -7.10543e-14  -9.83373e-11  -6.22897e-11  -5.81571e-10  -3.55271e-15  -7.90696e-10  -2.66454e-15  -1.77636e-15  -1.42109e-14  8.88178e-16  -7.10543e-15  -7.94484e-10  0.0  -5.392e-10  -8.88178e-16  -3.62666e-10  -1.97448e-9  -7.10543e-15  -2.66454e-14  -2.27035e-9  -4.66294e-14  -5.19759e-9  -5.73583e-10  -3.68594e-14  -3.30241e-9  1.77636e-15  -1.77636e-15  -4.57412e-9  -7.56287e-10  -4.70735e-14  -3.61912e-9  -8.43769e-15  -2.06642e-9  -3.55271e-15  -1.24345e-14  -7.17285e-9  -6.88338e-14  -3.90799e-14  -6.07767e-9  -4.35207e-14  -7.10543e-14  -1.77636e-14  -3.41949e-14  -8.04017e-9  -1.37668e-14  -1.26121e-13  -2.66454e-14  -1.28786e-14  -8.26006e-14  -2.26485e-14  -1.93179e-13  -3.86358e-14  -8.81517e-14  -7.90479e-14  -3.61045e-13  -4.72955e-13  -4.19664e-14  -2.90878e-13  -1.19238e-13  -4.30989e-13  -6.71685e-13  -2.65565e-13  -2.15161e-13  -3.15303e-13  -1.90292e-13  -5.14477e-13  -5.07372e-13  -7.64722e-13  -1.19926e-12  -5.12701e-13  -2.77112e-13  -6.09512e-13  -3.78586e-12  3.47722e-13  -6.02629e-13  -3.68203e-9  -1.82965e-13  -5.61329e-13  -8.38218e-13  -1.91003e-12  -1.46105e-12  -3.05311e-13  -9.57678e-13  -1.20992e-12  -1.8765e-12  -1.11111e-12  -6.01741e-14  -9.74776e-14  -8.26006e-13  -3.14659e-12  -4.17932e-12  -1.84304e-11  -3.38152e-12  -9.67848e-12  -3.35665e-12  -2.89735e-11  -1.5306e-11  -4.58233e-11  -4.39337e-11  -2.87774e-10  -6.0651e-11  -5.98914e-11  -2.03269e-9  -2.15341e-9  -3.74895e-9  -8.04806e-9  -3.98354e-10  -3.66651e-10  -2.20263e-9  -1.97088e-9  -4.25271e-9  -5.90411e-10  -5.23829e-9  -6.90261e-9  -4.49526e-9  -3.7199e-9  -9.97424e-9  -2.04909e-8  -7.72521e-9  -1.63593e-8  -1.76582e-8  -1.93373e-8  -2.14028e-8  -1.54803e-8  -1.26676e-13  -2.17579e-8  4.61076e-13  -8.61297e-9  -1.56051e-8  -1.91837e-8  -1.12321e-12  -1.30181e-8  -1.12621e-12  -1.9815e-8  7.6672e-13  -2.08922e-12  -1.64313e-12  -1.80189e-12  -1.64913e-12  1.39999e-13  -2.21601e-12  -2.69895e-12  -2.41518e-12  -5.48217e-12  2.31926e-13  -3.66895e-12  -6.98297e-12  -8.02414e-12  -8.3179e-12  -2.29405e-11  -1.54694e-11  1.48848e-12  -2.08705e-11  -3.65225e-11  -2.2625e-11  -4.15796e-11  -3.02266e-11  2.40918e-14  -2.64988e-11  -4.58855e-13  -3.82621e-11  -3.05833e-12  5.99742e-13  -1.68754e-12  1.17695e-12  2.55074e-12  -7.57616e-13  -8.68906e-11  -8.26589e-11  -1.43839e-10  2.48002e-12  4.79694e-12  -1.22084e-10  7.21201e-13  -4.08229e-13  1.85708e-11  9.01412e-12  -1.13232e-12  -1.56627e-11  -6.54587e-13  3.9363e-12  -2.19621e-11  7.32003e-12  2.26696e-11  -2.95348e-10  1.20842e-11  -3.89122e-12  5.79418e-11  -7.42073e-12  4.27436e-13  2.21756e-12  -3.24485e-12  -6.84186e-12  -1.32794e-11  -7.0155e-13  -1.36627e-11  -7.36846e-10  -5.77998e-10  -9.97757e-13  -2.08731e-11  2.9127e-11  -1.63441e-9  4.7411e-12  -2.2033e-10  -1.11353e-9  -7.41585e-12  -2.5481e-9  -1.97049e-9  -2.28814e-9  2.34992e-11  -2.05503e-9  -1.76293e-9  -3.17558e-9  -2.49242e-11  -2.49101e-9  -5.78612e-11  -1.55961e-9  -3.36413e-9  -2.9331e-9  -3.89539e-9  5.0554e-13  -5.40237e-9  -5.74025e-9  -5.05723e-9  -5.76454e-9  -8.6083e-9  -5.70492e-9  -1.12089e-8  -1.36479e-8  -8.86252e-9  -8.75069e-9  -1.03825e-8  -1.0166e-8  -8.68099e-9  -1.28495e-8  -9.95798e-9  -1.1723e-8  -1.49899e-8  -1.51341e-8  -1.54424e-8  -1.96851e-8  -1.89082e-8  -3.3962e-8  -1.94828e-8  -2.95664e-8  -2.93315e-8  -2.35287e-8  -4.02715e-8  -3.29922e-8  -3.64294e-8  -4.93174e-8  -4.24107e-8  -4.52591e-8  -5.15333e-8  -4.479e-8  -4.80827e-8  -5.07252e-8  -2.61487e-8  -1.67419e-8  -2.86491e-8  -2.12889e-10  -3.05254e-8  -1.38381e-9  5.04811e-9  -1.59873e-8  -3.81823e-10  1.0476e-9  -4.44237e-8  -5.22035e-8  -2.05274e-8  -2.55486e-8  -2.45992e-8  -1.04541e-10  5.15766e-10  2.30781e-10  1.12739e-9  6.71151e-10  1.51856e-10  1.81691e-10  5.43792e-10  5.28461e-10  -1.89787e-10  -3.47561e-10  6.72333e-10  2.43443e-10  -5.44875e-12  3.09834e-10  3.87749e-10  6.14072e-10  3.76074e-10  -1.66409e-8  4.69867e-10  9.8003e-10
+300 Eigenvalues converges, out of 300 requested.
+Starting Davidson with n_aux = 800, l_buffer = 1050, l = 600, thresh = 0.0001, max_iter = 100
+Iter 1: V_size = 266, Converged = 0, ‖r‖ (largest λ) = 0.07918556563718764
+Iter 2: V_size = 532, Converged = 27, ‖r‖ (largest λ) = 1.8776388051953608e-6
+Iter 3: V_size = 798, Converged = 82, ‖r‖ (largest λ) = 326.83553472954344
+Iter 4: V_size = 477, Converged = 113, ‖r‖ (largest λ) = 3.764450074756332e-6
+Iter 5: V_size = 743, Converged = 116, ‖r‖ (largest λ) = 105.17147826991764
+Iter 6: V_size = 529, Converged = 126, ‖r‖ (largest λ) = 3.187677320608323e-5
+Iter 7: V_size = 795, Converged = 126, ‖r‖ (largest λ) = 54.50861144801734
+Using Davidson for 251 vectors, JD for 12 vectors.
+Total MINRES iterations: 275
+Iter 8: V_size = 532, Converged = 129, ‖r‖ (largest λ) = 0.0001684255370532044
+Using Davidson for 166 vectors, JD for 97 vectors.
+Total MINRES iterations: 1474
+Iter 9: V_size = 798, Converged = 132, ‖r‖ (largest λ) = 23.745177955049968
+Using Davidson for 179 vectors, JD for 7 vectors.
+Total MINRES iterations: 163
+Iter 10: V_size = 529, Converged = 212, ‖r‖ (largest λ) = 2.1283035631266885e-6
+Using Davidson for 258 vectors, JD for 8 vectors.
+Total MINRES iterations: 179
+Iter 11: V_size = 795, Converged = 212, ‖r‖ (largest λ) = 115.96920153013974
+Using Davidson for 249 vectors, JD for 1 vectors.
+Total MINRES iterations: 25
+Iter 12: V_size = 532, Converged = 228, ‖r‖ (largest λ) = 0.00010284216052349401
+Using Davidson for 253 vectors, JD for 13 vectors.
+Total MINRES iterations: 303
+Iter 13: V_size = 798, Converged = 228, ‖r‖ (largest λ) = 53.80520179713751
+Using Davidson for 250 vectors, JD for 13 vectors.
+Total MINRES iterations: 325
+Iter 14: V_size = 532, Converged = 231, ‖r‖ (largest λ) = 0.00018033665439556846
+Using Davidson for 228 vectors, JD for 38 vectors.
+Total MINRES iterations: 653
+Iter 15: V_size = 798, Converged = 231, ‖r‖ (largest λ) = 0.00016842849471276997
+Using Davidson for 232 vectors, JD for 13 vectors.
+Total MINRES iterations: 276
+Iter 16: V_size = 532, Converged = 252, ‖r‖ (largest λ) = 1.6894796722731224e-6
+Using Davidson for 257 vectors, JD for 9 vectors.
+Total MINRES iterations: 202
+Iter 17: V_size = 798, Converged = 252, ‖r‖ (largest λ) = 84.15027440107603
+Using Davidson for 258 vectors, JD for 6 vectors.
+Total MINRES iterations: 145
+Iter 18: V_size = 532, Converged = 254, ‖r‖ (largest λ) = 0.00026964327203729034
+Using Davidson for 165 vectors, JD for 101 vectors.
+Total MINRES iterations: 2124
+Iter 19: V_size = 798, Converged = 254, ‖r‖ (largest λ) = 0.0002680365035033527
+Using Davidson for 230 vectors, JD for 6 vectors.
+Total MINRES iterations: 150
+Iter 20: V_size = 532, Converged = 284, ‖r‖ (largest λ) = 4.879049944141693e-6
+Using Davidson for 235 vectors, JD for 31 vectors.
+Total MINRES iterations: 765
+Iter 21: V_size = 798, Converged = 284, ‖r‖ (largest λ) = 42.17364771467224
+Using Davidson for 259 vectors, JD for 0 vectors.
+Iter 22: V_size = 532, Converged = 291, ‖r‖ (largest λ) = 0.0003185272721820369
+Using Davidson for 193 vectors, JD for 73 vectors.
+Total MINRES iterations: 1809
+Iter 23: V_size = 798, Converged = 291, ‖r‖ (largest λ) = 38.12182469578089
+Using Davidson for 236 vectors, JD for 7 vectors.
+Total MINRES iterations: 166
+Iter 24: V_size = 532, Converged = 314, ‖r‖ (largest λ) = 0.00028620237967599854
+Using Davidson for 193 vectors, JD for 73 vectors.
+Total MINRES iterations: 1805
+Iter 25: V_size = 798, Converged = 314, ‖r‖ (largest λ) = 67.3138315279834
+Using Davidson for 226 vectors, JD for 35 vectors.
+Total MINRES iterations: 848
+Iter 26: V_size = 532, Converged = 319, ‖r‖ (largest λ) = 0.00024982174481583656
+Using Davidson for 147 vectors, JD for 118 vectors.
+Total MINRES iterations: 2763
+Iter 27: V_size = 798, Converged = 320, ‖r‖ (largest λ) = 33.15387627238461
+Using Davidson for 164 vectors, JD for 85 vectors.
+Total MINRES iterations: 1953
+Iter 28: V_size = 531, Converged = 337, ‖r‖ (largest λ) = 6.7547918317956585e-6
+Using Davidson for 169 vectors, JD for 97 vectors.
+Total MINRES iterations: 2364
+Iter 29: V_size = 797, Converged = 337, ‖r‖ (largest λ) = 77.90507497697756
+Using Davidson for 188 vectors, JD for 77 vectors.
+Total MINRES iterations: 1781
+Iter 30: V_size = 532, Converged = 338, ‖r‖ (largest λ) = 0.00014271402662022144
+Using Davidson for 118 vectors, JD for 148 vectors.
+Total MINRES iterations: 3408
+Iter 31: V_size = 798, Converged = 338, ‖r‖ (largest λ) = 0.00014695368378789186
+Using Davidson for 116 vectors, JD for 146 vectors.
+Total MINRES iterations: 3353
+Iter 32: V_size = 532, Converged = 342, ‖r‖ (largest λ) = 5.839808815837133e-6
+Using Davidson for 112 vectors, JD for 154 vectors.
+Total MINRES iterations: 3625
+Iter 33: V_size = 798, Converged = 342, ‖r‖ (largest λ) = 27.080650120808915
+Using Davidson for 117 vectors, JD for 149 vectors.
+Total MINRES iterations: 3412
+Iter 34: V_size = 532, Converged = 342, ‖r‖ (largest λ) = 0.00026768500194685363
+Using Davidson for 54 vectors, JD for 212 vectors.
+Total MINRES iterations: 4938
+Iter 35: V_size = 798, Converged = 342, ‖r‖ (largest λ) = 0.00025531780875782056
+Using Davidson for 52 vectors, JD for 212 vectors.
+Total MINRES iterations: 4960
+Iter 36: V_size = 527, Converged = 344, ‖r‖ (largest λ) = 9.754708531545873e-6
+Using Davidson for 84 vectors, JD for 182 vectors.
+Total MINRES iterations: 4299
+Iter 37: V_size = 793, Converged = 344, ‖r‖ (largest λ) = 16.811124067420348
+Using Davidson for 88 vectors, JD for 178 vectors.
+Total MINRES iterations: 4136
+Iter 38: V_size = 532, Converged = 344, ‖r‖ (largest λ) = 7.604076852764384e-5
+Using Davidson for 27 vectors, JD for 239 vectors.
+Total MINRES iterations: 5637
+Iter 39: V_size = 798, Converged = 344, ‖r‖ (largest λ) = 7.604076853417315e-5
+Using Davidson for 26 vectors, JD for 240 vectors.
+Total MINRES iterations: 5662
+Iter 40: V_size = 518, Converged = 344, ‖r‖ (largest λ) = 7.604076853558414e-5
+Using Davidson for 18 vectors, JD for 248 vectors.
+Total MINRES iterations: 5862
+Iter 41: V_size = 784, Converged = 344, ‖r‖ (largest λ) = 7.604076853543276e-5
+Using Davidson for 22 vectors, JD for 244 vectors.
+Total MINRES iterations: 5755
+Iter 42: V_size = 455, Converged = 344, ‖r‖ (largest λ) = 7.604076853587961e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5901
+Iter 43: V_size = 721, Converged = 344, ‖r‖ (largest λ) = 7.604076853625315e-5
+Using Davidson for 17 vectors, JD for 249 vectors.
+Total MINRES iterations: 5874
+Iter 44: V_size = 404, Converged = 344, ‖r‖ (largest λ) = 7.604076853658723e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 45: V_size = 670, Converged = 344, ‖r‖ (largest λ) = 7.604076853640994e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5901
+Iter 46: V_size = 788, Converged = 344, ‖r‖ (largest λ) = 7.604076853688117e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5899
+Iter 47: V_size = 381, Converged = 344, ‖r‖ (largest λ) = 7.604076853692675e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 48: V_size = 647, Converged = 344, ‖r‖ (largest λ) = 7.604076853675828e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 49: V_size = 754, Converged = 344, ‖r‖ (largest λ) = 7.60407685368948e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 50: V_size = 378, Converged = 344, ‖r‖ (largest λ) = 7.604076853720033e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5897
+Iter 51: V_size = 644, Converged = 344, ‖r‖ (largest λ) = 7.604076853674307e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 52: V_size = 753, Converged = 344, ‖r‖ (largest λ) = 7.604076853683543e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5895
+Iter 53: V_size = 378, Converged = 344, ‖r‖ (largest λ) = 7.60407685367082e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 54: V_size = 644, Converged = 344, ‖r‖ (largest λ) = 7.604076853692743e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5901
+Iter 55: V_size = 792, Converged = 344, ‖r‖ (largest λ) = 7.604076853680072e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5900
+Iter 56: V_size = 390, Converged = 344, ‖r‖ (largest λ) = 7.604076853685568e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5899
+Iter 57: V_size = 656, Converged = 344, ‖r‖ (largest λ) = 7.60407685365858e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5899
+Iter 58: V_size = 763, Converged = 344, ‖r‖ (largest λ) = 7.60407685370105e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 59: V_size = 391, Converged = 344, ‖r‖ (largest λ) = 7.604076853680811e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 60: V_size = 657, Converged = 344, ‖r‖ (largest λ) = 7.604076853711983e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 61: V_size = 749, Converged = 344, ‖r‖ (largest λ) = 7.604076853719687e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 62: V_size = 377, Converged = 344, ‖r‖ (largest λ) = 7.604076853742517e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 63: V_size = 643, Converged = 344, ‖r‖ (largest λ) = 7.604076853729848e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5897
+Iter 64: V_size = 730, Converged = 344, ‖r‖ (largest λ) = 7.604076853743229e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5897
+Iter 65: V_size = 368, Converged = 344, ‖r‖ (largest λ) = 7.604076853734213e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5901
+Iter 66: V_size = 634, Converged = 344, ‖r‖ (largest λ) = 7.604076853763904e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5897
+Iter 67: V_size = 722, Converged = 344, ‖r‖ (largest λ) = 7.604076853769767e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5899
+Iter 68: V_size = 358, Converged = 344, ‖r‖ (largest λ) = 7.604076853811388e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 69: V_size = 624, Converged = 344, ‖r‖ (largest λ) = 7.604076853775028e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 70: V_size = 695, Converged = 344, ‖r‖ (largest λ) = 7.604076853781143e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5897
+Iter 71: V_size = 781, Converged = 344, ‖r‖ (largest λ) = 7.604076853808561e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5899
+Iter 72: V_size = 348, Converged = 344, ‖r‖ (largest λ) = 7.604076853732671e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 73: V_size = 614, Converged = 344, ‖r‖ (largest λ) = 7.604076853729618e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5895
+Iter 74: V_size = 715, Converged = 344, ‖r‖ (largest λ) = 7.604076853737608e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5897
+Iter 75: V_size = 366, Converged = 344, ‖r‖ (largest λ) = 7.604076853747748e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 76: V_size = 632, Converged = 344, ‖r‖ (largest λ) = 7.604076853721467e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 77: V_size = 732, Converged = 344, ‖r‖ (largest λ) = 7.604076853723424e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5901
+Iter 78: V_size = 381, Converged = 344, ‖r‖ (largest λ) = 7.604076853688476e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5896
+Iter 79: V_size = 647, Converged = 344, ‖r‖ (largest λ) = 7.604076853743092e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
+Total MINRES iterations: 5898
+Iter 80: V_size = 717, Converged = 344, ‖r‖ (largest λ) = 7.604076853736424e-5
+Using Davidson for 16 vectors, JD for 250 vectors.
