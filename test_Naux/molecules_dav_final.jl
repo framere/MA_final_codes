@@ -39,9 +39,6 @@ global NFLOPs = 0
 
 include("../../MA_best/FLOP_count.jl")
 
-
-
-
 function correction_equations_minres(A, U, lambdas, R; tol=1e-1, maxiter=100)
     global NFLOPs
     n, k = size(U)
@@ -559,7 +556,7 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     if molecule == "H2"
         accuracy = 1e-3
     else
-        accuracy = 1e-4
+        accuracy = 1e-3
     end
 
     @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
