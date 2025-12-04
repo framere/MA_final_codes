@@ -617,9 +617,9 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     println("$r Eigenvalues converges, out of $l requested.")
 end
 
-Nauxs = [2, 2.5, 3] #600, 1200, 2400 1.5, 2, 
+Nauxs = [1.5] #600, 1200, 2400 1.5, 2, 
 ls = [50, 100, 200] #10, 50, 100, 
-molecule = "uracil" # 'uracil', 'H2', 'formaldehyde'
+molecule = "formaldehyde" # 'uracil', 'H2', 'formaldehyde'
 
 for naux in Nauxs
     println("\n=== Running tests for molecule: $molecule ===")
