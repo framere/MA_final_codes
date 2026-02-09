@@ -1,0 +1,311 @@
+Running for system: formaldehyde
+Target number of eigenvalues (nev) = 60
+=== Starting Davidson with initial guess V0 number 1 ===
+iter=     1  Rnorm=  2.025e+01  size(V,2)=    60
+iter=     2  Rnorm=  3.209e+00  size(V,2)=   120
+iter=     3  Rnorm=  4.359e-01  size(V,2)=   180
+iter=     4  Rnorm=  5.950e-02  size(V,2)=   240
+iter=     5  Rnorm=  5.490e-03  size(V,2)=   300
+iter=     6  Rnorm=  4.351e-04  size(V,2)=   360
+converged!
+ 85.790052 seconds (5.01 k allocations: 1.507 GiB, 0.11% gc time)
+Number of FLOPs: 2518161716700
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×60 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.42109e-14  0.0  0.0  5.32907e-15  1.77636e-15  -1.77636e-15  1.06581e-14  -8.88178e-15  0.0  3.55271e-15  -1.77636e-15  0.0  1.77636e-15  3.55271e-15  -3.55271e-15  -1.77636e-15  -4.44089e-15  -8.88178e-16  1.77636e-15  -3.55271e-15  2.66454e-15  5.32907e-15  4.44089e-15  -7.10543e-15  -2.66454e-15  5.32907e-15  -1.02141e-14  1.06581e-14  -2.66454e-15  4.44089e-16  5.77316e-15  -1.28786e-14  9.32587e-15  -1.33227e-14  -1.28786e-14  -3.10862e-15  -6.26166e-14  -4.52971e-14  -2.62013e-14  -8.88178e-14  -6.70575e-14  -1.40643e-12  -1.49036e-12  -8.24185e-12  -8.22853e-12  -6.57208e-12  -1.92331e-11  -4.894e-11  -1.8749e-11  -7.14535e-11  -9.37139e-11  -2.41733e-10  -4.32251e-10  -5.58798e-10  -6.09305e-10  -5.20524e-10  -9.76608e-10  -1.82683e-9  -1.5449e-9  -4.28504e-9
+Target number of eigenvalues (nev) = 90
+=== Starting Davidson with initial guess V0 number 1 ===
+iter=     1  Rnorm=  1.193e+01  size(V,2)=    90
+iter=     2  Rnorm=  2.019e+00  size(V,2)=   180
+iter=     3  Rnorm=  4.117e-01  size(V,2)=   270
+iter=     4  Rnorm=  8.906e-02  size(V,2)=   360
+iter=     5  Rnorm=  1.307e-02  size(V,2)=   450
+iter=     6  Rnorm=  1.783e-03  size(V,2)=   540
+iter=     7  Rnorm=  2.262e-04  size(V,2)=   630
+converged!
+171.184561 seconds (8.71 k allocations: 2.930 GiB, 0.13% gc time)
+Number of FLOPs: 4963508588430
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×90 adjoint(::Vector{Float64}) with eltype Float64:
+ -3.55271e-15  -7.10543e-15  7.10543e-15  5.32907e-15  0.0  -8.88178e-15  5.32907e-15  -1.24345e-14  -3.55271e-15  5.32907e-15  -1.77636e-15  0.0  -1.77636e-15  8.88178e-16  -8.88178e-16  2.66454e-15  3.55271e-15  7.99361e-15  6.21725e-15  5.32907e-15  3.55271e-15  -7.10543e-15  1.24345e-14  -1.06581e-14  -3.55271e-15  -1.33227e-14  1.06581e-14  -3.55271e-15  -4.44089e-16  -4.44089e-16  7.99361e-15  0.0  -2.22045e-15  -6.21725e-15  7.54952e-15  1.11022e-14  7.99361e-15  7.99361e-15  4.44089e-16  5.77316e-15  -8.43769e-15  6.66134e-15  -8.88178e-16  1.33227e-15  -1.33227e-14  -7.54952e-15  -3.55271e-15  1.33227e-15  9.32587e-15  -2.66454e-15  3.10862e-15  -1.9984e-14  1.46549e-14  -4.44089e-15  -1.11022e-14  -2.26485e-14  -2.22045e-15  8.88178e-15  -2.04281e-14  -2.35367e-14  -3.15303e-14  -1.0103e-13  -1.64757e-13  -1.11466e-13  -1.42109e-13  -3.33067e-13  -1.9873e-13  -4.57412e-13  -4.08118e-13  -1.16041e-12  -2.20868e-12  -3.44613e-12  -1.89135e-11  -7.50755e-12  -1.49014e-11  -9.62475e-12  -4.57234e-11  -2.49556e-11  -4.69258e-11  -9.44678e-11  -9.54319e-11  -2.48382e-10  -1.56777e-10  -4.71537e-10  -4.97928e-10  -8.33835e-10  -3.99182e-10  -1.23312e-9  -1.45723e-9  -3.73409e-9
+Target number of eigenvalues (nev) = 102
+=== Starting Davidson with initial guess V0 number 1 ===
+iter=     1  Rnorm=  1.003e+01  size(V,2)=   102
+iter=     2  Rnorm=  1.887e+00  size(V,2)=   204
+iter=     3  Rnorm=  4.294e-01  size(V,2)=   306
+iter=     4  Rnorm=  1.027e-01  size(V,2)=   408
+iter=     5  Rnorm=  2.070e-02  size(V,2)=   510
+iter=     6  Rnorm=  3.749e-03  size(V,2)=   612
+iter=     7  Rnorm=  6.327e-04  size(V,2)=   714
+converged!
+211.016048 seconds (9.79 k allocations: 3.326 GiB, 0.83% gc time)
+Number of FLOPs: 5649837038706
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×102 adjoint(::Vector{Float64}) with eltype Float64:
+ -2.13163e-14  -1.06581e-14  -3.55271e-15  7.10543e-15  -3.55271e-15  -5.32907e-15  8.88178e-15  -1.42109e-14  -3.55271e-15  0.0  -4.44089e-15  -8.88178e-15  1.77636e-15  -3.55271e-15  -4.44089e-15  0.0  -1.77636e-15  5.32907e-15  -2.66454e-15  5.32907e-15  7.99361e-15  3.55271e-15  1.06581e-14  9.76996e-15  5.32907e-15  6.21725e-15  1.28786e-14  -2.66454e-15  1.02141e-14  2.66454e-15  -3.9968e-15  4.44089e-16  -1.77636e-15  -7.99361e-15  -5.77316e-15  1.33227e-15  1.77636e-15  8.88178e-15  0.0  1.24345e-14  2.22045e-15  2.66454e-15  -8.88178e-16  -4.88498e-15  1.77636e-15  -1.28786e-14  -1.77636e-15  1.28786e-14  4.44089e-16  -8.43769e-15  -1.77636e-15  1.82077e-14  -1.11022e-14  1.02141e-14  -8.88178e-16  1.33227e-15  -1.28786e-14  1.86517e-14  -2.22045e-14  1.9984e-14  -1.35447e-14  0.0  -3.53051e-14  2.88658e-15  4.44089e-16  -2.39808e-14  -1.95399e-14  -5.88418e-14  -4.68514e-14  -1.7053e-13  -2.23821e-13  -4.24105e-13  -1.86606e-12  -1.45484e-12  -2.60458e-12  -3.67351e-12  -4.54348e-12  -4.70846e-12  -8.61911e-12  -1.4051e-11  -1.57199e-11  -2.52187e-11  -2.96212e-11  -9.55862e-11  -1.1181e-10  -1.18637e-10  -1.96997e-10  -1.35051e-10  -1.74944e-10  -3.53431e-10  -3.34159e-10  -2.87158e-10  -4.45874e-10  -8.56109e-10  -1.32545e-9  -1.68107e-9  -1.95768e-9  -8.67331e-9  -8.47233e-9  -1.28559e-8  -2.36643e-8  -5.00001e-8
+Target number of eigenvalues (nev) = 114
+=== Starting Davidson with initial guess V0 number 1 ===
+iter=     1  Rnorm=  8.609e+00  size(V,2)=   114
+iter=     2  Rnorm=  1.617e+00  size(V,2)=   228
+iter=     3  Rnorm=  4.928e-01  size(V,2)=   342
+iter=     4  Rnorm=  1.544e-01  size(V,2)=   456
+iter=     5  Rnorm=  4.318e-02  size(V,2)=   570
+iter=     6  Rnorm=  1.089e-02  size(V,2)=   684
+iter=     7  Rnorm=  2.516e-03  size(V,2)=   798
+iter=     8  Rnorm=  5.371e-04  size(V,2)=   912
+converged!
+270.629777 seconds (12.67 k allocations: 4.665 GiB, 0.35% gc time)
+Number of FLOPs: 8023362857502
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×114 adjoint(::Vector{Float64}) with eltype Float64:
+ -3.90799e-14  -1.06581e-14  -3.55271e-15  1.42109e-14  -1.77636e-15  -8.88178e-15  7.10543e-15  -1.24345e-14  -1.77636e-15  3.55271e-15  -4.44089e-15  0.0  -2.66454e-15  1.77636e-15  -8.88178e-16  2.66454e-15  8.88178e-16  7.99361e-15  0.0  -4.44089e-15  1.77636e-15  0.0  -8.88178e-16  -1.33227e-14  -4.44089e-15  8.88178e-16  8.43769e-15  8.88178e-15  -2.66454e-15  7.10543e-15  8.88178e-16  4.88498e-15  4.44089e-15  -1.28786e-14  4.44089e-15  -3.9968e-15  1.11022e-14  -2.22045e-15  2.66454e-15  -5.32907e-15  -1.02141e-14  -3.9968e-15  1.33227e-14  1.06581e-14  -8.88178e-15  -7.10543e-15  7.54952e-15  1.64313e-14  -1.33227e-14  1.24345e-14  1.15463e-14  4.44089e-16  -1.59872e-14  1.06581e-14  -1.19904e-14  1.24345e-14  1.42109e-14  -1.5099e-14  1.55431e-14  5.77316e-15  -6.88338e-15  4.44089e-16  1.68754e-14  1.9984e-15  1.68754e-14  -1.95399e-14  2.26485e-14  -2.04281e-14  1.44329e-14  7.10543e-15  -8.65974e-15  -1.55431e-15  5.10703e-15  -1.9984e-15  1.82077e-14  6.66134e-16  -2.44249e-15  1.5099e-14  -2.5091e-14  4.21885e-15  9.99201e-15  -3.01981e-14  -1.68754e-14  -9.65894e-14  -1.27232e-13  -3.87468e-13  -3.41061e-13  -5.93303e-13  -4.45644e-13  -4.3654e-13  -1.13198e-12  -8.5687e-13  -1.09424e-12  -4.91718e-12  -4.54259e-12  -7.93166e-12  -1.23326e-11  -4.63878e-11  -2.7951e-11  -6.1311e-11  -1.10088e-10  -2.25721e-10  -4.51853e-10  -3.20579e-10  -1.66361e-9  -1.1841e-9  -7.29846e-10  -1.16026e-9  -1.56329e-9  -4.92392e-9  -1.04904e-8  -7.1143e-9  -3.79904e-8  -4.75294e-8
+Target number of eigenvalues (nev) = 126
+=== Starting Davidson with initial guess V0 number 1 ===
+iter=     1  Rnorm=  7.348e+00  size(V,2)=   126
+iter=     2  Rnorm=  1.491e+00  size(V,2)=   252
+iter=     3  Rnorm=  5.725e-01  size(V,2)=   378
+iter=     4  Rnorm=  2.379e-01  size(V,2)=   504
+iter=     5  Rnorm=  9.926e-02  size(V,2)=   630
+iter=     6  Rnorm=  3.452e-02  size(V,2)=   756
+iter=     7  Rnorm=  1.025e-02  size(V,2)=   882
+iter=     8  Rnorm=  2.808e-03  size(V,2)=  1008
+iter=     9  Rnorm=  1.193e-03  size(V,2)=   252
+iter=    10  Rnorm=  9.545e-04  size(V,2)=   378
+converged!
+346.937490 seconds (17.88 k allocations: 6.056 GiB, 0.34% gc time)
+Number of FLOPs: 10291034586294
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×126 adjoint(::Vector{Float64}) with eltype Float64:
+ -3.55271e-15  -3.55271e-15  0.0  7.10543e-15  0.0  0.0  8.88178e-15  -8.88178e-15  1.77636e-15  0.0  -6.21725e-15  7.99361e-15  3.55271e-15  -1.77636e-15  0.0  2.66454e-15  6.21725e-15  0.0  -4.44089e-15  1.77636e-15  -1.77636e-15  0.0  5.32907e-15  8.88178e-16  -1.77636e-15  -7.99361e-15  3.55271e-15  -5.32907e-15  3.10862e-15  7.10543e-15  -3.10862e-15  -5.77316e-15  4.44089e-16  -3.55271e-15  1.33227e-15  -4.88498e-15  -2.66454e-15  -4.44089e-16  -8.88178e-16  8.88178e-16  -2.22045e-15  3.10862e-15  9.32587e-15  -4.44089e-16  -1.33227e-14  8.88178e-16  6.21725e-15  5.77316e-15  7.54952e-15  -6.66134e-15  -8.43769e-15  1.28786e-14  -6.21725e-15  -9.76996e-15  -4.88498e-15  -1.24345e-14  -1.33227e-15  -4.88498e-15  -9.76996e-15  1.4877e-14  -9.99201e-15  -6.88338e-15  1.55431e-15  -9.10383e-15  -3.10862e-15  5.55112e-15  2.10942e-14  -8.43769e-15  -9.76996e-15  -1.11022e-15  -4.21885e-15  4.66294e-15  2.53131e-14  1.77636e-15  2.88658e-15  -8.88178e-15  1.86517e-14  -2.64233e-14  8.43769e-15  5.55112e-15  -1.88738e-14  2.37588e-14  -1.28786e-14  -7.99361e-15  -1.77636e-15  1.37668e-14  -1.88738e-14  2.33147e-14  6.66134e-16  -8.88178e-15  -1.9984e-14  4.21885e-15  3.55271e-15  -1.86517e-14  -9.54792e-15  1.9984e-14  -3.17524e-14  -9.54792e-15  -1.19904e-14  -1.94955e-13  -4.49418e-13  -2.02949e-13  -3.93241e-13  -2.16072e-12  -1.44373e-12  -7.09433e-13  -6.13287e-13  -1.63736e-12  -5.12013e-12  -3.38731e-11  -3.35165e-11  -1.12418e-10  -1.41432e-10  -9.26497e-11  -2.80447e-10  -7.99438e-10  -7.1561e-10  -8.3939e-10  -5.83344e-9  -1.9857e-8  -5.73909e-8  -1.01356e-8  -1.665e-8  -5.19148e-8  -1.02048e-7  -2.23448e-7
+Target number of eigenvalues (nev) = 138
+=== Starting Davidson with initial guess V0 number 1 ===
+iter=     1  Rnorm=  6.290e+00  size(V,2)=   138
+iter=     2  Rnorm=  1.339e+00  size(V,2)=   276
+iter=     3  Rnorm=  5.981e-01  size(V,2)=   414
+iter=     4  Rnorm=  2.918e-01  size(V,2)=   552
+iter=     5  Rnorm=  1.587e-01  size(V,2)=   690
+iter=     6  Rnorm=  9.501e-02  size(V,2)=   828
+iter=     7  Rnorm=  5.283e-02  size(V,2)=   966
+iter=     8  Rnorm=  3.036e-02  size(V,2)=  1104
+iter=     9  Rnorm=  2.705e-02  size(V,2)=   276
+iter=    10  Rnorm=  2.565e-02  size(V,2)=   414
+iter=    11  Rnorm=  2.412e-02  size(V,2)=   552
+iter=    12  Rnorm=  2.261e-02  size(V,2)=   690
+iter=    13  Rnorm=  2.182e-02  size(V,2)=   828
+iter=    14  Rnorm=  2.064e-02  size(V,2)=   966
+iter=    15  Rnorm=  1.801e-02  size(V,2)=  1104
+iter=    16  Rnorm=  1.716e-02  size(V,2)=   276
+iter=    17  Rnorm=  1.694e-02  size(V,2)=   414
+iter=    18  Rnorm=  1.670e-02  size(V,2)=   552
+iter=    19  Rnorm=  1.637e-02  size(V,2)=   690
+iter=    20  Rnorm=  1.599e-02  size(V,2)=   828
+iter=    21  Rnorm=  1.556e-02  size(V,2)=   966
+iter=    22  Rnorm=  1.488e-02  size(V,2)=  1104
+iter=    23  Rnorm=  1.466e-02  size(V,2)=   276
+iter=    24  Rnorm=  1.460e-02  size(V,2)=   414
+iter=    25  Rnorm=  1.450e-02  size(V,2)=   552
+iter=    26  Rnorm=  1.440e-02  size(V,2)=   690
+iter=    27  Rnorm=  1.427e-02  size(V,2)=   828
+iter=    28  Rnorm=  1.408e-02  size(V,2)=   966
+iter=    29  Rnorm=  1.387e-02  size(V,2)=  1104
+iter=    30  Rnorm=  1.381e-02  size(V,2)=   276
+iter=    31  Rnorm=  1.376e-02  size(V,2)=   414
+iter=    32  Rnorm=  1.369e-02  size(V,2)=   552
+iter=    33  Rnorm=  1.358e-02  size(V,2)=   690
+iter=    34  Rnorm=  1.342e-02  size(V,2)=   828
+iter=    35  Rnorm=  1.326e-02  size(V,2)=   966
+iter=    36  Rnorm=  1.307e-02  size(V,2)=  1104
+iter=    37  Rnorm=  1.302e-02  size(V,2)=   276
+iter=    38  Rnorm=  1.297e-02  size(V,2)=   414
+iter=    39  Rnorm=  1.292e-02  size(V,2)=   552
+iter=    40  Rnorm=  1.285e-02  size(V,2)=   690
+iter=    41  Rnorm=  1.278e-02  size(V,2)=   828
+iter=    42  Rnorm=  1.270e-02  size(V,2)=   966
+iter=    43  Rnorm=  1.260e-02  size(V,2)=  1104
+iter=    44  Rnorm=  1.257e-02  size(V,2)=   276
+iter=    45  Rnorm=  1.252e-02  size(V,2)=   414
+iter=    46  Rnorm=  1.248e-02  size(V,2)=   552
+iter=    47  Rnorm=  1.242e-02  size(V,2)=   690
+iter=    48  Rnorm=  1.235e-02  size(V,2)=   828
+iter=    49  Rnorm=  1.227e-02  size(V,2)=   966
+iter=    50  Rnorm=  1.214e-02  size(V,2)=  1104
+iter=    51  Rnorm=  1.212e-02  size(V,2)=   276
+iter=    52  Rnorm=  1.209e-02  size(V,2)=   414
+iter=    53  Rnorm=  1.205e-02  size(V,2)=   552
+iter=    54  Rnorm=  1.198e-02  size(V,2)=   690
+iter=    55  Rnorm=  1.192e-02  size(V,2)=   828
+iter=    56  Rnorm=  1.186e-02  size(V,2)=   966
+iter=    57  Rnorm=  1.175e-02  size(V,2)=  1104
+iter=    58  Rnorm=  1.173e-02  size(V,2)=   276
+iter=    59  Rnorm=  1.169e-02  size(V,2)=   414
+iter=    60  Rnorm=  1.165e-02  size(V,2)=   552
+iter=    61  Rnorm=  1.159e-02  size(V,2)=   690
+iter=    62  Rnorm=  1.154e-02  size(V,2)=   828
+iter=    63  Rnorm=  1.149e-02  size(V,2)=   966
+iter=    64  Rnorm=  1.139e-02  size(V,2)=  1104
+iter=    65  Rnorm=  1.137e-02  size(V,2)=   276
+iter=    66  Rnorm=  1.134e-02  size(V,2)=   414
+iter=    67  Rnorm=  1.130e-02  size(V,2)=   552
+iter=    68  Rnorm=  1.126e-02  size(V,2)=   690
+iter=    69  Rnorm=  1.121e-02  size(V,2)=   828
+iter=    70  Rnorm=  1.112e-02  size(V,2)=   966
+iter=    71  Rnorm=  1.101e-02  size(V,2)=  1104
+iter=    72  Rnorm=  1.099e-02  size(V,2)=   276
+iter=    73  Rnorm=  1.096e-02  size(V,2)=   414
+iter=    74  Rnorm=  1.092e-02  size(V,2)=   552
+iter=    75  Rnorm=  1.085e-02  size(V,2)=   690
+iter=    76  Rnorm=  1.081e-02  size(V,2)=   828
+iter=    77  Rnorm=  1.076e-02  size(V,2)=   966
+iter=    78  Rnorm=  1.067e-02  size(V,2)=  1104
+iter=    79  Rnorm=  1.065e-02  size(V,2)=   276
+iter=    80  Rnorm=  1.062e-02  size(V,2)=   414
+iter=    81  Rnorm=  1.059e-02  size(V,2)=   552
+iter=    82  Rnorm=  1.055e-02  size(V,2)=   690
+iter=    83  Rnorm=  1.050e-02  size(V,2)=   828
+iter=    84  Rnorm=  1.044e-02  size(V,2)=   966
+iter=    85  Rnorm=  1.035e-02  size(V,2)=  1104
+iter=    86  Rnorm=  1.034e-02  size(V,2)=   276
+iter=    87  Rnorm=  1.031e-02  size(V,2)=   414
+iter=    88  Rnorm=  1.028e-02  size(V,2)=   552
+iter=    89  Rnorm=  1.022e-02  size(V,2)=   690
+iter=    90  Rnorm=  1.015e-02  size(V,2)=   828
+iter=    91  Rnorm=  1.006e-02  size(V,2)=   966
+iter=    92  Rnorm=  9.644e-03  size(V,2)=  1104
+iter=    93  Rnorm=  9.630e-03  size(V,2)=   276
+iter=    94  Rnorm=  9.525e-03  size(V,2)=   414
+iter=    95  Rnorm=  9.486e-03  size(V,2)=   552
+iter=    96  Rnorm=  9.367e-03  size(V,2)=   690
+iter=    97  Rnorm=  9.325e-03  size(V,2)=   828
+iter=    98  Rnorm=  9.267e-03  size(V,2)=   966
+iter=    99  Rnorm=  9.173e-03  size(V,2)=  1104
+iter=   100  Rnorm=  9.149e-03  size(V,2)=   276
+iter=   101  Rnorm=  9.102e-03  size(V,2)=   414
+iter=   102  Rnorm=  9.047e-03  size(V,2)=   552
+iter=   103  Rnorm=  8.980e-03  size(V,2)=   690
+iter=   104  Rnorm=  8.876e-03  size(V,2)=   828
+iter=   105  Rnorm=  8.774e-03  size(V,2)=   966
+iter=   106  Rnorm=  8.462e-03  size(V,2)=  1104
+iter=   107  Rnorm=  8.357e-03  size(V,2)=   276
+iter=   108  Rnorm=  8.314e-03  size(V,2)=   414
+iter=   109  Rnorm=  8.273e-03  size(V,2)=   552
+iter=   110  Rnorm=  8.243e-03  size(V,2)=   690
+iter=   111  Rnorm=  8.183e-03  size(V,2)=   828
+iter=   112  Rnorm=  8.094e-03  size(V,2)=   966
+iter=   113  Rnorm=  8.043e-03  size(V,2)=  1104
+iter=   114  Rnorm=  8.027e-03  size(V,2)=   276
+iter=   115  Rnorm=  7.976e-03  size(V,2)=   414
+iter=   116  Rnorm=  7.949e-03  size(V,2)=   552
+iter=   117  Rnorm=  7.915e-03  size(V,2)=   690
+iter=   118  Rnorm=  7.883e-03  size(V,2)=   828
+iter=   119  Rnorm=  7.828e-03  size(V,2)=   966
+iter=   120  Rnorm=  7.787e-03  size(V,2)=  1104
+iter=   121  Rnorm=  7.777e-03  size(V,2)=   276
+iter=   122  Rnorm=  7.749e-03  size(V,2)=   414
+iter=   123  Rnorm=  7.728e-03  size(V,2)=   552
+iter=   124  Rnorm=  7.695e-03  size(V,2)=   690
+iter=   125  Rnorm=  7.654e-03  size(V,2)=   828
+iter=   126  Rnorm=  7.601e-03  size(V,2)=   966
+iter=   127  Rnorm=  7.554e-03  size(V,2)=  1104
+iter=   128  Rnorm=  7.540e-03  size(V,2)=   276
+iter=   129  Rnorm=  7.522e-03  size(V,2)=   414
+iter=   130  Rnorm=  7.499e-03  size(V,2)=   552
+iter=   131  Rnorm=  7.473e-03  size(V,2)=   690
+iter=   132  Rnorm=  7.447e-03  size(V,2)=   828
+iter=   133  Rnorm=  7.392e-03  size(V,2)=   966
+iter=   134  Rnorm=  7.347e-03  size(V,2)=  1104
+iter=   135  Rnorm=  7.331e-03  size(V,2)=   276
+iter=   136  Rnorm=  7.302e-03  size(V,2)=   414
+iter=   137  Rnorm=  7.279e-03  size(V,2)=   552
+iter=   138  Rnorm=  7.235e-03  size(V,2)=   690
+iter=   139  Rnorm=  7.195e-03  size(V,2)=   828
+iter=   140  Rnorm=  7.162e-03  size(V,2)=   966
+iter=   141  Rnorm=  7.119e-03  size(V,2)=  1104
+iter=   142  Rnorm=  7.112e-03  size(V,2)=   276
+iter=   143  Rnorm=  7.083e-03  size(V,2)=   414
+iter=   144  Rnorm=  7.063e-03  size(V,2)=   552
+iter=   145  Rnorm=  6.982e-03  size(V,2)=   690
+iter=   146  Rnorm=  6.956e-03  size(V,2)=   828
+iter=   147  Rnorm=  6.928e-03  size(V,2)=   966
+iter=   148  Rnorm=  6.848e-03  size(V,2)=  1104
+iter=   149  Rnorm=  6.834e-03  size(V,2)=   276
+iter=   150  Rnorm=  6.816e-03  size(V,2)=   414
+iter=   151  Rnorm=  6.793e-03  size(V,2)=   552
+iter=   152  Rnorm=  6.765e-03  size(V,2)=   690
+iter=   153  Rnorm=  6.708e-03  size(V,2)=   828
+iter=   154  Rnorm=  6.682e-03  size(V,2)=   966
+iter=   155  Rnorm=  6.657e-03  size(V,2)=  1104
+iter=   156  Rnorm=  6.647e-03  size(V,2)=   276
+iter=   157  Rnorm=  6.625e-03  size(V,2)=   414
+iter=   158  Rnorm=  6.600e-03  size(V,2)=   552
+iter=   159  Rnorm=  6.568e-03  size(V,2)=   690
+iter=   160  Rnorm=  6.550e-03  size(V,2)=   828
+iter=   161  Rnorm=  6.501e-03  size(V,2)=   966
+iter=   162  Rnorm=  6.475e-03  size(V,2)=  1104
+iter=   163  Rnorm=  6.467e-03  size(V,2)=   276
+iter=   164  Rnorm=  6.439e-03  size(V,2)=   414
+iter=   165  Rnorm=  6.421e-03  size(V,2)=   552
+iter=   166  Rnorm=  6.407e-03  size(V,2)=   690
+iter=   167  Rnorm=  6.388e-03  size(V,2)=   828
+iter=   168  Rnorm=  6.370e-03  size(V,2)=   966
+iter=   169  Rnorm=  6.343e-03  size(V,2)=  1104
+iter=   170  Rnorm=  6.336e-03  size(V,2)=   276
+iter=   171  Rnorm=  6.323e-03  size(V,2)=   414
+iter=   172  Rnorm=  6.311e-03  size(V,2)=   552
+iter=   173  Rnorm=  6.296e-03  size(V,2)=   690
+iter=   174  Rnorm=  6.282e-03  size(V,2)=   828
+iter=   175  Rnorm=  6.263e-03  size(V,2)=   966
+iter=   176  Rnorm=  6.237e-03  size(V,2)=  1104
+iter=   177  Rnorm=  6.231e-03  size(V,2)=   276
+iter=   178  Rnorm=  6.220e-03  size(V,2)=   414
+iter=   179  Rnorm=  6.208e-03  size(V,2)=   552
+iter=   180  Rnorm=  6.175e-03  size(V,2)=   690
+iter=   181  Rnorm=  6.147e-03  size(V,2)=   828
+iter=   182  Rnorm=  6.113e-03  size(V,2)=   966
+iter=   183  Rnorm=  6.093e-03  size(V,2)=  1104
+iter=   184  Rnorm=  6.086e-03  size(V,2)=   276
+iter=   185  Rnorm=  6.065e-03  size(V,2)=   414
+iter=   186  Rnorm=  6.047e-03  size(V,2)=   552
+iter=   187  Rnorm=  6.012e-03  size(V,2)=   690
+iter=   188  Rnorm=  5.990e-03  size(V,2)=   828
+iter=   189  Rnorm=  5.949e-03  size(V,2)=   966
+iter=   190  Rnorm=  5.906e-03  size(V,2)=  1104
+iter=   191  Rnorm=  5.891e-03  size(V,2)=   276
+iter=   192  Rnorm=  5.882e-03  size(V,2)=   414
+iter=   193  Rnorm=  5.864e-03  size(V,2)=   552
+iter=   194  Rnorm=  5.820e-03  size(V,2)=   690
+iter=   195  Rnorm=  5.795e-03  size(V,2)=   828
+iter=   196  Rnorm=  5.720e-03  size(V,2)=   966
+iter=   197  Rnorm=  5.693e-03  size(V,2)=  1104
+iter=   198  Rnorm=  5.687e-03  size(V,2)=   276
+iter=   199  Rnorm=  5.679e-03  size(V,2)=   414
+iter=   200  Rnorm=  5.665e-03  size(V,2)=   552
+Max iterations (200) reached without full expected convergence. Returning what we have.
+8715.455043 seconds (431.55 k allocations: 156.441 GiB, 0.18% gc time)
+Number of FLOPs: 267081840510612
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../MA_best/Eigenvalues_folder/eigenres_formaldehyde_RNDbasis1.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×138 adjoint(::Vector{Float64}) with eltype Float64:
+ -3.55271e-15  3.55271e-15  0.0  5.32907e-15  -5.32907e-15  -3.55271e-15  8.88178e-15  -1.42109e-14  0.0  5.32907e-15  0.0  3.55271e-15  2.66454e-15  -8.88178e-16  -5.32907e-15  0.0  8.88178e-16  8.88178e-16  -6.21725e-15  3.55271e-15  3.55271e-15  4.44089e-15  1.77636e-15  1.77636e-15  -5.32907e-15  2.66454e-15  3.9968e-15  1.15463e-14  -1.15463e-14  -4.44089e-16  -6.21725e-15  -5.77316e-15  -3.9968e-15  -3.55271e-15  9.32587e-15  1.77636e-15  -5.32907e-15  8.88178e-16  7.99361e-15  8.88178e-16  4.44089e-15  8.88178e-15  1.33227e-15  -6.21725e-15  -8.88178e-16  1.33227e-14  9.32587e-15  -8.88178e-15  -4.44089e-15  1.06581e-14  9.32587e-15  -8.43769e-15  -6.66134e-15  -1.02141e-14  -2.22045e-15  -8.43769e-15  -7.10543e-15  -2.22045e-14  -1.55431e-14  1.9984e-14  -8.88178e-15  -2.24265e-14  3.77476e-15  -2.22045e-14  2.53131e-14  -1.17684e-14  1.28786e-14  -4.66294e-15  -2.44249e-14  2.02061e-14  2.42029e-14  1.22125e-14  1.86517e-14  1.4877e-14  -1.88738e-14  -1.9762e-14  1.88738e-14  1.46549e-14  2.35367e-14  2.57572e-14  -1.06581e-14  -1.44329e-14  -4.21885e-15  6.66134e-15  2.95319e-14  -1.06581e-14  7.99361e-15  -1.31006e-14  -1.5099e-14  -7.99361e-15  -2.30926e-14  -7.77156e-15  1.55431e-14  -2.70894e-14  -2.22045e-15  -3.33067e-15  1.02141e-14  2.86438e-14  -3.4639e-14  -2.4869e-14  -2.42029e-14  6.43929e-15  3.33067e-14  1.15463e-14  3.39728e-14  1.86517e-14  2.33147e-14  -3.30846e-14  5.10703e-15  4.06342e-14  3.10862e-15  -1.35447e-14  -2.95319e-14  -1.06581e-14  4.32987e-14  3.9968e-14  1.77636e-15  -3.15303e-14  -3.17524e-14  5.77316e-15  2.19824e-14  -1.66533e-14  -2.81997e-14  4.75175e-14  4.81837e-14  2.88658e-14  -2.5091e-14  -1.33653e-9  -9.99201e-15  5.06262e-14  4.16334e-14  -1.36581e-8  -1.38761e-10  -1.10832e-8  -9.37878e-11  -1.21939e-10  -5.61548e-8  -2.72289e-5

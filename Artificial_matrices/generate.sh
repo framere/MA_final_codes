@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH -J Formal
+#SBATCH -J generate
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -p test
@@ -7,5 +7,4 @@
 
 JULIA=/home/fmereto/julia/bin/julia
 
-$JULIA Tobias.jl
-
+$JULIA generate.jl

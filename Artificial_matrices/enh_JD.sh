@@ -1,11 +1,10 @@
 #!/bin/sh
-#SBATCH -J Formal
+#SBATCH -J Enh_JD
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -p test
-#SBATCH --time=1-00:00:00
+#SBATCH --time=0-16:00:00
 
 JULIA=/home/fmereto/julia/bin/julia
 
-$JULIA Tobias.jl
-
+$JULIA enh_JD.jl

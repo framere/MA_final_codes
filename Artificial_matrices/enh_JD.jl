@@ -156,48 +156,28 @@ function select_corrections_ORTHO(t_candidates, V, V_lock, η, droptol; maxorth=
     return T_hat[:,1:n_b], n_b
 end
 
+function load_matrix(filename::String)
+    N = 20000  
 
-function occupied_orbitals(molecule::String)
-    if molecule == "H2"
-        return 1
-    elseif molecule == "formaldehyde"
-        return 6
-    elseif molecule == "uracil"
-        return 21
-    else
-        error("Unknown molecule: $molecule")
-    end
-end
-
-function load_matrix(filename::String, molecule::String)
-    if molecule == "H2"
-        N = 11994
-    elseif molecule == "formaldehyde"
-        N = 27643
-    elseif molecule == "uracil"
-        N = 32416
-    else
-        error("Unknown molecule: $molecule")
-    end
-    # println("read ", filename)
+    println("read ", filename)
     file = open(filename, "r")
     A = Array{Float64}(undef, N * N)
     read!(file, A)
     close(file)
 
     A = reshape(A, N, N)
+    # A = -A
     return Hermitian(A)
 end
 
-function read_eigenresults(molecule::String)
-    output_file = "../../MA_best/Eigenvalues_folder/eigenres_" * molecule * "_RNDbasis1.jld2"
+function read_eigenresults(Number::Int)
+    output_file = "EV_matrix_$(Number).jld2"
     println("Reading eigenvalues from $output_file")
     data = jldopen(output_file, "r")
     eigenvalues = data["eigenvalues"]
     close(data)
     return sort(eigenvalues)
 end
-
 
 function degeneracy_detector(vals::AbstractVector{T}; tol=5e-3) where T<:Number
     # Sort eigenvalues but keep original index
@@ -262,7 +242,7 @@ function davidson(
 
     n = size(A, 1)
     n_b = size(V, 2)
-    l_buffer = max(1, round(Int, l * 1.75))
+    l_buffer = max(1, round(Int, l * 1.25))
     nu_0 = max(l_buffer, n_b)
     nevf = 0
     Nlow = size(V, 2)
@@ -320,7 +300,8 @@ function davidson(
         H = Hermitian(V' * AV)
         count_matmul_flops(size(V,2), size(AV,2), n)
 
-        nu = min(size(H, 2), nu_0 - nevf)
+        # nu = min(n_aux ÷ 4, nu_0 - nevf)
+        nu = min(n_aux - nevf, size(H,1))
         count_diag_flops(nu)
         Σ, U = eigen(H, 1:nu)
         X = V * U
@@ -436,7 +417,7 @@ function davidson(
                 continue
             end
             λ = Σ_sorted[i]
-            adaptive_thresh = 2 * sqrt(abs(λ)) * thresh
+            adaptive_thresh = thresh # 2 * sqrt(abs(λ)) *
             if norms_sorted[i] < adaptive_thresh
                 converged_cooldown[i] += 1   # increment cooldown counter
 
@@ -472,12 +453,12 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 9
+        if iter < 13
             for (i_local, pos) in enumerate(keep_positions)
-                # denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
-                # t[:, i_local] = R_nc[:, i_local] ./ denom
-                # count_vec_scaling_flops(n)
-                t[:, i_local] = R_nc[:, i_local]
+                denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
+                t[:, i_local] = R_nc[:, i_local] ./ denom
+                count_vec_scaling_flops(n)
+                # t[:, i_local] = R_nc[:, i_local]
             end
         else
             # Hybrid Davidson-JD
@@ -509,10 +490,10 @@ function davidson(
             # Davidson corrections
             t_dav = zeros(T, n, length(dav_indices))
             for (j, i_local) in enumerate(dav_indices)
-                # denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
-                # t_dav[:, j] = R_nc[:, i_local] ./ denom
-                # count_vec_scaling_flops(n)
-                t_dav[:, j] = R_nc[:, i_local] 
+                denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
+                t_dav[:, j] = R_nc[:, i_local] ./ denom
+                count_vec_scaling_flops(n)
+                # t_dav[:, j] = R_nc[:, i_local] 
             end
 
             # JD corrections
@@ -573,29 +554,20 @@ function davidson(
 end
 
 
-function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
+function main(Number::Int, l::Integer, Naux::Integer, max_iter::Integer)
     global NFLOPs
     NFLOPs = 0  # reset for each run
 
-    filename = "../../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
-    Nlow = Naux ÷ 3
-    A = load_matrix(filename,molecule)
+    filename = "artificial_matrix_$(Number).dat"
+    Nlow = Naux ÷ 4
+    A = load_matrix(filename)
     D = diag(A)
     N = size(A, 1)
     all_idxs = sortperm(abs.(D), rev = true)
     V0_1 = A[:, all_idxs[1:Nlow]]
-    V0_2 = randn(N, Nlow).- 0.5
-    V0_3 = zeros(N, Nlow)
-    for i = 1:Nlow
-        V0_3[i, i] = 1.0
-    end
-    Vs = [V0_1, V0_2, V0_3]
+    Vs = [V0_1]
+    accuracy = 5e-4
 
-    if molecule == "H2"
-        accuracy = 1e-3
-    else
-        accuracy = 1e-3
-    end
     for V in Vs
         @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
 
@@ -604,39 +576,36 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
         Σ = sqrt.(abs.(Σ))  # Take square root of eigenvalues
             
         println("Number of FLOPs: $NFLOPs")
+        println("Computed top $l singular values (sqrt of eigenvalues):")
+        display("text/plain", Σ')
 
-        # Perform exact diagonalization as reference
-        println("\nReading exact Eigenvalues...")
-        Σexact = read_eigenresults(molecule)
-        Σexact = abs.(Σexact)
-        idx_exact = sortperm(Σexact, rev=true)
-        Σexact = sqrt.(abs.(Σexact[idx_exact]))
+        # # Perform exact diagonalization as reference
+        # println("\nReading exact Eigenvalues...")
+        # Σexact = read_eigenresults(Number)
+        # Σexact = abs.(Σexact)
+        # idx_exact = sortperm(Σexact, rev=true)
+        # Σexact = sqrt.(abs.(Σexact[idx_exact]))
 
 
-        # Display difference
-        r = min(length(Σ), l)
-        println("\nCompute the difference between computed and exact eigenvalues:")
-        display("text/plain", (Σ[1:r] - Σexact[1:r])')
-        # difference = (Σ[1:r] .- Σexact[1:r])
-        # for i in 1:r
-        #     println(@sprintf("%3d: %.10f (computed) - %.10f (exact) = % .4e", i, Σ[i], Σexact[i], difference[i]))
-        # end
-        println("$r Eigenvalues converges, out of $l requested.")
+        # # Display difference
+        # r = min(length(Σ), l)
+        # println("\nCompute the difference between computed and exact eigenvalues:")
+        # display("text/plain", (Σ[1:r] - Σexact[1:r])')
+        # # difference = (Σ[1:r] .- Σexact[1:r])
+        # # for i in 1:r
+        # #     println(@sprintf("%3d: %.10f (computed) - %.10f (exact) = % .4e", i, Σ[i], Σexact[i], difference[i]))
+        # # end
+        # println("$r Eigenvalues converges, out of $l requested.")
     end
 end
 
-Nauxs = [2] # 1.5, 2, 
-ls = [100] #10, 50, 100, 
-molecules = ["H2"] # 'uracil', 'H2', 'formaldehyde'
+Numbers = [9] #collect(1:1:4) # 6, 7, 8, 9, 10
+ls = [10]
 
-for molecule in molecules
-    println("\n=== Running tests for molecule: $molecule ===")
-    for naux in Nauxs
-        for l in ls
-            nev = l*occupied_orbitals(molecule)
-            main(molecule, nev, Int(round(naux * nev)), 20)
-        end
+for Number in Numbers
+    println("\n=== Running tests for molecule: $Number ===")
+    for l in ls
+        nev = l*9
+        main(Number, nev, Int(round(1.5 * nev)), 100)
     end
 end
-
-

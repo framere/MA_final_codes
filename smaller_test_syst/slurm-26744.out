@@ -1,0 +1,167 @@
+slurmstepd-andoria00: error: *** JOB 26744 ON andoria00 CANCELLED AT 2026-02-02T14:23:18 ***
+
+[1311838] signal 15: Terminated
+in expression starting at /home/fmereto/MA_final_code/smaller_test_syst/enh_JD.jl:624
+dgemv_n_ZEN at /home/fmereto/julia/bin/../lib/julia/libopenblas64_.so (unknown line)
+dgemv_64_ at /home/fmereto/julia/bin/../lib/julia/libopenblas64_.so (unknown line)
+gemv! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/blas.jl:670
+gemv! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:450 [inlined]
+generic_matvecmul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:79 [inlined]
+_mul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:73 [inlined]
+mul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:70 [inlined]
+mul! at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:253 [inlined]
+* at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/usr/share/julia/stdlib/v1.11/LinearAlgebra/src/matmul.jl:56
+#select_corrections_ORTHO#5 at /home/fmereto/MA_final_code/smaller_test_syst/enh_JD.jl:129
+select_corrections_ORTHO at /home/fmereto/MA_final_code/smaller_test_syst/enh_JD.jl:90 [inlined]
+davidson at /home/fmereto/MA_final_code/smaller_test_syst/enh_JD.jl:536
+macro expansion at ./timing.jl:581 [inlined]
+main at /home/fmereto/MA_final_code/smaller_test_syst/enh_JD.jl:589
+unknown function (ip: 0x7f3ad9ea5c4b)
+top-level scope at /home/fmereto/MA_final_code/smaller_test_syst/enh_JD.jl:637
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/toplevel.c:886
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/toplevel.c:994
+eval at ./boot.jl:430 [inlined]
+include_string at ./loading.jl:2734
+_include at ./loading.jl:2794
+include at ./Base.jl:557
+jfptr_include_46865.1 at /home/fmereto/julia/lib/julia/sys.so (unknown line)
+exec_options at ./client.jl:323
+_start at ./client.jl:531
+jfptr__start_73560.1 at /home/fmereto/julia/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/julia.h:2157 [inlined]
+true_main at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/jlapi.c:900
+jl_repl_entrypoint at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/src/jlapi.c:1059
+main at /cache/build/builder-amdci5-5/julialang/julia-release-1-dot-11/cli/loader_exe.c:58
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 21391362 (Pool: 21390697; Big: 665); GC: 860
+
+=== Running tests for molecule: He ===
+Starting Davidson with n_aux = 12, l_buffer = 9, l = 5, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 4, Converged = 0, ‖r‖ (largest λ) = 0.1721648026986995, total_norm = 0.34806376807695694
+Iter 2: V_size = 8, Converged = 0, ‖r‖ (largest λ) = 0.0022070396496165195, total_norm = 1.2366733673141355
+Iter 3: V_size = 12, Converged = 0, ‖r‖ (largest λ) = 1.0522970307709143, total_norm = 3.1919790683010136
+Iter 4: V_size = 12, Converged = 0, ‖r‖ (largest λ) = 0.4629833073192448, total_norm = 1.1837240609889752
+Iter 5: V_size = 12, Converged = 0, ‖r‖ (largest λ) = 0.1370486691930797, total_norm = 2.187601017148103
+Iter 6: V_size = 12, Converged = 1, ‖r‖ (largest λ) = 0.007586341871363694, total_norm = 0.07369400930955386
+Iter 7: V_size = 13, Converged = 1, ‖r‖ (largest λ) = 0.00018423402743356928, total_norm = 0.0022527443169666136
+Iter 8: V_size = 12, Converged = 1, ‖r‖ (largest λ) = 8.557553587191952e-6, total_norm = 0.00013862819490488386
+Iter 9: V_size = 12, Converged = 4, ‖r‖ (largest λ) = 6.937882742065189e-7, total_norm = 1.4214944004865442e-5
+Converged all required eigenvalues (cluster-aware). Iter = 10
+  0.547108 seconds (5.46 k allocations: 63.529 MiB)
+Number of FLOPs: 7584140884
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigen_results_He.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×5 adjoint(::Vector{Float64}) with eltype Float64:
+ -2.13163e-14  -8.26006e-14  -7.6783e-13  -9.64118e-13  -7.74613e-10
+5 Eigenvalues converges, out of 5 requested.
+Starting Davidson with n_aux = 25, l_buffer = 18, l = 10, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 8, Converged = 0, ‖r‖ (largest λ) = 0.20966840036486592, total_norm = 0.5069889036672003
+Iter 2: V_size = 16, Converged = 0, ‖r‖ (largest λ) = 0.001667098433980763, total_norm = 2.0424978035523353
+Iter 3: V_size = 25, Converged = 0, ‖r‖ (largest λ) = 0.00037244697473969886, total_norm = 2.52169180007706
+Iter 4: V_size = 25, Converged = 1, ‖r‖ (largest λ) = 1.0754146491065178e-5, total_norm = 0.3566802595269957
+Iter 5: V_size = 26, Converged = 5, ‖r‖ (largest λ) = 2.243634694900863e-7, total_norm = 0.518663480611149
+Iter 6: V_size = 29, Converged = 6, ‖r‖ (largest λ) = 3.4764417650616925e-5, total_norm = 0.30405483975818565
+Iter 7: V_size = 25, Converged = 8, ‖r‖ (largest λ) = 1.0360329682067208e-7, total_norm = 0.2131964905962459
+Iter 8: V_size = 22, Converged = 9, ‖r‖ (largest λ) = 1.4730611565947719e-8, total_norm = 0.04565536865148045
+Iter 9: V_size = 19, Converged = 9, ‖r‖ (largest λ) = 0.0011928701946739896, total_norm = 0.013103343402857246
+Iter 10: V_size = 18, Converged = 9, ‖r‖ (largest λ) = 0.000598702129327945, total_norm = 0.007933483104616286
+Iter 11: V_size = 18, Converged = 9, ‖r‖ (largest λ) = 0.00023950058605777685, total_norm = 0.005888364668470235
+Converged all required eigenvalues (cluster-aware). Iter = 12
+  1.014644 seconds (24.42 k allocations: 240.283 MiB, 13.30% gc time)
+Number of FLOPs: 16214360168
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigen_results_He.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×10 adjoint(::Vector{Float64}) with eltype Float64:
+ -2.66454e-15  -5.41003e-11  -1.77636e-15  -2.22045e-15  -3.8769e-13  -1.42109e-14  -7.62368e-12  -3.9968e-15  -1.33227e-15  -1.2462e-8
+10 Eigenvalues converges, out of 10 requested.
+Starting Davidson with n_aux = 75, l_buffer = 52, l = 30, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 25, Converged = 0, ‖r‖ (largest λ) = 0.05373431017835847, total_norm = 0.847891786893752
+Iter 2: V_size = 50, Converged = 0, ‖r‖ (largest λ) = 3.39311834675618e-5, total_norm = 0.24564414054095568
+Iter 3: V_size = 75, Converged = 1, ‖r‖ (largest λ) = 6.402231383773885e-8, total_norm = 0.13489136861852627
+Iter 4: V_size = 76, Converged = 6, ‖r‖ (largest λ) = 1.0606993202342292e-9, total_norm = 0.30771394457327506
+Iter 5: V_size = 80, Converged = 17, ‖r‖ (largest λ) = 3.321532822465391e-11, total_norm = 0.08145961603462847
+Iter 6: V_size = 81, Converged = 25, ‖r‖ (largest λ) = 0.0001443267846825827, total_norm = 0.004702506606359829
+Iter 7: V_size = 62, Converged = 27, ‖r‖ (largest λ) = 8.945761566381455e-6, total_norm = 0.0026558048257180208
+Converged all required eigenvalues (cluster-aware). Iter = 8
+  1.364530 seconds (85.36 k allocations: 769.033 MiB, 19.07% gc time)
+Number of FLOPs: 33980005948
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigen_results_He.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×30 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.77636e-15  -4.44089e-16  0.0  -1.77636e-15  -3.9968e-15  -3.37508e-14  4.44089e-16  0.0  -8.88178e-16  -8.60412e-12  -4.44089e-16  -1.06248e-13  -6.15064e-14  -6.65084e-10  -6.61843e-11  -6.47894e-10  -1.25039e-11  -1.09024e-13  -2.00064e-11  -9.40359e-14  -5.55112e-16  -4.51293e-9  -4.92784e-12  -9.36673e-12  -3.33067e-16  -1.36169e-9  -1.94361e-8  -4.32696e-9  -9.54644e-9  -2.81107e-9
+30 Eigenvalues converges, out of 30 requested.
+Starting Davidson with n_aux = 125, l_buffer = 88, l = 50, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 41, Converged = 0, ‖r‖ (largest λ) = 0.039806559020880046, total_norm = 0.6781694408283111
+Iter 2: V_size = 82, Converged = 0, ‖r‖ (largest λ) = 1.7541943837590383e-5, total_norm = 0.12003742995567847
+Iter 3: V_size = 125, Converged = 1, ‖r‖ (largest λ) = 3.3184223912642805e-8, total_norm = 0.3434387789769594
+Iter 4: V_size = 126, Converged = 8, ‖r‖ (largest λ) = 5.7959149444094064e-11, total_norm = 0.12619966786561893
+Iter 5: V_size = 132, Converged = 25, ‖r‖ (largest λ) = 1.6324070891629554e-12, total_norm = 0.07090583365370527
+Iter 6: V_size = 142, Converged = 39, ‖r‖ (largest λ) = 2.8605689325812578e-8, total_norm = 0.04861660383075591
+Iter 7: V_size = 112, Converged = 46, ‖r‖ (largest λ) = 2.3566712961701425e-6, total_norm = 0.020198712156333096
+Converged all required eigenvalues (cluster-aware). Iter = 8
+  2.106984 seconds (219.08 k allocations: 1.812 GiB, 13.59% gc time)
+Number of FLOPs: 59366572640
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigen_results_He.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×50 adjoint(::Vector{Float64}) with eltype Float64:
+ -8.88178e-16  -4.44089e-16  -8.88178e-16  -1.77636e-15  -2.22045e-15  -2.53131e-14  1.77636e-15  1.77636e-15  -4.44089e-16  -3.79696e-14  -1.11022e-16  6.66134e-16  3.33067e-16  -1.56319e-13  -1.3217e-8  -1.45439e-13  -7.65821e-12  -6.71685e-14  -3.55271e-15  -5.68434e-14  -4.55191e-15  -3.59167e-10  -2.22977e-10  -1.77636e-15  -4.44089e-16  -4.34697e-10  -2.65094e-9  -5.37136e-10  -1.28745e-9  -2.38142e-11  -9.50859e-9  -1.15694e-11  -2.05328e-9  -9.1984e-11  -2.42029e-13  -5.62883e-14  -4.4259e-13  -6.24081e-11  -1.18657e-8  -7.1064e-8  4.32066e-8  -7.59153e-9  -1.46694e-9  -4.11498e-8  -5.21522e-9  -2.39209e-10  -3.56047e-9  -1.49817e-10  -1.83544e-8  -8.9653e-9
+50 Eigenvalues converges, out of 50 requested.
+Starting Davidson with n_aux = 250, l_buffer = 175, l = 100, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 83, Converged = 0, ‖r‖ (largest λ) = 0.00985152505417164, total_norm = 0.39424051383253833
+Iter 2: V_size = 166, Converged = 0, ‖r‖ (largest λ) = 1.1081132779408713e-6, total_norm = 0.2466446626928803
+Iter 3: V_size = 250, Converged = 1, ‖r‖ (largest λ) = 8.286006858462534e-10, total_norm = 0.10441219992449852
+Iter 4: V_size = 251, Converged = 17, ‖r‖ (largest λ) = 4.605290389480944e-13, total_norm = 0.06283524440036681
+Iter 5: V_size = 266, Converged = 49, ‖r‖ (largest λ) = 2.932510432795205e-15, total_norm = 0.02262499393031118
+Iter 6: V_size = 282, Converged = 89, ‖r‖ (largest λ) = 2.7243414411756593e-9, total_norm = 0.014131261873111058
+Iter 7: V_size = 212, Converged = 97, ‖r‖ (largest λ) = 9.072719522662097e-8, total_norm = 0.0048994419098920515
+Converged all required eigenvalues (cluster-aware). Iter = 8
+  4.748730 seconds (838.55 k allocations: 6.482 GiB, 14.64% gc time)
+Number of FLOPs: 124025559208
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigen_results_He.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×100 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.77636e-15  0.0  -4.44089e-16  -1.77636e-15  -1.33227e-15  -1.77636e-15  1.77636e-15  1.77636e-15  -8.88178e-16  3.33067e-16  6.66134e-16  9.99201e-16  5.55112e-16  -2.47247e-13  -6.88338e-14  1.11022e-16  0.0  -2.22045e-16  -1.11022e-16  2.22045e-16  -9.99201e-16  -5.3845e-11  1.11022e-16  -3.33067e-16  0.0  -1.66533e-15  -1.05472e-11  -4.1589e-13  -4.42646e-13  -2.29964e-11  -6.86329e-12  -1.07381e-11  -7.37743e-13  -2.24265e-14  -3.88578e-16  2.77556e-16  -2.77556e-15  -1.44329e-15  -1.60982e-15  -4.88993e-11  -1.37132e-9  -9.06275e-13  -2.98969e-10  -7.10733e-10  -1.23567e-8  -5.51409e-8  1.0927e-10  2.43378e-12  3.76077e-8  1.56991e-8  -1.05576e-10  -1.33132e-10  -7.29583e-13  -2.19474e-12  -7.28315e-9  -3.44169e-15  1.66533e-16  -8.88106e-12  -9.10777e-12  -2.44249e-15  -1.17301e-12  -4.99967e-10  -1.6413e-10  -5.56331e-9  -3.14919e-9  -1.99818e-9  -5.74818e-13  -1.24703e-9  -1.2626e-8  -1.16995e-8  -1.30706e-9  -2.28639e-8  -4.61373e-9  -1.14825e-9  2.51077e-13  1.52075e-9  -1.00316e-9  -6.79259e-9  6.05727e-10  -4.06747e-9  -4.28989e-9  -3.37229e-10  1.21594e-12  -2.85891e-11  -2.40983e-10  -2.40941e-8  -3.46269e-8  -1.86577e-8  -4.26592e-9  3.76596e-9  -3.01208e-10  -1.1221e-12  -6.46623e-8  -4.60631e-8  -2.0087e-9  -1.13839e-9  2.32732e-9  -4.15888e-8  -4.0364e-8  -3.65453e-9
+100 Eigenvalues converges, out of 100 requested.
+Starting Davidson with n_aux = 500, l_buffer = 350, l = 200, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 166, Converged = 0, ‖r‖ (largest λ) = 0.001771839240669891, total_norm = 0.3081666896763019
+Iter 2: V_size = 332, Converged = 0, ‖r‖ (largest λ) = 1.0484574675333403e-7, total_norm = 0.29445224460315544
+Iter 3: V_size = 500, Converged = 3, ‖r‖ (largest λ) = 1.2698360794416424e-11, total_norm = 0.02898887358269137
+Iter 4: V_size = 503, Converged = 35, ‖r‖ (largest λ) = 6.820381715333009e-15, total_norm = 0.007704536727980129
+Iter 5: V_size = 532, Converged = 121, ‖r‖ (largest λ) = 3.815511717423173e-15, total_norm = 0.004426065657471457
+Iter 6: V_size = 544, Converged = 195, ‖r‖ (largest λ) = 2.816204517816022e-9, total_norm = 0.00163633643508564
+Converged all required eigenvalues (cluster-aware). Iter = 7
+ 11.420369 seconds (2.48 M allocations: 18.910 GiB, 10.82% gc time)
+Number of FLOPs: 247987358624
+
+Reading exact Eigenvalues...
+Reading eigenvalues from ../../MA_best/Eigenvalues_folder/eigen_results_He.jld2
+
+Compute the difference between computed and exact eigenvalues:
+1×200 adjoint(::Vector{Float64}) with eltype Float64:
+ -1.33227e-15  -4.44089e-16  -1.33227e-15  -1.77636e-15  -2.22045e-15  0.0  1.77636e-15  1.33227e-15  -8.88178e-16  5.55112e-16  3.33067e-16  4.44089e-16  1.11022e-15  -3.33067e-16  -9.99201e-15  -5.55112e-16  1.11022e-16  -5.55112e-16  -8.88178e-16  0.0  3.33067e-16  3.33067e-16  2.22045e-16  -3.33067e-16  5.55112e-16  -8.88178e-16  3.33067e-16  1.11022e-16  4.44089e-16  -3.54494e-13  -5.55112e-16  -5.55112e-16  0.0  1.11022e-16  5.55112e-17  -2.22045e-16  -1.11022e-16  -1.11022e-16  -7.65499e-14  -1.16129e-13  -2.09428e-10  -1.94844e-14  -2.84966e-12  -1.51654e-11  -2.49209e-10  -1.15075e-13  -4.23422e-12  -9.85878e-14  -3.28343e-9  -1.06892e-9  -1.73322e-12  -2.88997e-12  -8.59868e-14  -8.02168e-9  -2.22115e-9  -9.4369e-16  7.77156e-16  -3.51297e-10  2.10942e-15  6.66134e-16  1.02696e-14  1.9984e-15  -7.77156e-16  3.42155e-11  1.81939e-11  6.45042e-12  2.41474e-15  1.05313e-12  7.04992e-15  6.69501e-12  4.43823e-12  9.83619e-12  6.02913e-11  1.17978e-12  6.66134e-16  1.56736e-13  1.05138e-13  1.22494e-12  1.56666e-12  1.12577e-12  3.16913e-11  7.37993e-13  3.747e-14  -2.69229e-15  -8.10463e-15  -9.10078e-13  -1.57138e-12  -7.98528e-13  -2.38726e-13  3.88586e-11  -5.86803e-12  5.27356e-16  1.54599e-14  -4.00013e-13  6.05266e-13  -8.28432e-12  -3.52965e-9  -3.07444e-9  8.21843e-14  7.49401e-16  8.15181e-14  1.11022e-15  5.177e-11  -8.97859e-11  3.36398e-14  1.91513e-15  3.69149e-15  -7.09433e-14  -1.34942e-11  -8.42672e-11  -2.64821e-9  -2.09821e-12  6.20254e-13  -1.7984e-8  -2.38685e-8  -2.46778e-8  -5.09442e-8  6.63358e-14  -3.29098e-13  -3.33067e-15  8.25048e-13  1.08793e-9  2.2954e-11  -1.97043e-8  -5.31589e-8  -2.78865e-8  3.45015e-10  -2.1054e-8  1.3059e-14  2.01715e-10  -1.24468e-7  -6.52481e-8  -8.556e-8  -1.40438e-9  -1.07689e-7  -3.3263e-8  -8.62811e-12  -2.44818e-13  -3.13499e-14  -1.35231e-9  2.01306e-12  8.93689e-12  5.88557e-14  2.24959e-14  -4.52002e-11  -1.22619e-7  -7.57932e-8  -1.49724e-8  -8.81308e-11  -1.73587e-7  2.80331e-15  2.30426e-11  1.67847e-10  7.7259e-13  7.19859e-11  -4.45448e-8  4.75216e-11  4.32398e-11  1.68193e-10  5.4512e-14  5.3833e-11  3.63732e-11  1.53169e-13  -8.2421e-12  -3.45664e-12  -4.18196e-12  -1.02668e-11  -9.64792e-12  -1.27462e-7  -3.98025e-8  -9.57252e-10  -3.03662e-9  3.01372e-8  -8.7228e-11  -7.58969e-11  6.55245e-9  -4.84036e-10  -6.44939e-8  -1.48734e-11  -9.15599e-8  -4.5521e-10  -9.70393e-12  -1.12056e-11  -1.80245e-13  -9.268e-13  -4.93787e-11  -1.63937e-11  -1.12137e-11  -6.88284e-11  -5.10868e-10  1.26142e-10  -1.8104e-10  -6.83052e-11  -7.32669e-11  -3.72117e-10  -1.26154e-8  -5.10913e-9  -1.95578e-10  1.43384e-10  -1.83821e-9
+200 Eigenvalues converges, out of 200 requested.
+
+=== Running tests for molecule: hBN ===
+Starting Davidson with n_aux = 450, l_buffer = 315, l = 180, thresh = 9.0e-5, max_iter = 20
+Iter 1: V_size = 150, Converged = 0, ‖r‖ (largest λ) = 0.5227099038947101, total_norm = 11.11906885762431
+Iter 2: V_size = 300, Converged = 0, ‖r‖ (largest λ) = 0.1305280023175976, total_norm = 7.266186694583738
+Iter 3: V_size = 450, Converged = 0, ‖r‖ (largest λ) = 0.007636720533485761, total_norm = 5.2085951600194225
+Iter 4: V_size = 450, Converged = 0, ‖r‖ (largest λ) = 0.000535190567181515, total_norm = 4.1780798371830326

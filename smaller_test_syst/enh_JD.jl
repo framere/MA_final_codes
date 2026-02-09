@@ -156,48 +156,46 @@ function select_corrections_ORTHO(t_candidates, V, V_lock, η, droptol; maxorth=
     return T_hat[:,1:n_b], n_b
 end
 
-
 function occupied_orbitals(molecule::String)
-    if molecule == "H2"
+    if molecule == "He"
         return 1
-    elseif molecule == "formaldehyde"
-        return 6
-    elseif molecule == "uracil"
-        return 21
+    elseif molecule == "hBN"
+        return 36
+    elseif molecule == "Si"
+        return 72
     else
         error("Unknown molecule: $molecule")
     end
 end
 
 function load_matrix(filename::String, molecule::String)
-    if molecule == "H2"
-        N = 11994
-    elseif molecule == "formaldehyde"
-        N = 27643
-    elseif molecule == "uracil"
-        N = 32416
+    if molecule == "He"
+        N = 4488
+    elseif molecule == "hBN"
+        N = 6863
+    elseif molecule == "Si"
+        N = 6201
     else
         error("Unknown molecule: $molecule")
     end
-    # println("read ", filename)
     file = open(filename, "r")
     A = Array{Float64}(undef, N * N)
     read!(file, A)
     close(file)
 
     A = reshape(A, N, N)
+    A = -A
     return Hermitian(A)
 end
 
 function read_eigenresults(molecule::String)
-    output_file = "../../MA_best/Eigenvalues_folder/eigenres_" * molecule * "_RNDbasis1.jld2"
+    output_file = "../../MA_best/Eigenvalues_folder/eigen_results_" * molecule * ".jld2"
     println("Reading eigenvalues from $output_file")
     data = jldopen(output_file, "r")
-    eigenvalues = data["eigenvalues"]
+    eigenvalues = data["Σexact"]
     close(data)
     return sort(eigenvalues)
 end
-
 
 function degeneracy_detector(vals::AbstractVector{T}; tol=5e-3) where T<:Number
     # Sort eigenvalues but keep original index
@@ -472,7 +470,7 @@ function davidson(
         ϵ = 1e-8
         t = zeros(T, n, length(keep_positions))
 
-        if iter < 9
+        if iter < 13
             for (i_local, pos) in enumerate(keep_positions)
                 # denom = clamp.(Σ_nc[i_local] .- D, ϵ, Inf)
                 # t[:, i_local] = R_nc[:, i_local] ./ denom
@@ -577,25 +575,16 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
     global NFLOPs
     NFLOPs = 0  # reset for each run
 
-    filename = "../../MA_best/" * molecule *"/gamma_VASP_RNDbasis1.dat"
+    filename = "../../Master_arbeit/Davidson_algorithm/m_pp_" * molecule * ".dat"
     Nlow = Naux ÷ 3
     A = load_matrix(filename,molecule)
     D = diag(A)
     N = size(A, 1)
     all_idxs = sortperm(abs.(D), rev = true)
     V0_1 = A[:, all_idxs[1:Nlow]]
-    V0_2 = randn(N, Nlow).- 0.5
-    V0_3 = zeros(N, Nlow)
-    for i = 1:Nlow
-        V0_3[i, i] = 1.0
-    end
-    Vs = [V0_1, V0_2, V0_3]
+    Vs = [V0_1]
+    accuracy = 9e-5
 
-    if molecule == "H2"
-        accuracy = 1e-3
-    else
-        accuracy = 1e-3
-    end
     for V in Vs
         @time Σ, U = davidson(A, V, Naux, l, accuracy, max_iter, all_idxs)
 
@@ -626,17 +615,26 @@ function main(molecule::String, l::Integer, Naux::Integer, max_iter::Integer)
 end
 
 Nauxs = [2] # 1.5, 2, 
-ls = [100] #10, 50, 100, 
-molecules = ["H2"] # 'uracil', 'H2', 'formaldehyde'
+molecules = ["He", "hBN", "Si"]
+
+ls_hBN = [5, 10, 50, 100]
+ls_Si = [5, 10, 20, 50, 70]
+ls_He = [5, 10, 30, 50, 100, 200]
 
 for molecule in molecules
     println("\n=== Running tests for molecule: $molecule ===")
-    for naux in Nauxs
+    if molecule == "He"
+            ls = ls_He
+        elseif molecule == "hBN"
+            ls = ls_hBN
+        elseif molecule == "Si"
+            ls = ls_Si
+        else
+            error("Unknown molecule: $molecule")
+        end
         for l in ls
             nev = l*occupied_orbitals(molecule)
-            main(molecule, nev, Int(round(naux * nev)), 20)
+            main(molecule, nev, Int(round(2.5 * nev)), 90)
         end
     end
 end
-
-
